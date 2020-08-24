@@ -15,16 +15,24 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('reg_id');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone')->nullable();
             $table->integer('gender')->nullable();
+            $table->date('dob')->nullable();
+            $table->integer('age')->nullable();
             $table->string('designation')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('city')->nullable();
             $table->string('country')->nullable();
-            $table->text('address')->nullable();
-            $table->text('profile')->nullable();
+            $table->integer('test_status')->default('0');
+            $table->integer('ventilation')->default('0');
+            $table->integer('icu')->default('0');
+            $table->integer('health_condition')->default('1');
+            $table->integer('entry_type')->default('0');
+            $table->integer('status')->default('1');
             $table->rememberToken();
             $table->timestamps();
         });
