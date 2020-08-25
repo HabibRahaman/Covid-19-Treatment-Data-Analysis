@@ -2,7 +2,7 @@
 @section('content')
 
         <!-- ============================================================== -->
-        <!-- Login box.scss -->
+        <!-- Auth box.scss -->
         <!-- ============================================================== -->
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url({{ asset('backend/images/big/auth-bg.jpg') }}) no-repeat center center;">
             <div class="auth-box">
@@ -79,16 +79,13 @@
                         </form>
                     </div>
                     <div class="center-align m-t-20 db">
-                        <a href="#" class="btn indigo darken-1 tooltipped m-r-5" data-position="top" data-tooltip="Login with Facebook"><i class="fab fa-facebook-f"></i></a> <a href="#" class="btn orange darken-4 tooltipped" data-position="top" data-tooltip="Login with Facebook"><i class="fab fa-google-plus-g"></i></a>
-                    </div>
-                    <div class="center-align m-t-20 db">
                         Don't have an account? <a href="{{ route('register') }}">Sign Up!</a>
                     </div>
                 </div>
             </div>
         </div>
         <!-- ============================================================== -->
-        <!-- Login box.scss -->
+        <!-- Auth box.scss -->
         <!-- ============================================================== -->
 
 @endsection
