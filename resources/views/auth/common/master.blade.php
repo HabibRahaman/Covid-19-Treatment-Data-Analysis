@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- favicon -->
-    <link rel="icon" href="{{ asset('web/img/favicon.jpg') }}" sizes="192x192">
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('web/img/favicon.jpg') }}">
+    <link rel="icon" href="{{ asset('web/img/favicon.png') }}" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('web/img/favicon.png') }}">
 
     <title>Bangladesh Tourism Guide</title>
     
@@ -36,19 +36,6 @@
         <!-- Main Content -->
         @yield('content')
         <!-- Main Content -->
-
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
     <!-- All Required js -->
@@ -58,8 +45,6 @@
     <!-- This page plugin js -->
     <!-- ============================================================== -->
     <script type="text/javascript">
-        $('.tooltipped').tooltip();
-        
         $(function() {
             $(".preloader").fadeOut();
         });

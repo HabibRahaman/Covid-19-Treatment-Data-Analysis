@@ -13,7 +13,8 @@
 *******************/
 .auth-wrapper {
   min-height: 100vh;
-  position: relative; }
+  position: relative;
+  background-size: cover !important; }
   .auth-wrapper .auth-box {
     background: #fff;
     padding: 20px;
@@ -23,6 +24,12 @@
     margin: 10% 0; }
     .auth-wrapper .auth-box .logo {
       text-align: center; }
+      .auth-wrapper .auth-box .logo img {
+        margin: 0 auto 20px 0;
+        display: block;
+        overflow: hidden;
+        width: auto;
+        max-width: 100%; }
   .auth-wrapper #recoverform {
     display: none; }
   .auth-wrapper .auth-sidebar {
