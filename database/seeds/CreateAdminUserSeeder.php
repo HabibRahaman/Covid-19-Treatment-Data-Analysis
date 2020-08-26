@@ -14,6 +14,8 @@ class CreateAdminUserSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->delete();
+
         $user = User::create([
 
         	'email'=>'admin@mail.com',
@@ -25,7 +27,7 @@ class CreateAdminUserSeeder extends Seeder
         ]);
 
   
-        $role = Role::create(['name' => 'Admin']);
+        $role = Role::create(['name' => 'Super Admin']);
 
         $permissions = Permission::pluck('id','id')->all();
 

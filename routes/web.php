@@ -73,6 +73,8 @@ Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')
 
     // Roles And Permission Routes
     Route::resource('role','RoleController');
+
+    // Users
     Route::resource('user','UserController');
 
     // Profile Routes
