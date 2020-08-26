@@ -71,6 +71,9 @@ Route::middleware(['auth'])->namespace('Admin')->group(function () {
 
 Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
 
+    // Disease
+    Route::resource('disease','DiseaseController');
+
     // Roles And Permission Routes
     Route::resource('role','RoleController');
 

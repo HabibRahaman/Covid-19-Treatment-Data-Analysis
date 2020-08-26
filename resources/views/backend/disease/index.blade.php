@@ -35,24 +35,9 @@
                                                 <div class="col s12">
                                                     <div class="input-field">
                                                         <input type="text" name="name" id="name" required>
-                                                        <label for="name">Country Name (English)<span>*</span></label>
+                                                        <label for="name">Name<span>*</span></label>
                                                     </div>
                                                 </div>
-                                                <div class="col s12">
-                                                    <div class="input-field">
-                                                        <input type="text" name="bn_name" id="bn_name" required>
-                                                        <label for="bn_name">Country Name (Bangla)<span>*</span></label>
-                                                    </div>
-                                                </div>
-                                                <div class="col s12">
-                                                    <div class="chips tag_chips"></div>
-                                                </div>
-                                                <div class="alltages"></div>
-
-                                                <div class="col s12">
-                                                    <div class="chips bn_tag_chips"></div>
-                                                </div>
-                                                <div class="bn_alltages"></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col s12">
@@ -75,41 +60,48 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Tag</th>
+                                        <th>Type</th>
+                                        <th>Risk Level</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($countries as $country)
+                                    @foreach($diseases as $disease)
                                     <tr>
-                                        <td>{{ $country->getTranslation('name', 'en') }} | {{ $country->getTranslation('name', 'bn') }}</td>
+                                        <td>{{ $disease->name }}</td>
                                         <td>
-                                            <div class="chip">
-                                                {{ $country->getTranslation('tag', 'en') }}
-                                            </div>
-                                            <div class="chip">
-                                                {{ $country->getTranslation('tag', 'bn') }}
-                                            </div>
-                                        </td>
-                                        <td>
-                                            @if($country->status == 1)
+                                            @if($disease->status == 1)
                                             <span class="new badge blue">Active</span>
                                             @else
                                             <span class="new badge red">Inactive</span>
                                             @endif
                                         </td>
                                         <td>
-                                        <a class="waves-effect waves-light btn btn-small green modal-trigger edit-btn" href="#edititem-{{ $country->id }}" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            @if($disease->type == 1)
+                                            <span class="new badge blue">Active</span>
+                                            @else
+                                            <span class="new badge red">Inactive</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($disease->risk_level == 1)
+                                            <span class="new badge blue">Active</span>
+                                            @else
+                                            <span class="new badge red">Inactive</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                        <a class="waves-effect waves-light btn btn-small green modal-trigger edit-btn" href="#edititem-{{ $disease->id }}" data-toggle="tooltip" data-placement="top" title="Edit">
                                             <i class="fas fa-edit "></i>
                                         </a>
 
                                         {{-- <a class="waves-effect waves-light btn btn-small blue"><i class="fas fa-eye"></i></a> --}}
                                         <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Delete"
-                                            onclick="alertFunction('delete',{{$country->id}});">
+                                            onclick="alertFunction('delete',{{$disease->id}});">
                                            <i class="fas fa-trash-alt"></i>
                                         </a>
-                                        <form id="delete{{$country->id}}" action="{{ route($route.'destroy', [$country->id]) }}" method="POST" style="display: none;">
+                                        <form id="delete{{$disease->id}}" action="{{ route($route.'destroy', [$disease->id]) }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                             @method('DELETE')
                                         </form>
@@ -118,49 +110,28 @@
                                         <!-- Edit Item Modal -->
                                         <!-- ================================ -->
                                         <!-- Modal Structure -->
-                                        <div id="edititem-{{ $country->id }}" class="modal">
+                                        <div id="edititem-{{ $disease->id }}" class="modal">
                                             <div class="modal-content">
                                             <div class="card">
                                                 <div class="card-content">
                                                     <h5 class="card-title activator">Edit {{ $title }}</h5>
-                                                    <form  action="{{ route($route.'update', [$country->id]) }}" method="post" novalidate>
+                                                    <form  action="{{ route($route.'update', [$disease->id]) }}" method="post" novalidate>
                                                         @csrf
                                                         @method('PUT')
-                                                        <div class="country">
+                                                        <div class="row">
                                                             <div class="col s12">
                                                                 <div class="input-field">
-                                                                    <input type="text" name="name" id="edit_name{{$country->id}}" value="{{ $country->getTranslation('name', 'en') }}" required>
-                                                                    <label for="edit_name{{$country->id}}">Country Name (English)<span>*</span></label>
-                                                                </div>
-                                                                <div class="input-field">
-                                                                    <input type="text" name="bn_name" id="edit_bn_name{{$country->id}}" value="{{ $country->getTranslation('name', 'bn') }}" required>
-                                                                    <label for="edit_bn_name{{$country->id}}">Country Name (Bangla)<span>*</span></label>
+                                                                    <input type="text" name="name" id="name" value="{{ $disease->name }}" required>
+                                                                    <label for="name">Name<span>*</span></label>
                                                                 </div>
                                                             </div>
-
-                                                            <div class="col s12">
-                                                                <div class="chips tag_chips">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="alltages"></div>
-                                                            <span style="display: none" class="oldtagname" spantagname="{{ $country->getTranslation('tag', 'en') }}"></span>
-
-                                                            <div class="col s12">
-                                                                <div class="chips bn_tag_chips">
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="bn_alltages"></div>
-                                                            <span style="display: none" class="bn_oldtagname" spantagname="{{ $country->getTranslation('tag', 'bn') }}"></span>
-
                                                             <div class="col s12">
                                                                 <div class="input-field">
-                                                                    <select name="status" id="status{{$country->id}}">
-                                                                        <option value="1" @if( $country->status == 1 ) selected @endif>Active</option>
-                                                                        <option value="0" @if( $country->status == 0 ) selected @endif>Inactive</option>
+                                                                    <select name="status" id="status{{$disease->id}}">
+                                                                        <option value="1" @if( $disease->status == 1 ) selected @endif>Active</option>
+                                                                        <option value="0" @if( $disease->status == 0 ) selected @endif>Inactive</option>
                                                                     </select>
-                                                                    <label for="status{{$country->id}}">Select Status</label>
+                                                                    <label for="status{{$disease->id}}">Select Status</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -186,7 +157,7 @@
                             </table>
 
                             <div class="pagination">
-                                {{ $countries->links() }}
+                                {{ $diseases->links() }}
                             </div>
                         </div>
                     </div>
@@ -203,23 +174,11 @@
 @section('page_js')
 <!-- Custom js -->
 <!-- ============================================================== -->
-<script src="{{ asset('backend/extra-libs/prism/prism.js') }}"></script>
-
-@include('backend.common.includes.tag-chips')
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        ChipFunction();
-    });
-
-</script>
-
 <script type="text/javascript">
     $(document).ready(function(){
         $("#addnew").validate({
             rules: {
                 name: "required",
-                tag: "required",
             }
         });
     });
