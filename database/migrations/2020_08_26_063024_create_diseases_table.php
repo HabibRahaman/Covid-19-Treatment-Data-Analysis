@@ -16,6 +16,7 @@ class CreateDiseasesTable extends Migration
         Schema::create('diseases', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->text('details')->nullable();
             $table->integer('type')->nullable();
             $table->integer('risk_level')->default('1');

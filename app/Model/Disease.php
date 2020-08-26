@@ -12,6 +12,6 @@ class Disease extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'details', 'type', 'risk_level', 'status',
+        'name', 'slug', 'details', 'type', 'risk_level', 'status',
     ];
 }
