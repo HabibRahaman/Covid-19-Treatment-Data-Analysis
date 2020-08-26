@@ -9,11 +9,10 @@
     <!-- ============================================================== -->
     <script src="{{ asset('backend/js/app.js') }}"></script>
     <script src="{{ asset('backend/js/app.init.mini-sidebar.js') }}"></script>
-    <script src="{{ asset('backend/js/app-style-switcher.js') }}"></script>
     <script src="{{ asset('backend/libs/tinymce/tinymce.min.js') }}"></script>
-    
-    {{-- <script src="{{ asset('backend/js/dropzone-config.js') }}"></script> --}}
+    <script src="{{ asset('backend/extra-libs/prism/prism.js') }}"></script>
     <script src="{{ asset('backend/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('backend/js/sweetalert.min.js') }}"></script>
     <!-- ============================================================== -->
     <!-- Custom js -->
     <!-- ============================================================== -->
@@ -77,8 +76,6 @@
 
 
     <!-- Sweet alert -->
-    <script src="{{ asset('backend/js/sweetalert.min.js') }}"></script>
-    
     <script type="text/javascript">
         function alertFunction(action,id){
             swal({

@@ -10,7 +10,7 @@
     <link rel="icon" href="{{ asset('web/img/favicon.png') }}" sizes="192x192">
     <link rel="apple-touch-icon-precomposed" href="{{ asset('web/img/favicon.png') }}">
 
-    <title>Bangladesh Tourism Guide</title>
+    <title>Covid-19 Treatment & Data Analysis</title>
     
     @include('backend.common.includes.styles')
 
@@ -26,7 +26,7 @@
         <div class="preloader">
             <div class="loader">
                 <div class="loader__figure"></div>
-                <p class="loader__label">Bangladesh Tourism Guide Admin</p>
+                <p class="loader__label">Covid-19</p>
             </div>
         </div>
         <!-- ============================================================== -->

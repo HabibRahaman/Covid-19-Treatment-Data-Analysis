@@ -8,10 +8,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
     <!-- favicon -->
-    <link rel="icon" href="{{ asset('web/img/favicon.jpg') }}" sizes="192x192">
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('web/img/favicon.jpg') }}">
+    <link rel="icon" href="{{ asset('web/img/favicon.png') }}" sizes="192x192">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('web/img/favicon.png') }}">
 
-    <title>Bangladesh Tourism Guide</title>
+    <title>Covid-19 Treatment & Data Analysis</title>
     
     @include('backend.common.includes.styles')
     
@@ -25,7 +25,7 @@
         <div class="preloader">
             <div class="loader">
                 <div class="loader__figure"></div>
-                <p class="loader__label">BTG</p>
+                <p class="loader__label">Covid-19</p>
             </div>
         </div>
         <!-- ============================================================== -->
@@ -42,7 +42,7 @@
                     <!-- ============================================================== -->
                     <a href="javascript:void(0)" class="brand-logo">
                         <span class="icon" style="padding: 2px; color: #fff">
-                            BTG
+                            <img src="{{ asset('web/img/favicon.png') }}" alt="logo">
                             {{-- <img class="light-logo w-100" src="{{ asset('web/img/footer_logo.png') }}" alt="Logo"> --}}
                         </span>
                     </a>
@@ -66,64 +66,6 @@
                                 <span class="bars bar2"></span>
                                 <span class="bars bar3"></span>
                             </a>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- Notification icon scss in header.scss -->
-                        <!-- ============================================================== -->
-                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="noti_dropdown"><i class="material-icons">notifications</i></a>
-                            <ul id="noti_dropdown" class="mailbox dropdown-content">
-                                <li>
-                                    <div class="drop-title">Notifications</div>
-                                </li>
-                                <li>
-                                    <div class="message-center">
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="btn-floating btn-large red"><i class="material-icons">link</i></span>
-                                                <span class="mail-contnet">
-                                                    <h5>Launch Admin</h5>
-                                                    <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span>
-                                                </span>
-                                            </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="btn-floating btn-large blue"><i class="material-icons">date_range</i></span>
-                                                <span class="mail-contnet">
-                                                    <h5>Event today</h5>
-                                                    <span class="mail-desc">Just a reminder that you have event</span>
-                                                    <span class="time">9:10 AM</span>
-                                                </span>
-                                            </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="btn-floating btn-large cyan"><i class="material-icons">settings</i></span>
-                                                <span class="mail-contnet">
-                                                    <h5>Settings</h5>
-                                                    <span class="mail-desc">You can customize this template as you want</span>
-                                                    <span class="time">9:08 AM</span>
-                                                </span>
-                                            </a>
-                                        <!-- Message -->
-                                        <a href="#">
-                                                <span class="btn-floating btn-large green"><i class="material-icons">face</i></span>
-                                                <span class="mail-contnet">
-                                                    <h5>Lily Jordan</h5>
-                                                    <span class="mail-desc">Just see the my admin!</span>
-                                                    <span class="time">9:02 AM</span>
-                                                </span>
-                                            </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a class="center-align" href="javascript:void(0);"> <strong>Check all notifications</strong> </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="search-box">
-                            <a href="javascript: void(0);"><i class="material-icons">search</i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
-                            </form>
                         </li>
                     </ul>
                     <!-- ============================================================== -->
@@ -152,8 +94,6 @@
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('admin.profile.index') }}"><i class="material-icons">account_circle</i> My Profile</a></li>
-                                <li><a href="#"><i class="material-icons">account_balance_wallet</i> My Balance</a></li>
-                                <li role="separator" class="divider"></li>
                                 <li><a href="{{ route('admin.profile.index') }}"><i class="material-icons">settings</i> Account Setting</a></li>
                                 <li role="separator" class="divider"></li>
 
