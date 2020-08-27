@@ -99,6 +99,7 @@
                                         <th>Name</th>
                                         <th>Priority</th>
                                         <th>Risk Level</th>
+                                        <th>Show</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -123,6 +124,13 @@
                                             <span class="new badge orange">Medium</span>
                                             @elseif($symptom->risk_level == 3)
                                             <span class="new badge red">Higher</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($symptom->show == 1)
+                                            <span class="new badge green">Yes</span>
+                                            @else
+                                            <span class="new badge black">No</span>
                                             @endif
                                         </td>
                                         <td>
@@ -256,7 +264,7 @@
         $("#addnew").validate({
             rules: {
                 name: "required",
-                type: "required",
+                priority: "required",
                 risk_level: "required"
             }
         });
