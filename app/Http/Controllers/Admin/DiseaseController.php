@@ -103,7 +103,6 @@ class DiseaseController extends Controller
      */
     public function update(Request $request, Disease $disease)
     {
-        
         $request->validate([
             'name' => 'required | unique:diseases,name,'.$disease->id,
             'type'  => 'required',

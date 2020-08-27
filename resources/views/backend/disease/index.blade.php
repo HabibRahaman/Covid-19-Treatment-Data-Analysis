@@ -89,7 +89,7 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Type</th>
+                                        <th>Disease Type</th>
                                         <th>Risk Level</th>
                                         <th>Status</th>
                                         <th>Action</th>
@@ -100,21 +100,27 @@
                                     <tr>
                                         <td>{{ $disease->name }}</td>
                                         <td>
-                                            @if($disease->status == 1)
-                                            <span class="new badge blue">Active</span>
-                                            @else
-                                            <span class="new badge red">Inactive</span>
-                                            @endif
-                                        </td>
-                                        <td>
                                             @if($disease->type == 1)
-                                            <span class="new badge blue">Active</span>
-                                            @else
-                                            <span class="new badge red">Inactive</span>
+                                            Infectious
+                                            @elseif($disease->type == 2)
+                                            Deficiency
+                                            @elseif($disease->type == 3)
+                                            Hereditary
+                                            @elseif($disease->type == 4)
+                                            Physiological
                                             @endif
                                         </td>
                                         <td>
                                             @if($disease->risk_level == 1)
+                                            <span class="new badge blue">Lower</span>
+                                            @elseif($disease->risk_level == 2)
+                                            <span class="new badge orange">Medium</span>
+                                            @elseif($disease->risk_level == 3)
+                                            <span class="new badge red">Higher</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if($disease->status == 1)
                                             <span class="new badge blue">Active</span>
                                             @else
                                             <span class="new badge red">Inactive</span>
@@ -152,6 +158,35 @@
                                                                 <div class="input-field">
                                                                     <input type="text" name="name" id="name" value="{{ $disease->name }}" required>
                                                                     <label for="name">Name<span>*</span></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12">
+                                                                <div class="input-field">
+                                                                    <span for="details">Details</span><br/>
+                                                                    <textarea class="textEditor" name="details" id="details">{{ $disease->details }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12">
+                                                                <div class="input-field">
+                                                                    <select name="type" id="type" required>
+                                                                        <option value="">Select</option>
+                                                                        <option value="1" @if($disease->type == 1) selected @endif>Infectious</option>
+                                                                        <option value="2" @if($disease->type == 2) selected @endif>Deficiency</option>
+                                                                        <option value="3" @if($disease->type == 3) selected @endif>Hereditary</option>
+                                                                        <option value="4" @if($disease->type == 4) selected @endif>Physiological</option>
+                                                                    </select> 
+                                                                    <label for="type">Disease Type <span>*</span></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12">
+                                                                <div class="input-field">
+                                                                    <select name="risk_level" id="risk_level" required>
+                                                                        <option value="">Select</option>
+                                                                        <option value="3" @if($disease->risk_level == 3) selected @endif>Higher</option>
+                                                                        <option value="2" @if($disease->risk_level == 2) selected @endif>Medium</option>
+                                                                        <option value="1" @if($disease->risk_level == 1) selected @endif>Lower</option>
+                                                                    </select> 
+                                                                    <label for="risk_level">Risk Level <span>*</span></label>
                                                                 </div>
                                                             </div>
                                                             <div class="col s12">
