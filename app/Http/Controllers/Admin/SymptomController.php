@@ -112,7 +112,15 @@ class SymptomController extends Controller
         // Slug
         $slug = $slug = Str::slug($request->name, '-');
 
-        $request->request->add(['slug' => $slug]); //add request
+        // Show status
+        if($request->show == null || $request->show != 1){
+            $show = 0; 
+        }
+        else {
+            $show = 1; 
+        }
+
+        $request->request->add(['slug' => $slug, 'show' => $show]); //add request
         //filter the request
         $input = $request->only(['name','slug','details','priority','risk_level','show','status']);
 
