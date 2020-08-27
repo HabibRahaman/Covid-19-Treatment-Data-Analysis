@@ -16,6 +16,12 @@
                         </li>
                         @endcan
 
+                        @can('Symptoms')
+                        <li>
+                            <a href="{{ route('admin.symptom.index') }}" class="collapsible-header"><i class="material-icons">verified_user</i><span class="hide-menu"> Symptoms </span></a>
+                        </li>
+                        @endcan
+
                         @can('Roles')
                         <li>
                             <a href="{{ route('admin.role.index') }}" class="collapsible-header"><i class="material-icons">verified_user</i><span class="hide-menu"> Roles </span></a>
