@@ -14,6 +14,8 @@
     <script src="{{ asset('backend/js/toastr.min.js') }}"></script>
     <script src="{{ asset('backend/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('backend/js/pages/forms/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('backend/extra-libs/DataTables/datatables.min.js') }}"></script>
+    <script src="{{ asset('backend/js/pages/datatable/datatable-advanced.init.js') }}"></script>
     <!-- ============================================================== -->
     <!-- Custom js -->
     <!-- ============================================================== -->

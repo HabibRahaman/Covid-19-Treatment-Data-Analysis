@@ -85,7 +85,8 @@
                         <!-- Item List Table -->
                         <!-- ================================ -->
                         <div class="card-content">
-                            <table id="row_create_call" class="table table-striped table-bordered display" style="width:100%">
+                          <div class="responsive-table">
+                            <table id="file_export" class="table table-striped display" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Name</th>
@@ -219,10 +220,11 @@
                                     @endforeach
                                 </tbody>
                             </table>
-
-                            <div class="pagination">
-                                {{ $diseases->links() }}
-                            </div>
+                          </div>
+                          
+                          <div class="pagination">
+                            {{ $diseases->links() }}
+                          </div>
                         </div>
                     </div>
                 </div>
