@@ -13,6 +13,7 @@
     <script src="{{ asset('backend/extra-libs/prism/prism.js') }}"></script>
     <script src="{{ asset('backend/js/toastr.min.js') }}"></script>
     <script src="{{ asset('backend/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('backend/js/pages/forms/jquery.validate.min.js') }}"></script>
     <!-- ============================================================== -->
     <!-- Custom js -->
     <!-- ============================================================== -->

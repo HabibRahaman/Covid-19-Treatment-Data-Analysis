@@ -35,7 +35,36 @@
                                                 <div class="col s12">
                                                     <div class="input-field">
                                                         <input type="text" name="name" id="name" required>
-                                                        <label for="name">Name<span>*</span></label>
+                                                        <label for="name">Name <span>*</span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col s12">
+                                                    <div class="input-field">
+                                                        <span for="details">Details</span><br/>
+                                                        <textarea class="textEditor" name="details" id="details"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col s12">
+                                                    <div class="input-field">
+                                                        <select name="type" id="type" required>
+                                                            <option value="">Select</option>
+                                                            <option value="1">Infectious</option>
+                                                            <option value="2">Deficiency</option>
+                                                            <option value="3">Hereditary</option>
+                                                            <option value="4">Physiological</option>
+                                                        </select> 
+                                                        <label for="type">Disease Type <span>*</span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col s12">
+                                                    <div class="input-field">
+                                                        <select name="risk_level" id="risk_level" required>
+                                                            <option value="">Select</option>
+                                                            <option value="3">Higher</option>
+                                                            <option value="2">Medium</option>
+                                                            <option value="1">Lower</option>
+                                                        </select> 
+                                                        <label for="risk_level">Risk Level <span>*</span></label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -179,6 +208,8 @@
         $("#addnew").validate({
             rules: {
                 name: "required",
+                type: "required",
+                risk_level: "required"
             }
         });
     });
