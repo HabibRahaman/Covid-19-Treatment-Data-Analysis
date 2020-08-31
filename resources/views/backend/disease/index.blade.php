@@ -232,6 +232,14 @@
                                                       <div class="col s12">
                                                           <span class="card-title">{{ $disease->name }}</span>
 
+                                                          <h6>Symptoms:</h6>
+                                                          @foreach($disease->symptoms as $symptom)
+                                                            <span class="new badge green">{{ $symptom->name }}</span>
+                                                          @endforeach
+                                                      </div>
+                                                    </div>
+                                                    <div class="row m-t-20">
+                                                      <div class="col s12">
                                                           <h6>Details:</h6>
                                                           {!! $disease->details !!}
                                                       </div>
