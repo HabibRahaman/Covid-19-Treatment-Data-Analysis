@@ -14,4 +14,10 @@ class Symptom extends Model
     protected $fillable = [
         'name', 'slug', 'details', 'priority', 'risk_level', 'show', 'status',
     ];
+
+
+    public function diseases()
+    {
+        return $this->belongsToMany('App\Model\Disease', 'disease_symptom', 'symptom_id', 'disease_id');
+    }
 }
