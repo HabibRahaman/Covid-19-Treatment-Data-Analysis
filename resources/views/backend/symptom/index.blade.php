@@ -66,6 +66,16 @@
                                                         <label for="risk_level">Risk Level <span>*</span></label>
                                                     </div>
                                                 </div>
+                                                <div class="col s12">
+                                                    <div class="input-field">
+                                                        <select name="diseases[]" id="diseases" required multiple>
+                                                            @foreach($diseases as $disease)
+                                                            <option value="{{ $disease->id }}">{{ $disease->name }}</option>
+                                                            @endforeach
+                                                        </select> 
+                                                        <label for="diseases">Diseases <span>*</span></label>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col s12">
@@ -203,6 +213,23 @@
                                                                         <option value="1" @if($symptom->risk_level == 1) selected @endif>Lower</option>
                                                                     </select> 
                                                                     <label for="risk_level">Risk Level <span>*</span></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12">
+                                                                <div class="input-field">
+                                                                    <select name="diseases[]" id="diseases" required multiple>
+                                                                        @foreach($diseases as $disease)
+                                                                        <option value="{{ $disease->id }}"
+
+                                                                            @foreach($symptom->diseases as $selected_disease)
+                                                                            @if($selected_disease->id == $disease->id) selected @endif 
+                                                                            @endforeach
+
+                                                                        >{{ $disease->name }}
+                                                                        </option>
+                                                                        @endforeach
+                                                                    </select> 
+                                                                    <label for="diseases">Diseases <span>*</span></label>
                                                                 </div>
                                                             </div>
                                                             <div class="col s12">

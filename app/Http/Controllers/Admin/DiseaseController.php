@@ -117,7 +117,7 @@ class DiseaseController extends Controller
         $input = $request->only(['name','slug','details','type','risk_level','status']);
 
         // store data
-        $disease = $disease->update($input);
+        $disease->update($input);
 
         toastr()->success('Update Successfully');
 

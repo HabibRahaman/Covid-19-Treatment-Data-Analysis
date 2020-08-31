@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Model\Symptom;
+use App\Model\Disease;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,6 +29,7 @@ class SymptomController extends Controller
         $data['title'] = $this->title;
         $data['route'] = $this->route;
         
+        $data['diseases'] = Disease::orderBy('name', 'asc')->get();
         $data['symptoms'] = Symptom::orderBy('name', 'asc')->paginate(15);
 
         return view($this->view.'.index', $data);
@@ -55,6 +57,7 @@ class SymptomController extends Controller
             'name'  => 'required | unique:symptoms,name',
             'priority'  => 'required',
             'risk_level'  => 'required',
+            'diseases'  => 'required',
         ]);
 
         // Slug
@@ -66,6 +69,9 @@ class SymptomController extends Controller
 
         // store data
         $symptom = Symptom::create($input);
+
+        // Attach
+        $symptom->diseases()->attach($request->diseases);
 
         toastr()->success('Create Successfully');
 
@@ -107,6 +113,7 @@ class SymptomController extends Controller
             'name' => 'required | unique:symptoms,name,'.$symptom->id,
             'priority'  => 'required',
             'risk_level'  => 'required',
+            'diseases'  => 'required',
         ]);
 
         // Slug
@@ -125,7 +132,10 @@ class SymptomController extends Controller
         $input = $request->only(['name','slug','details','priority','risk_level','show','status']);
 
         // store data
-        $symptom = $symptom->update($input);
+        $symptom->update($input);
+
+        // Attach Update
+        $symptom->diseases()->sync($request->diseases);
 
         toastr()->success('Update Successfully');
 
@@ -140,6 +150,9 @@ class SymptomController extends Controller
      */
     public function destroy(Symptom $symptom)
     {
+        // Detach
+        $symptom->diseases()->detach();
+
         // Delete
         $symptom->delete();
 
