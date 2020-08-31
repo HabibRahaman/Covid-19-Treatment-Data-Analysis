@@ -145,7 +145,10 @@
                                             <i class="fas fa-edit "></i>
                                         </a>
 
-                                        {{-- <a class="waves-effect waves-light btn btn-small blue"><i class="fas fa-eye"></i></a> --}}
+                                        <a class="waves-effect waves-light btn btn-small blue modal-trigger" href="#viewitem-{{ $symptom->id }}" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            <i class="fas fa-eye "></i>
+                                        </a>
+
                                         <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Delete"
                                             onclick="alertFunction('delete',{{$symptom->id}});">
                                            <i class="fas fa-trash-alt"></i>
@@ -230,6 +233,33 @@
                                                 </div>
 
                                             </div>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- ================================ -->
+                                        <!-- View Item Modal -->
+                                        <!-- ================================ -->
+                                        <!-- Modal Structure -->
+                                        <div id="viewitem-{{ $symptom->id }}" class="modal modal-fixed-footer">
+                                            <div class="modal-content">
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <h5 class="card-title activator">View {{ $title }}</h5>
+                                                        
+                                                    <div class="row">
+                                                      <div class="col s12">
+                                                          <span class="card-title">{{ $symptom->name }}</span>
+
+                                                          <h6>Details:</h6>
+                                                          {!! $symptom->details !!}
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="#!" class="modal-action modal-close waves-effect waves-light btn grey darken-4">Close</a>
                                             </div>
                                         </div>
                                         </td>
