@@ -58,7 +58,6 @@ class MedicineController extends Controller
             'name'  => 'required | unique:medicines,name',
             'group'  => 'required',
             'risk_level'  => 'required',
-            // 'diseases'  => 'required',
         ]);
 
         // Slug
@@ -72,7 +71,7 @@ class MedicineController extends Controller
         $medicine = Medicine::create($input);
 
         // Attach
-        // $medicine->diseases()->attach($request->diseases);
+        $medicine->symptoms()->attach($request->symptoms);
 
         toastr()->success('Create Successfully');
 
@@ -114,7 +113,6 @@ class MedicineController extends Controller
             'name' => 'required | unique:medicines,name,'.$medicine->id,
             'group'  => 'required',
             'risk_level'  => 'required',
-            // 'diseases'  => 'required',
         ]);
 
         // Slug
@@ -136,7 +134,7 @@ class MedicineController extends Controller
         $medicine->update($input);
 
         // Attach Update
-        // $medicine->diseases()->sync($request->diseases);
+        $medicine->symptoms()->sync($request->symptoms);
 
         toastr()->success('Update Successfully');
 
@@ -152,7 +150,7 @@ class MedicineController extends Controller
     public function destroy(Medicine $medicine)
     {
         // Detach
-        // $medicine->diseases()->detach();
+        $medicine->symptoms()->detach();
 
         // Delete
         $medicine->delete();

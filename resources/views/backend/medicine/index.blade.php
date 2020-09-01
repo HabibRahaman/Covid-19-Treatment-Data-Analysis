@@ -75,16 +75,16 @@
                                                         <label for="risk_level">Risk Level <span>*</span></label>
                                                     </div>
                                                 </div>
-                                                {{-- <div class="col s12">
+                                                <div class="col s12">
                                                     <div class="input-field">
-                                                        <select name="diseases[]" id="diseases" required multiple>
-                                                            @foreach($diseases as $disease)
-                                                            <option value="{{ $disease->id }}">{{ $disease->name }}</option>
+                                                        <select name="symptoms[]" id="symptoms" required multiple>
+                                                            @foreach($symptoms as $symptom)
+                                                            <option value="{{ $symptom->id }}">{{ $symptom->name }}</option>
                                                             @endforeach
                                                         </select> 
-                                                        <label for="diseases">Diseases <span>*</span></label>
+                                                        <label for="symptoms">Symptoms <span>*</span></label>
                                                     </div>
-                                                </div> --}}
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col s12">
@@ -239,23 +239,23 @@
                                                                     <label for="risk_level">Risk Level <span>*</span></label>
                                                                 </div>
                                                             </div>
-                                                            {{-- <div class="col s12">
+                                                            <div class="col s12">
                                                                 <div class="input-field">
-                                                                    <select name="diseases[]" id="diseases" required multiple>
-                                                                        @foreach($diseases as $disease)
-                                                                        <option value="{{ $disease->id }}"
+                                                                    <select name="symptoms[]" id="symptoms" required multiple>
+                                                                        @foreach($symptoms as $symptom)
+                                                                        <option value="{{ $symptom->id }}"
 
-                                                                            @foreach($medicine->diseases as $selected_disease)
-                                                                            @if($selected_disease->id == $disease->id) selected @endif 
+                                                                            @foreach($medicine->symptoms as $selected_symptom)
+                                                                            @if($selected_symptom->id == $symptom->id) selected @endif 
                                                                             @endforeach
 
-                                                                        >{{ $disease->name }}
+                                                                        >{{ $symptom->name }}
                                                                         </option>
                                                                         @endforeach
                                                                     </select> 
-                                                                    <label for="diseases">Diseases <span>*</span></label>
+                                                                    <label for="symptoms">Symptoms <span>*</span></label>
                                                                 </div>
-                                                            </div> --}}
+                                                            </div>
                                                             <div class="col s12">
                                                                 <div class="input-field">
                                                                     <select name="status" id="status{{$medicine->id}}">
@@ -302,10 +302,10 @@
                                                       <div class="col s12">
                                                           <span class="card-title">{{ $medicine->name }}</span>
 
-                                                          {{-- <h6>Diseases:</h6>
-                                                          @foreach($medicine->diseases as $disease)
-                                                            <span class="new badge green">{{ $disease->name }}</span>
-                                                          @endforeach --}}
+                                                          <h6>Symptoms:</h6>
+                                                          @foreach($medicine->symptoms as $symptom)
+                                                            <span class="new badge green">{{ $symptom->name }}</span>
+                                                          @endforeach
                                                       </div>
                                                     </div>
                                                     <div class="row m-t-20">
@@ -353,7 +353,7 @@
         $("#addnew").validate({
             rules: {
                 name: "required",
-                priority: "required",
+                group: "required",
                 risk_level: "required"
             }
         });
