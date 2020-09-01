@@ -14,8 +14,8 @@ class CreateMedicinesTable extends Migration
     public function up()
     {
         Schema::create('medicines', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->bigInteger('group_id')->unsigned()->nullable();
+            $table->increments('id');
+            $table->integer('group_id')->unsigned()->nullable();
             $table->string('name')->unique();
             $table->string('slug')->unique();
             $table->text('details')->nullable();
