@@ -280,7 +280,13 @@
 
                                                           <h6>Diseases:</h6>
                                                           @foreach($symptom->diseases as $disease)
-                                                            <span class="new badge green">{{ $disease->name }}</span>
+                                                            <span class="new badge blue">{{ $disease->name }}</span>
+                                                          @endforeach
+
+                                                          <br/><br/>
+                                                          <h6>Medicines:</h6>
+                                                          @foreach($symptom->medicines as $medicine)
+                                                            <span class="new badge green">{{ $medicine->name }}</span>
                                                           @endforeach
                                                       </div>
                                                     </div>

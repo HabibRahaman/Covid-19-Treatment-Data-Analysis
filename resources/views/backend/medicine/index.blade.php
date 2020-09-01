@@ -302,9 +302,15 @@
                                                       <div class="col s12">
                                                           <span class="card-title">{{ $medicine->name }}</span>
 
+                                                          @foreach($medicine_groups as $medicine_group)
+                                                            @if($medicine->group_id == $medicine_group->id)
+                                                                <h6>Group: {{ $medicine_group->name }}</h6><br/>
+                                                            @endif
+                                                          @endforeach
+                                                          
                                                           <h6>Symptoms:</h6>
                                                           @foreach($medicine->symptoms as $symptom)
-                                                            <span class="new badge green">{{ $symptom->name }}</span>
+                                                            <span class="new badge blue">{{ $symptom->name }}</span>
                                                           @endforeach
                                                       </div>
                                                     </div>
