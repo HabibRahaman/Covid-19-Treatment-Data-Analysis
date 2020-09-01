@@ -66,7 +66,7 @@ class MedicineController extends Controller
 
         $request->request->add(['slug' => $slug]); //add request
         //filter the request
-        $input = $request->only(['name','slug','details','group','risk_level','show']);
+        $input = $request->only(['group_id','name','slug','details','group','risk_level','show']);
 
         // store data
         $medicine = Medicine::create($input);
@@ -130,7 +130,7 @@ class MedicineController extends Controller
 
         $request->request->add(['slug' => $slug, 'show' => $show]); //add request
         //filter the request
-        $input = $request->only(['name','slug','details','group','risk_level','show','status']);
+        $input = $request->only(['group_id','name','slug','details','group','risk_level','show','status']);
 
         // store data
         $medicine->update($input);

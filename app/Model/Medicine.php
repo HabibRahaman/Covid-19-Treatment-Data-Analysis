@@ -16,13 +16,23 @@ class Medicine extends Model
     ];
 
 
-    public function medicines()
+    /*public function medicines()
     {
         return $this->hasMany('App\Model\Medicine', 'group_id');
-    }
+    }*/
+
+    /*public function group()
+    {
+        return $this->hasOne('App\Model\Medicine', 'group_id');
+    }*/
 
     public function group()
     {
-        return $this->belongsTo('App\Model\Medicine', 'group_id');
+        return $this->belongsTo('App\Model\Medicine','group_id')->where('group_id',0);
+    }
+
+    public function medicine()
+    {
+        return $this->hasMany('App\Model\Medicine','group_id');
     }
 }

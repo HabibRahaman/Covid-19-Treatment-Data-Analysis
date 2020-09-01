@@ -116,6 +116,7 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th>Group Name</th>
                                         <th>Group</th>
                                         <th>Risk Level</th>
                                         <th>Show</th>
@@ -127,6 +128,13 @@
                                     @foreach($medicines as $medicine)
                                     <tr>
                                         <td>{{ $medicine->name }}</td>
+                                        <td>
+                                            @foreach($medicine_groups as $medicine_group)
+                                                @if($medicine->group_id == $medicine_group->id)
+                                                    {{ $medicine_group->name }}
+                                                @endif
+                                            @endforeach
+                                        </td>
                                         <td>
                                             @if($medicine->group == 1)
                                             <span class="new badge green">Yes</span>
@@ -198,6 +206,17 @@
                                                                 <div class="input-field">
                                                                     <span for="details">Details</span><br/>
                                                                     <textarea class="textEditor" name="details" id="details">{{ $medicine->details }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12">
+                                                                <div class="input-field">
+                                                                    <select name="group_id" id="group_id" required>
+                                                                        <option value="">Select</option>
+                                                                        @foreach($medicine_groups as $medicine_group)
+                                                                        <option value="{{ $medicine_group->id }}" @if($medicine->group_id == $medicine_group->id) selected @endif>{{ $medicine_group->name }}</option>
+                                                                        @endforeach
+                                                                    </select> 
+                                                                    <label for="group_id">Parent Group <span>*</span></label>
                                                                 </div>
                                                             </div>
                                                             <div class="col s12">
