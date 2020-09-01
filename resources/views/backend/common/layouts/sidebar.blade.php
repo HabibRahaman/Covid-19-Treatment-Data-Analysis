@@ -22,6 +22,12 @@
                         </li>
                         @endcan
 
+                        @can('Medicines')
+                        <li>
+                            <a href="{{ route('admin.medicine.index') }}" class="collapsible-header"><i class="material-icons">verified_user</i><span class="hide-menu"> Medicines </span></a>
+                        </li>
+                        @endcan
+
                         @can('Roles')
                         <li>
                             <a href="{{ route('admin.role.index') }}" class="collapsible-header"><i class="material-icons">verified_user</i><span class="hide-menu"> Roles </span></a>

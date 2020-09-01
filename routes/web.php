@@ -71,11 +71,14 @@ Route::middleware(['auth'])->namespace('Admin')->group(function () {
 
 Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
 
-    // Disease
+    // Diseases
     Route::resource('disease','DiseaseController');
 
     // Symptoms
     Route::resource('symptom','SymptomController');
+
+    // Medicines
+    Route::resource('medicine','MedicineController');
 
     // Roles And Permission Routes
     Route::resource('role','RoleController');
