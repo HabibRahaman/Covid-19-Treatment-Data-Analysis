@@ -25,4 +25,9 @@ class Disease extends Model
     {
         return $this->belongsToMany('App\Model\MedicalCondition', 'disease_medical_condition', 'disease_id', 'medical_condition_id');
     }
+
+    public function health_cares()
+    {
+        return $this->belongsToMany('App\Model\HealthCare', 'disease_health_care', 'disease_id', 'health_care_id');
+    }
 }

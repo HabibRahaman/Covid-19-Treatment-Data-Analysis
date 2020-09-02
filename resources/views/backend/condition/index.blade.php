@@ -316,7 +316,7 @@
         $("#addnew").validate({
             rules: {
                 name: "required",
-                priority: "required",
+                instructions: "required",
                 risk_level: "required"
             }
         });

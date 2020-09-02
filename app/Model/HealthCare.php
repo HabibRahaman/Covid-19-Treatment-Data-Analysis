@@ -14,4 +14,10 @@ class HealthCare extends Model
     protected $fillable = [
         'name', 'slug', 'details', 'type', 'priority', 'status',
     ];
+
+
+    public function diseases()
+    {
+        return $this->belongsToMany('App\Model\Disease', 'disease_health_care', 'health_care_id', 'disease_id');
+    }
 }

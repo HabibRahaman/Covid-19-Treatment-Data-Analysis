@@ -78,14 +78,6 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col s12">
-                                                    <label>
-                                                        <input type="checkbox" name="show" class="filled-in" value="1" />
-                                                        <span>Show</span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col s12">
                                                     <a href="#!" class="modal-action modal-close waves-effect waves-light btn grey darken-4">Cancel</a>
                                                     <button type="submit" class="waves-effect waves-light btn cyan">Save</button>
                                                 </div>
@@ -117,18 +109,18 @@
                                     <tr>
                                         <td>{{ $healthcare->name }}</td>
                                         <td>
-                                            @if($disease->type == 1)
+                                            @if($healthcare->type == 1)
                                             Medical Care
-                                            @elseif($disease->type == 2)
+                                            @elseif($healthcare->type == 2)
                                             Home Care
                                             @endif
                                         </td>
                                         <td>
-                                            @if($symptom->priority == 1)
+                                            @if($healthcare->priority == 1)
                                             <span class="new badge blue">Lower</span>
-                                            @elseif($symptom->priority == 2)
+                                            @elseif($healthcare->priority == 2)
                                             <span class="new badge orange">Medium</span>
-                                            @elseif($symptom->priority == 3)
+                                            @elseif($healthcare->priority == 3)
                                             <span class="new badge red">Higher</span>
                                             @endif
                                         </td>
@@ -232,14 +224,6 @@
                                                         </div>
                                                         <div class="row">
                                                             <div class="col s12">
-                                                                <label>
-                                                                    <input type="checkbox" name="show" class="filled-in" value="1" @if($healthcare->show == 1) checked="checked" @endif/>
-                                                                    <span>Show</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>  
-                                                        <div class="row">
-                                                            <div class="col s12">
                                                                 <a href="#!" class="modal-action modal-close waves-effect waves-light btn grey darken-4">Cancel</a>
                                                                 <button type="submit" class="waves-effect waves-light btn cyan submit-btn">Update</button>
                                                             </div>
@@ -318,8 +302,8 @@
         $("#addnew").validate({
             rules: {
                 name: "required",
-                priority: "required",
-                risk_level: "required"
+                type: "required",
+                priority: "required"
             }
         });
     });
