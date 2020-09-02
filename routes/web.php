@@ -80,6 +80,9 @@ Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')
     // Medicines
     Route::resource('medicine','MedicineController');
 
+    // Medical Conditions
+    Route::resource('condition','MedicalConditionController');
+
     // Roles And Permission Routes
     Route::resource('role','RoleController');
 
