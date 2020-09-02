@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Model\Disease;
+use App\Model\MedicalCondition;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Model\MedicalCondition;
 use App\Http\Controllers\Controller;
 
 class MedicalConditionController extends Controller
@@ -107,14 +107,16 @@ class MedicalConditionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MedicalCondition $medicalCondition)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required | unique:medical_conditions,name,'.$medicalCondition->id,
+            'name' => 'required | unique:medical_conditions,name,'.$id,
             'instructions'  => 'required',
             'risk_level'  => 'required',
             'diseases'  => 'required',
         ]);
+
+        $medicalCondition = MedicalCondition::findOrFail($id);
 
         // Slug
         $slug = $slug = Str::slug($request->name, '-');
@@ -148,8 +150,10 @@ class MedicalConditionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MedicalCondition $medicalCondition)
+    public function destroy($id)
     {
+        $medicalCondition = MedicalCondition::findOrFail($id);
+
         // Detach
         $medicalCondition->diseases()->detach();
 
