@@ -29,7 +29,7 @@
                                 <div class="card">
                                     <div class="card-content">
                                         <h5 class="card-title activator">Add {{ $title }}</h5>
-                                        <form id="addnew" action="{{ route($route.'store') }}" method="post" novalidate>
+                                        <form id="addnew" action="{{ route($route.'store') }}" method="post" enctype="multipart/form-data" novalidate>
                                             @csrf
                                             <div class="row">
                                                 <div class="col s12">
@@ -42,6 +42,12 @@
                                                     <div class="input-field">
                                                         <span for="details">Details</span><br/>
                                                         <textarea class="textEditor" name="details" id="details"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col s12">
+                                                    <div class="input-field">
+                                                        <span for="thumb">Upload Thumb</span>
+                                                        <input type="file" name="thumb" id="thumb">
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,6 +73,7 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th>Thumbnail</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -75,6 +82,11 @@
                                     @foreach($blogs as $blog)
                                     <tr>
                                         <td>{{ $blog->name }}</td>
+                                        <td>
+                                            @if(is_file('uploads/'.$path.'/'.$blog->thumb))
+                                            <img src="{{ asset('uploads/'.$path.'/'.$blog->thumb) }}" style="max-width: 120px; max-height: 80px;" alt="Thumb">
+                                            @endif
+                                        </td>
                                         <td>
                                             @if($blog->status == 1)
                                             <span class="new badge blue">Active</span>
@@ -109,7 +121,7 @@
                                             <div class="card">
                                                 <div class="card-content">
                                                     <h5 class="card-title activator">Edit {{ $title }}</h5>
-                                                    <form  action="{{ route($route.'update', [$blog->id]) }}" method="post" novalidate>
+                                                    <form  action="{{ route($route.'update', [$blog->id]) }}" method="post" enctype="multipart/form-data" novalidate>
                                                         @csrf
                                                         @method('PUT')
                                                         <div class="row">
@@ -123,6 +135,12 @@
                                                                 <div class="input-field">
                                                                     <span for="details">Details</span><br/>
                                                                     <textarea class="textEditor" name="details" id="details">{{ $blog->details }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12">
+                                                                <div class="input-field">
+                                                                    <span for="thumb">Upload Thumb</span>
+                                                                    <input type="file" name="thumb" id="thumb">
                                                                 </div>
                                                             </div>
                                                             <div class="col s12">
