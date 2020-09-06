@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Model\Customer;
+use App\Model\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
@@ -10,7 +10,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class CustomerRegisterController extends Controller
+class PatientRegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ class CustomerRegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:customer');
+        $this->middleware('guest:patient');
     }
 
     public function showRegisterForm()
@@ -51,16 +51,16 @@ class CustomerRegisterController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:customers'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:patients'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
 
-        $admin = Customer::create([
+        $admin = Patient::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
 
-        return redirect()->route('customer.login');
+        return redirect()->route('patient.login');
     }
 }

@@ -104,26 +104,26 @@ Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')
 
 
 
-// Customer Auth Routes
-Route::name('customer.')->namespace('Auth')->prefix('customer')->group(function () {
+// Patient Auth Routes
+Route::name('patient.')->namespace('Auth')->prefix('patient')->group(function () {
 
-    Route::get('/login', 'CustomerLoginController@showLoginForm')->name('login');
-    Route::post('/login', 'CustomerLoginController@login')->name('login.post');
-    Route::get('/register', 'CustomerRegisterController@showRegisterForm')->name('register');
-    Route::post('/register', 'CustomerRegisterController@register')->name('register.post');
-    Route::post('/logout', 'CustomerLoginController@logout')->name('logout');
+    Route::get('/login', 'PatientLoginController@showLoginForm')->name('login');
+    Route::post('/login', 'PatientLoginController@login')->name('login.post');
+    Route::get('/register', 'PatientRegisterController@showRegisterForm')->name('register');
+    Route::post('/register', 'PatientRegisterController@register')->name('register.post');
+    Route::post('/logout', 'PatientLoginController@logout')->name('logout');
 
     // Forgot Password Routes
-    Route::get('/forgot-password', 'CustomerForgotPasswordController@forgotPassword')->name('forgot-password');
-    Route::post('/email-password', 'CustomerForgotPasswordController@emailForgotPasswordLink')->name('email-password');
-    Route::get('/verify-email/{id}/{token}', 'CustomerForgotPasswordController@verifyEmail')->name('verify-email');
-    Route::post('/reset-password', 'CustomerForgotPasswordController@resetPassword')->name('reset-password');
+    Route::get('/forgot-password', 'PatientForgotPasswordController@forgotPassword')->name('forgot-password');
+    Route::post('/email-password', 'PatientForgotPasswordController@emailForgotPasswordLink')->name('email-password');
+    Route::get('/verify-email/{id}/{token}', 'PatientForgotPasswordController@verifyEmail')->name('verify-email');
+    Route::post('/reset-password', 'PatientForgotPasswordController@resetPassword')->name('reset-password');
 
 });
 
 
 
-Route::middleware(['customer'])->name('customer.')->namespace('Customer')->prefix('customer')->group(function() {
+Route::middleware(['patient'])->name('patient.')->namespace('Patient')->prefix('patient')->group(function() {
     // Route::get('/home', 'HomeController@index');
 
     

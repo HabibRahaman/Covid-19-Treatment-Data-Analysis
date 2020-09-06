@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-class CustomerLoginController extends Controller
+class PatientLoginController extends Controller
 {
     use AuthenticatesUsers;
 
@@ -20,7 +20,7 @@ class CustomerLoginController extends Controller
      */
     public function __construct()
     {
-      $this->middleware('guest:customer')->except('logout');
+      $this->middleware('guest:patient')->except('logout');
     }
 
     /**
@@ -29,10 +29,10 @@ class CustomerLoginController extends Controller
     */
     public function guard()
     {
-    	return Auth::guard('customer');
+    	return Auth::guard('patient');
     }
 
-    // login from for customer
+    // login from for patient
     public function showLoginForm()
     {
         return view('web.auth.login');

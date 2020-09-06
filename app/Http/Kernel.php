@@ -69,6 +69,6 @@ class Kernel extends HttpKernel
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
 
-        'customer' => \App\Http\Middleware\RedirectIfNotCustomer::class,
+        'patient' => \App\Http\Middleware\RedirectIfNotPatient::class,
     ];
 }

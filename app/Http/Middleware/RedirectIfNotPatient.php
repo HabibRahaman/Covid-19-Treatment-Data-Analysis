@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class RedirectIfNotCustomer
+class RedirectIfNotPatient
 {
     /**
      * Handle an incoming request.
@@ -13,10 +13,10 @@ class RedirectIfNotCustomer
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard="customer")
+    public function handle($request, Closure $next, $guard="patient")
     {
         if(!auth()->guard($guard)->check()) {
-            return redirect(route('customer.login'));
+            return redirect(route('patient.login'));
         }
         return $next($request);
     }

@@ -41,9 +41,9 @@ return [
             'provider' => 'users',
         ],
 
-        'customer'  => [
+        'patient'  => [
           'driver'  => 'session',
-          'provider' => 'customers',
+          'provider' => 'patients',
         ],
 
         'api' => [
@@ -76,9 +76,9 @@ return [
             'model' => App\User::class,
         ],
 
-        'customers' => [
+        'patients' => [
             'driver' => 'eloquent',
-            'model'  => App\Model\Customer::class,
+            'model'  => App\Model\Patient::class,
         ],
 
         // 'users' => [

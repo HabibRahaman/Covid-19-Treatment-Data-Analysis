@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class CustomerForgetPassword extends Mailable
+class PatientForgetPassword extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,6 +30,6 @@ class CustomerForgetPassword extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->data['subject'])->view('emails.customerForgotPassword');
+        return $this->subject($this->data['subject'])->view('emails.patientForgotPassword');
     }
 }

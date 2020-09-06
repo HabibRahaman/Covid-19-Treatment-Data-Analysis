@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Auth;
 use Hash;
 use Mail;
 use Session;
-use App\Model\Customer;
+use App\Model\Patient;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Mail\CustomerForgetPassword;
+use App\Mail\PatientForgetPassword;
 
-class CustomerForgotPasswordController extends Controller
+class PatientForgotPasswordController extends Controller
 {
     public function forgotPassword()
     {
@@ -28,13 +28,13 @@ class CustomerForgotPasswordController extends Controller
         ]);
         
 
-        $customer = Customer::where('email', $request->email)->get();
+        $patient = Patient::where('email', $request->email)->get();
 
-        if(count($customer) == 1){
+        if(count($patient) == 1){
         	$length = 18;
 			$token = bin2hex(random_bytes($length));
 
-			$update = Customer::where('email', '=', $request->email)->firstOrFail();
+			$update = Patient::where('email', '=', $request->email)->firstOrFail();
 			$update->remember_token = $token;
 			$update->save();
 
@@ -53,7 +53,7 @@ class CustomerForgotPasswordController extends Controller
             $data['receiverName'] = $receiverName;
 
             // Send Mail
-            Mail::to($data['sendTo'])->send(new CustomerForgetPassword($data));
+            Mail::to($data['sendTo'])->send(new PatientForgetPassword($data));
 
             Session::flash('success', 'Mail Send Successfully! Check Your Inbox Now');
 
@@ -71,9 +71,9 @@ class CustomerForgotPasswordController extends Controller
     public function verifyEmail(Request $request, $id, $token)
     {
 
-        $customer = Customer::where('id', $id)->firstOrFail();
+        $patient = Patient::where('id', $id)->firstOrFail();
 
-        return view('web.auth.reset-password', compact('customer', 'token'));
+        return view('web.auth.reset-password', compact('patient', 'token'));
 
     }
 
@@ -81,20 +81,20 @@ class CustomerForgotPasswordController extends Controller
     public function resetPassword(Request $request)
     {
 
-        $customer = Customer::findOrFail($request->id);
+        $patient = Patient::findOrFail($request->id);
 
         $this->validate($request,[
             'password' => 'required|confirmed|min:6',
             ]);
 
 
-        $customer->password = Hash::make($request->password);
-        $customer->remember_token = NULL;
-        $customer->save();
+        $patient->password = Hash::make($request->password);
+        $patient->remember_token = NULL;
+        $patient->save();
 
         session()->flash('success','Your password has been updated successfully');
 
-        return redirect()->route('customer.login');
+        return redirect()->route('patient.login');
 
     }
 }
