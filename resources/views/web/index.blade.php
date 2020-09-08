@@ -6,6 +6,7 @@
   <div class="container">
    <div class="row">
 
+     <!-- Single Service -->
      <div class="col-12 col-md-6">
        <a href="#" class="signle-service-box">
          <div class="service-icon-area">
@@ -18,7 +19,9 @@
          </div>
        </a>
      </div>
+     <!-- Single Service -->
 
+     <!-- Single Service -->
      <div class="col-12 col-md-6">
        <a href="#" class="signle-service-box">
          <div class="service-icon-area">
@@ -31,7 +34,9 @@
          </div>
        </a>
      </div>
+     <!-- Single Service -->
 
+     <!-- Single Service -->
      <div class="col-12 col-md-6">
        <a href="#" class="signle-service-box">
          <div class="service-icon-area">
@@ -44,7 +49,9 @@
          </div>
        </a>
      </div>
+     <!-- Single Service -->
 
+     <!-- Single Service -->
      <div class="col-12 col-md-6">
        <a href="#" class="signle-service-box">
          <div class="service-icon-area">
@@ -57,9 +64,127 @@
          </div>
        </a>
      </div>
+     <!-- Single Service -->
+
     </div> 
   </div>
 </section>
 <!-- Service Box -->
+
+
+
+<!-- Graph Box -->
+<section class="section">
+  <div class="container">
+   <div class="row">
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-3">
+       <div class="signle-graph-box">
+         <div class="service-graph-header">
+             <div class="graph-title">Title Here</div>
+         </div>
+         <div class="single-graph-body">
+             
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-3">
+       <div class="signle-graph-box">
+         <div class="service-graph-header">
+             <div class="graph-title">Title Here</div>
+         </div>
+         <div class="single-graph-body">
+             
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-3">
+       <div class="signle-graph-box">
+         <div class="service-graph-header">
+             <div class="graph-title">Title Here</div>
+         </div>
+         <div class="single-graph-body">
+             
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-3">
+       <div class="signle-graph-box">
+         <div class="service-graph-header">
+             <div class="graph-title">Title Here</div>
+         </div>
+         <div class="single-graph-body">
+             
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-3">
+       <div class="signle-graph-box">
+         <div class="service-graph-header">
+             <div class="graph-title">Title Here</div>
+         </div>
+         <div class="single-graph-body">
+             
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-3">
+       <div class="signle-graph-box">
+         <div class="service-graph-header">
+             <div class="graph-title">Title Here</div>
+         </div>
+         <div class="single-graph-body">
+             
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-3">
+       <div class="signle-graph-box">
+         <div class="service-graph-header">
+             <div class="graph-title">Title Here</div>
+         </div>
+         <div class="single-graph-body">
+             
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-3">
+       <div class="signle-graph-box">
+         <div class="service-graph-header">
+             <div class="graph-title">Title Here</div>
+         </div>
+         <div class="single-graph-body">
+             
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+    </div> 
+  </div>
+</section>
+<!-- Graph Box -->
 
 @endsection
