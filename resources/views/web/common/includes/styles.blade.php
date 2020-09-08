@@ -4,7 +4,7 @@
   <link rel="apple-touch-icon-precomposed" href="{{ asset('web/img/favicon.png') }}">
 
   <!-- font -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> 
 
   <!-- css -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/css/bootstrap.min.css') }}">
