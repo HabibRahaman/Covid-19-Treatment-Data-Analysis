@@ -1,22 +1,25 @@
 @extends('web.common.layouts.master')
 @section('content')
 
-<!-- Travel Guide -->
-<div class="travel-guide-overlay">
-<section class="section travel-guide">
+<!-- Service Box -->
+<section class="section service-section">
   <div class="container">
    <div class="row">
-     <div class="col-12 col-md-12">
-       <div class="travel-guide-box">
-         <div class="travel-guide-title">Travel Guide</div>
-         <div class="travel-guide-subtitle">simple and make easy</div>
-         <a href="#" class="travel-guide-button">Become a Travel Guide</a>
-       </div>
+     <div class="col-12 col-md-6">
+       <a href="#" class="signle-service-box">
+         <div class="service-icon-area">
+             <img src="{{ asset('web/img/services/survey.png') }}" alt="Icon">
+         </div>
+         <div class="service-text-area">
+             <div class="service-title">Attended Survey</div>
+             <div class="service-subtitle">জরিপে অংশ নিয়েছে</div>
+             <p class="service-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+         </div>
+       </a>
      </div>
     </div> 
   </div>
 </section>
-</div>
-<!-- Travel Guide -->
+<!-- Service Box -->
 
 @endsection

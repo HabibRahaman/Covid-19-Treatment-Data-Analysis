@@ -51,3 +51,97 @@ a, a:hover, a:focus {
 strong {
 	font-weight: 900 !important;
 }
+
+section.section {
+	float: left;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	padding: 60px 0;
+	box-sizing: border-box;
+}
+
+/** Service Box **/
+.service-section {
+	background-color: #e1fcff;
+}
+.signle-service-box {
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+	max-width: 400px;
+	min-height: 150px;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
+	box-sizing: border-box;
+	box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.16);
+	border-radius: 32px;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+.signle-service-box .service-icon-area {
+	float: left;
+	width: 90px;
+	height: 150px;
+	background-color: #4fe88f;
+	border-radius: 0px 60% 60% 0px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.signle-service-box .service-icon-area img {
+	margin: 0 auto;
+	width: auto;
+	height: auto;
+	max-width: 50px;
+	max-height: 50px;
+	display: block;
+	overflow: hidden;
+}
+.signle-service-box .service-text-area {
+	float: left;
+	width: calc(100% - 90px);
+	height: 100%;
+	display: block;
+	padding: 15px;
+	box-sizing: border-box;
+}
+.signle-service-box .service-title {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #848484;
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 3px;
+}
+.signle-service-box .service-subtitle {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #5b9166;
+	font-family: Roboto;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 10px;
+}
+.signle-service-box .service-details {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #707070;
+	font-family: Roboto;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 1.5;
+}
+/** Service Box **/
