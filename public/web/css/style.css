@@ -61,11 +61,41 @@ section.section {
 	box-sizing: border-box;
 	background-color: #ffffff;
 }
+.section-title-area {
+	float: left;
+	width: 100%;
+	height: auto;
+	display: block;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.section-title-area .section-subtitle {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #50b381;
+	font-family: Roboto;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+.section-title-area .section-title {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #727272;
+	font-family: Roboto;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.5;
+}
+
 
 
 /** Header Box **/
-.header-section {
+section.header-section {
 	padding: 0px !important;
+	background-color: #e1fcff;
 }
 .header-logo {
 	float: left;
@@ -147,7 +177,7 @@ section.section {
 
 
 /** Service Box **/
-.service-section {
+section.service-section {
 	background-color: #e1fcff;
 }
 .signle-service-box {

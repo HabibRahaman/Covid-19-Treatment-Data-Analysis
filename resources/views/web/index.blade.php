@@ -139,6 +139,14 @@
 <section class="section">
   <div class="container">
    <div class="row">
+       <div class="col-12">
+           <div class="section-title-area">
+                <div class="section-subtitle">Work</div>
+               <h2 class="section-title">How it's work</h2>
+           </div>
+       </div>
+   </div>
+   <div class="row">
 
      <!-- Single Graph -->
      <div class="col-12 col-md-6 col-lg-3">
