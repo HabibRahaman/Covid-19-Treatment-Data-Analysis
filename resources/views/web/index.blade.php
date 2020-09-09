@@ -1,6 +1,33 @@
 @extends('web.common.layouts.master')
 @section('content')
 
+<!-- Header Box -->
+<section class="section header-section" style="background-image: url({{ asset('web/img/header_bg.png') }});">
+  <div class="container">
+   <div class="row">
+    <div class="col-md-2">
+        <!-- Logo Box -->
+        <a href="#" class="header-logo">
+            <img src="{{ asset('web/img/logo.png') }}" alt="Logo">
+        </a>
+        <!-- Logo Box -->
+    </div>
+    <div class="col-md-10">
+        <div class="header-hotlines">
+            <div class="single-hotline">
+                <div class="hotline-title">National Call center</div>
+                <div class="hotline-subtitle">জাতীয় কল সেন্টার</div>
+                <div class="hotline-number">333</div>
+            </div>
+        </div>
+    </div>
+   </div>
+  </div>
+</section>
+<!-- Header Box -->
+
+
+
 <!-- Service Box -->
 <section class="section service-section">
   <div class="container">

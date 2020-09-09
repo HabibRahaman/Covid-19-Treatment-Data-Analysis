@@ -63,6 +63,84 @@ section.section {
 }
 
 
+/** Header Box **/
+.header-section {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-origin: border-box;
+	background-position: bottom;
+	min-height: 390px;
+	padding-top: 0px !important;
+}
+.header-logo {
+	float: left;
+	width: 100%;
+	height: auto;
+	display: block;
+	margin-top: 20px;
+}
+.header-logo img {
+	float: left;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	max-height: 80px;
+	display: block;
+	overflow: hidden;
+}
+
+.header-hotlines {
+	float: left;
+	width: 100%;
+	height: auto;
+	display: block;
+	overflow: hidden;
+}
+.header-hotlines .single-hotline {
+	float: left;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	overflow: hidden;
+	text-align: center;
+	padding: 15px 10px;
+	box-sizing: border-box;
+}
+.header-hotlines .hotline-title {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #ffffff;
+	font-family: Roboto;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+.header-hotlines .hotline-subtitle {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #5b9166;
+	font-family: Roboto;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+.header-hotlines .hotline-number {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #5b666a;
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.5;
+}
+/** Header Box **/
+
+
+
 /** Service Box **/
 .service-section {
 	background-color: #e1fcff;
