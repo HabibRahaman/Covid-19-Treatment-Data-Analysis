@@ -286,6 +286,15 @@
     </div>
     <!-- Single Footer -->
 
+
+    <!-- Single Footer -->
+    <div class="col-md-3  offset-md-2 col-lg-3 offset-lg-2">
+        <div class="footer-promo">
+            <img src="{{ asset('web/img/doctor.png') }}" alt="Promo">
+        </div>
+    </div>
+    <!-- Single Footer -->
+
    </div>
   </div>
 </section>

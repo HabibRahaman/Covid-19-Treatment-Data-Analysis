@@ -328,4 +328,17 @@ section.section {
 	padding-right: 5px;
 	box-sizing: border-box;
 }
+.single-footer .footer-promo {
+	float: left;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+}
+.footer-promo img {
+	margin: 0 auto;
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	height: auto;
+}
 /** Footer Box **/
