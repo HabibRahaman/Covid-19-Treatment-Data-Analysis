@@ -249,4 +249,46 @@
 </section>
 <!-- Graph Box -->
 
+
+
+<!-- Footer Box -->
+<section class="section footer-section" style="background-image: url({{ asset('web/img/footer_bg.png') }});">
+  <div class="container">
+   <div class="row">
+
+    <!-- Single Footer -->
+    <div class="col-md-3 offset-md-1 col-lg-3 offset-lg-1">
+        <div class="single-footer">
+            <ul class="footer-nav">
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Single Footer -->
+
+    <!-- Single Footer -->
+    <div class="col-md-3 col-lg-3">
+        <div class="single-footer">
+            <ul class="footer-nav">
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Single Footer -->
+
+   </div>
+  </div>
+</section>
+<!-- Footer Box -->
+
 @endsection

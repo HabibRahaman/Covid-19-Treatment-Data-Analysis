@@ -278,3 +278,54 @@ section.section {
 	box-sizing: border-box;
 }
 /** Graph Box **/
+
+
+
+/** Footer Box **/
+.footer-section {
+	padding-top: 100px !important;
+	padding-bottom: 0px !important;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-origin: border-box;
+	background-position: top;
+	min-height: 290px;
+}
+.single-footer {
+	float: left;
+	width: 100%;
+	height: auto;
+	padding: 15px;
+	box-sizing: border-box;
+}
+.single-footer ul.footer-nav {
+	float: left;
+	margin-top: 20px;
+	list-style-type: none;
+}
+.single-footer .footer-nav li {
+	float: left;
+	display: block;
+	width: 100%;
+	list-style-type: square !important;
+}
+.single-footer .footer-nav li a {
+	float: left;
+	text-align: left;
+	width: 100%;
+	display: block;
+	color: #ffffff;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.5;
+	padding: 2px 0px;
+	box-sizing: border-box;
+}
+.single-footer .footer-nav li a span {
+	float: left;
+	display: inline;
+	padding-right: 5px;
+	box-sizing: border-box;
+}
+/** Footer Box **/
