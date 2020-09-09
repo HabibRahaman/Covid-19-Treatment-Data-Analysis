@@ -2,8 +2,8 @@
 @section('content')
 
 <!-- Header Box -->
-<section class="section header-section" style="background-image: url({{ asset('web/img/header_bg.png') }});">
-  <div class="container">
+<section class="section header-section">
+  <div class="container-fluid">
    <div class="row">
     <div class="col-md-2">
         <!-- Logo Box -->
@@ -13,12 +13,47 @@
         <!-- Logo Box -->
     </div>
     <div class="col-md-10">
-        <div class="header-hotlines">
+        <div class="header-hotlines" style="background-image: url({{ asset('web/img/header_bg.png') }});">
+
+            <!-- Single Hotline -->
             <div class="single-hotline">
                 <div class="hotline-title">National Call center</div>
                 <div class="hotline-subtitle">জাতীয় কল সেন্টার</div>
                 <div class="hotline-number">333</div>
             </div>
+            <!-- Single Hotline -->
+
+            <!-- Single Hotline -->
+            <div class="single-hotline">
+                <div class="hotline-title">Ministry of Health</div>
+                <div class="hotline-subtitle">স্বাস্থ্য বাতায়ন</div>
+                <div class="hotline-number">16263</div>
+            </div>
+            <!-- Single Hotline -->
+
+            <!-- Single Hotline -->
+            <div class="single-hotline">
+                <div class="hotline-title">IEDCR</div>
+                <div class="hotline-subtitle">আইডিসিআর</div>
+                <div class="hotline-number">10655</div>
+            </div>
+            <!-- Single Hotline -->
+
+            <!-- Single Hotline -->
+            <div class="single-hotline">
+                <div class="hotline-title">Specialist Helpline</div>
+                <div class="hotline-subtitle">বিশেষজ্ঞ হেলথ লাইন</div>
+                <div class="hotline-number">09611677777</div>
+            </div>
+            <!-- Single Hotline -->
+
+            <!-- Single Hotline -->
+            <div class="single-hotline">
+                <div class="hotline-title">National Helpline</div>
+                <div class="hotline-subtitle">জাতীয় হেল্পলাইন</div>
+                <div class="hotline-number">109</div>
+            </div>
+            <!-- Single Hotline -->
         </div>
     </div>
    </div>
