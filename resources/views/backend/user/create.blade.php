@@ -27,25 +27,25 @@
                                     <div class="col s12">
                                         <div class="input-field">
                                             <input type="text" name="name" id="name" required>
-                                            <label for="name">User Name</label>
+                                            <label for="name">User Name <span>*</span></label>
                                         </div>
                                     </div>
                                     <div class="col s12">
                                         <div class="input-field">
                                             <input type="email" name="email" id="email" required>
-                                            <label for="email">Email</label>
+                                            <label for="email">Email <span>*</span></label>
                                         </div>
                                     </div>
                                     <div class="col s12">
                                         <div class="input-field">
                                             <input type="password" name="password" id="password" required>
-                                            <label for="password">Password</label>
+                                            <label for="password">Password <span>*</span></label>
                                         </div>
                                     </div>
                                     <div class="col s12">
                                         <div class="input-field">
                                             <input type="password" name="confirm-password" id="confirm-password" required>
-                                            <label for="confirm-password">Confirm Password</label>
+                                            <label for="confirm-password">Confirm Password <span>*</span></label>
                                         </div>
                                     </div>
                                     <div class="col s12">
@@ -55,7 +55,7 @@
                                                 <option value="{{ $role->id }}">{{ $role->name }}</option>
                                                 @endforeach
                                             </select>
-                                            <label for="roles">Roles</label>
+                                            <label for="roles">Roles <span>*</span></label>
                                         </div>
                                     </div>
                                 </div>
@@ -76,4 +76,13 @@
             <!-- Container fluid scss in scafholding.scss -->
             <!-- ============================================================== -->
 
+@endsection
+@section('page_js')
+<!-- Custom js -->
+<!-- ============================================================== -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("form").parsley();
+    });
+</script>
 @endsection

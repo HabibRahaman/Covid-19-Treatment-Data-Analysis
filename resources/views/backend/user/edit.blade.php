@@ -28,7 +28,7 @@
                                     <div class="col s12">
                                         <div class="input-field">
                                             <input type="text" name="name" value="{{ $user->name }}" id="name" required>
-                                            <label for="name">User Name</label>
+                                            <label for="name">User Name <span>*</span></label>
                                         </div>
                                     </div>
                                     <div class="col s12">
@@ -50,7 +50,7 @@
                                                     >{{ $role->name }}</option>
                                                 @endforeach
                                             </select>
-                                            <label for="roles">Roles</label>
+                                            <label for="roles">Roles <span>*</span></label>
                                         </div>
                                     </div>
                                 </div>
@@ -71,4 +71,13 @@
             <!-- Container fluid scss in scafholding.scss -->
             <!-- ============================================================== -->
 
+@endsection
+@section('page_js')
+<!-- Custom js -->
+<!-- ============================================================== -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("form").parsley();
+    });
+</script>
 @endsection

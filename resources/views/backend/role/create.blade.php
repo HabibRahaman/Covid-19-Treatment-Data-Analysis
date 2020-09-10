@@ -27,7 +27,7 @@
                                     <div class="col s12">
                                         <div class="input-field">
                                             <input type="text" name="name" id="name" required>
-                                            <label for="name">Role Name</label>
+                                            <label for="name">Role Name <span>*</span></label>
                                         </div>
                                     </div>
 
@@ -64,4 +64,13 @@
             <!-- Container fluid scss in scafholding.scss -->
             <!-- ============================================================== -->
 
+@endsection
+@section('page_js')
+<!-- Custom js -->
+<!-- ============================================================== -->
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("form").parsley();
+    });
+</script>
 @endsection
