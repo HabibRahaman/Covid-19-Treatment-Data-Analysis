@@ -19,12 +19,6 @@
                                 <div class="center-align m-t-30"> <img src="{{ asset('backend/images/users/5.jpg') }}" class="circle" width="150" />
                                     <h4 class="card-title m-t-10">{{ $user->name }}</h4>
                                     <h6 class="card-subtitle">{{ $user->designation }}</h6>
-                                    <div class="center-align">
-                                        <div>
-                                            <a href="javascript:void(0)" class="m-r-40"><i class="icon-people"></i> <font class="font-medium">254</font></a>
-                                            <a href="javascript:void(0)"><i class="icon-picture"></i> <font class="font-medium">54</font></a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <hr>
@@ -35,10 +29,6 @@
                                 <h6>{{ $user->phone }}</h6>
                                 <small>Address</small>
                                 <h6>{{ $user->address }}</h6>
-                                <small class="db m-t-20">Social Profile</small>
-                                <a href="javascript:void(0)" class="btn-floating indigo darken-2 m-t-10"><i class="fab fa-facebook"></i></a>
-                                <a href="javascript:void(0)" class="btn-floating blue darken-1 m-t-10"><i class="fab fa-twitter"></i></a>
-                                <a href="javascript:void(0)" class="btn-floating deep-orange m-t-10"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -84,8 +74,14 @@
                                             @csrf
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input name="name" id="name" type="text" value="{{ $user->name }}">
+                                                    <input name="name" id="name" type="text" value="{{ $user->name }}" required>
                                                     <label for="name">Full Name <span>*</span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="dob" id="dob" type="date" value="{{ $user->dob }}" required>
+                                                    <label for="dob">Date of Birth <span>*</span></label>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -142,20 +138,20 @@
                                             @csrf
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input type="password" name="oldpass" id="oldpass">
-                                                    <label for="oldpass">Old Password</label>
+                                                    <input type="password" name="oldpass" id="oldpass" required>
+                                                    <label for="oldpass">Old Password <span>*</span></label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input type="password" name="newpass" id="newpass">
-                                                    <label for="newpass">New Password</label>
+                                                    <input type="password" name="newpass" id="newpass" required>
+                                                    <label for="newpass">New Password <span>*</span></label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input type="password" name="newpass_confirmation" id="confirmpass">
-                                                    <label for="confirmpass">Confirm Password</label>
+                                                    <input type="password" name="newpass_confirmation" id="confirmpass" required>
+                                                    <label for="confirmpass">Confirm Password <span>*</span></label>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -178,14 +174,11 @@
 @endsection
 
 @section('page_js')
+<!-- Custom js -->
+<!-- ============================================================== -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#addnew").validate({
-            rules: {
-                name:"required",
-                email: "required",
-            }
-        });
+        $("form").parsley();
     });
 </script>
 @endsection

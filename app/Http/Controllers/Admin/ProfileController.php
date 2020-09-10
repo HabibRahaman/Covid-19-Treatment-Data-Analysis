@@ -47,7 +47,7 @@ class ProfileController extends Controller
             'name' => 'required'
         ]);
 
-        $input = $request->only(['name','email','phone','gender','designation','country','address','profile']);
+        $input = $request->only(['name','email','gender','dob','designation','department','organization','higher_degree','academy','specialty','profile','phone','address','city','country']);
         
         $user = User::find(Auth::guard('web')->user()->id);
         $user->update($input);
