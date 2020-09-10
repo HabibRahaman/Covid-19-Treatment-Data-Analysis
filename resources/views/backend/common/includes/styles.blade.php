@@ -1,6 +1,7 @@
     <!-- This page CSS -->
 
     <link href="{{ asset('backend/extra-libs/prism/prism.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/css/pages/form-page.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/pages/data-table.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/toastr.min.css') }}" rel="stylesheet">
 

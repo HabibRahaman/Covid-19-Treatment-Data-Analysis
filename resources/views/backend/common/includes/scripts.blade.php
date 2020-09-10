@@ -11,9 +11,10 @@
     <script src="{{ asset('backend/js/app.init.mini-sidebar.js') }}"></script>
     <script src="{{ asset('backend/libs/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('backend/extra-libs/prism/prism.js') }}"></script>
+    <script src="{{ asset('backend/js/pages/forms/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('backend/js/pages/forms/parsley.min.js') }}"></script>
     <script src="{{ asset('backend/js/toastr.min.js') }}"></script>
     <script src="{{ asset('backend/js/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('backend/js/pages/forms/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('backend/extra-libs/DataTables/datatables.min.js') }}"></script>
     <script src="{{ asset('backend/js/pages/datatable/datatable-advanced.init.js') }}"></script>
     <!-- ============================================================== -->
@@ -68,10 +69,15 @@
                 plugins: [
                     "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
                     "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                    "save table contextmenu directionality emoticons template paste textcolor"
+                    "save table contextmenu directionality emoticons template paste textcolor",
+                    "paste"
                 ],
                 toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image | print preview media fullpage | forecolor backcolor emoticons",
-
+                paste_as_text: true,
+                paste_auto_cleanup_on_paste : true,
+                paste_remove_styles: true,
+                paste_remove_styles_if_webkit: true,
+                paste_strip_class_attributes: true
             });
         }
     });

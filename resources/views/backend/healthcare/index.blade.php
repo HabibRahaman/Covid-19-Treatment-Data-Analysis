@@ -299,13 +299,7 @@
 <!-- ============================================================== -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#addnew").validate({
-            rules: {
-                name: "required",
-                type: "required",
-                priority: "required"
-            }
-        });
+        $("#addnew").parsley();
     });
 </script>
 @endsection

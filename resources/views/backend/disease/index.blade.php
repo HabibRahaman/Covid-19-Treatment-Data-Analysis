@@ -280,13 +280,7 @@
 <!-- ============================================================== -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#addnew").validate({
-            rules: {
-                name: "required",
-                type: "required",
-                risk_level: "required"
-            }
-        });
+        $("#addnew").parsley();
     });
 </script>
 @endsection
