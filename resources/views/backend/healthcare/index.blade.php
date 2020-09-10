@@ -299,7 +299,7 @@
 <!-- ============================================================== -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#addnew").parsley();
+        $("form").parsley();
     });
 </script>
 @endsection

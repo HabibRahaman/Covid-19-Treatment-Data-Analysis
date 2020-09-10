@@ -46,7 +46,7 @@
                                                 </div>
                                                 <div class="col s12">
                                                     <div class="input-field">
-                                                        <select name="group_id" id="group_id" required>
+                                                        <select name="group_id" id="group_id">
                                                             <option value="">Select</option>
                                                             @foreach($medicine_groups as $medicine_group)
                                                             <option value="{{ $medicine_group->id }}">{{ $medicine_group->name }}</option>
@@ -210,7 +210,7 @@
                                                             </div>
                                                             <div class="col s12">
                                                                 <div class="input-field">
-                                                                    <select name="group_id" id="group_id" required>
+                                                                    <select name="group_id" id="group_id">
                                                                         <option value="">Select</option>
                                                                         @foreach($medicine_groups as $medicine_group)
                                                                         <option value="{{ $medicine_group->id }}" @if($medicine->group_id == $medicine_group->id) selected @endif>{{ $medicine_group->name }}</option>
@@ -356,7 +356,7 @@
 <!-- ============================================================== -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#addnew").parsley();
+        $("form").parsley();
     });
 </script>
 @endsection
