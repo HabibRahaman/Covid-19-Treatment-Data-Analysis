@@ -335,10 +335,7 @@
                                 </tbody>
                             </table>
                           </div>
-                          
-                          <div class="pagination">
-                            {{ $medicines->links() }}
-                          </div>
+                            
                         </div>
                     </div>
                 </div>

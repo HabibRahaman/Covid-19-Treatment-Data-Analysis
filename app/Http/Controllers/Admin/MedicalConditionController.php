@@ -30,7 +30,7 @@ class MedicalConditionController extends Controller
         $data['route'] = $this->route;
         
         $data['diseases'] = Disease::orderBy('name', 'asc')->get();
-        $data['conditions'] = MedicalCondition::orderBy('name', 'asc')->paginate(15);
+        $data['conditions'] = MedicalCondition::orderBy('name', 'asc')->get();
 
         return view($this->view.'.index', $data);
     }

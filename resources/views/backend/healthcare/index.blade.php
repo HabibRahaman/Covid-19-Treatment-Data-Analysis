@@ -279,9 +279,6 @@
                             </table>
                           </div>
                           
-                          <div class="pagination">
-                            {{ $healthcares->links() }}
-                          </div>
                         </div>
                     </div>
                 </div>

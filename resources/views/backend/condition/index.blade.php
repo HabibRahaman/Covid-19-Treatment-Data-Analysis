@@ -293,9 +293,6 @@
                             </table>
                           </div>
                           
-                          <div class="pagination">
-                            {{ $conditions->links() }}
-                          </div>
                         </div>
                     </div>
                 </div>

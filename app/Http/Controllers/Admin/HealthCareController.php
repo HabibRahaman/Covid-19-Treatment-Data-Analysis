@@ -30,7 +30,7 @@ class HealthCareController extends Controller
         $data['route'] = $this->route;
         
         $data['diseases'] = Disease::orderBy('name', 'asc')->get();
-        $data['healthcares'] = HealthCare::orderBy('name', 'asc')->paginate(15);
+        $data['healthcares'] = HealthCare::orderBy('name', 'asc')->get();
 
         return view($this->view.'.index', $data);
     }

@@ -31,7 +31,7 @@ class MedicineController extends Controller
         
         $data['symptoms'] = Symptom::orderBy('name', 'asc')->get();
         $data['medicine_groups'] = Medicine::where('group', 1)->orderBy('name', 'asc')->get();
-        $data['medicines'] = Medicine::orderBy('name', 'asc')->paginate(15);
+        $data['medicines'] = Medicine::orderBy('name', 'asc')->get();
 
         return view($this->view.'.index', $data);
     }

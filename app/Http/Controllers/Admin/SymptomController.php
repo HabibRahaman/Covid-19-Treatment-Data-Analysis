@@ -30,7 +30,7 @@ class SymptomController extends Controller
         $data['route'] = $this->route;
         
         $data['diseases'] = Disease::orderBy('name', 'asc')->get();
-        $data['symptoms'] = Symptom::orderBy('name', 'asc')->paginate(15);
+        $data['symptoms'] = Symptom::orderBy('name', 'asc')->get();
 
         return view($this->view.'.index', $data);
     }

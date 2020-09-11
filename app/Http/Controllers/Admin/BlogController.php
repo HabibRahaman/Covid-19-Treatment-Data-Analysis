@@ -32,7 +32,7 @@ class BlogController extends Controller
         $data['route'] = $this->route;
         $data['path'] = $this->path;
         
-        $data['blogs'] = Blog::orderBy('id', 'desc')->paginate(15);
+        $data['blogs'] = Blog::orderBy('id', 'desc')->get();
 
         return view($this->view.'.index', $data);
     }

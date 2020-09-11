@@ -28,7 +28,7 @@ class DiseaseController extends Controller
         $data['title'] = $this->title;
         $data['route'] = $this->route;
         
-        $data['diseases'] = Disease::orderBy('name', 'asc')->paginate(15);
+        $data['diseases'] = Disease::orderBy('name', 'asc')->get();
 
         return view($this->view.'.index', $data);
     }

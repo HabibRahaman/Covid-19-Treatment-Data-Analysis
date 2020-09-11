@@ -312,9 +312,6 @@
                             </table>
                           </div>
                           
-                          <div class="pagination">
-                            {{ $symptoms->links() }}
-                          </div>
                         </div>
                     </div>
                 </div>

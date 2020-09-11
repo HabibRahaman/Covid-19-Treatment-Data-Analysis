@@ -260,9 +260,6 @@
                             </table>
                           </div>
                           
-                          <div class="pagination">
-                            {{ $diseases->links() }}
-                          </div>
                         </div>
                     </div>
                 </div>
