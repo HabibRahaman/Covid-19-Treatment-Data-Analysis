@@ -74,7 +74,7 @@ section.section {
 	width: 100%;
 	display: block;
 	color: #50b381;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 17px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -84,7 +84,7 @@ section.section {
 	width: 100%;
 	display: block;
 	color: #727272;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 28px;
 	font-weight: 700;
 	line-height: 1.5;
@@ -129,12 +129,12 @@ section.header-section {
 	background-repeat: no-repeat;
 	background-origin: border-box;
 	background-position: bottom;
-	min-height: 290px;
+	min-height: 250px;
 }
 .header-hotlines .single-hotline {
 	float: left;
 	width: auto;
-	max-width: 150px;
+	max-width: 160px;
 	height: auto;
 	display: block;
 	overflow: hidden;
@@ -147,7 +147,7 @@ section.header-section {
 	width: 100%;
 	display: block;
 	color: #ffffff;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 13px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -157,7 +157,7 @@ section.header-section {
 	width: 100%;
 	display: block;
 	color: #5b9166;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -167,7 +167,7 @@ section.header-section {
 	width: 100%;
 	display: block;
 	color: #5b666a;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 1.5;
@@ -179,6 +179,8 @@ section.header-section {
 /** Service Box **/
 section.service-section {
 	background-color: #e1fcff;
+	padding-top: 0px !important;
+	margin-top: -80px !important;
 }
 .signle-service-box {
 	margin: 30px auto;
@@ -232,7 +234,7 @@ section.service-section {
 	width: 100%;
 	display: block;
 	color: #848484;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -243,7 +245,7 @@ section.service-section {
 	width: 100%;
 	display: block;
 	color: #5b9166;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -254,7 +256,7 @@ section.service-section {
 	width: 100%;
 	display: block;
 	color: #707070;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 12px;
 	font-weight: 300;
 	line-height: 1.5;
@@ -293,7 +295,7 @@ section.service-section {
 	width: 100%;
 	display: block;
 	color: #727272;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 17px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -324,9 +326,13 @@ section.service-section {
 .single-footer {
 	float: left;
 	width: 100%;
-	height: auto;
+	height: 100%;
 	padding: 15px;
 	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .single-footer ul.footer-nav {
 	float: left;
@@ -345,11 +351,11 @@ section.service-section {
 	width: 100%;
 	display: block;
 	color: #ffffff;
-	font-family: Roboto;
+	font-family: 'Patrick Hand', cursive;
 	font-size: 15px;
 	font-weight: 400;
 	line-height: 1.5;
-	padding: 2px 0px;
+	padding: 4px 0px;
 	box-sizing: border-box;
 }
 .single-footer .footer-nav li a span {

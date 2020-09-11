@@ -75,8 +75,8 @@
              <img src="{{ asset('web/img/services/online_survey.png') }}" alt="Icon">
          </div>
          <div class="service-text-area">
-             <div class="service-title">Attended Survey</div>
-             <div class="service-subtitle">জরিপে অংশ নিয়েছে</div>
+             <div class="service-title">Attend Survey</div>
+             <div class="service-subtitle">জরিপে অংশ নিন</div>
              <p class="service-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
          </div>
        </a>
@@ -265,7 +265,7 @@
    <div class="row">
 
     <!-- Single Footer -->
-    <div class="col-md-3 offset-md-1 col-lg-3 offset-lg-1">
+    <div class="col-md-4 offset-md-1 col-lg-4 offset-lg-1">
         <div class="single-footer">
             <ul class="footer-nav">
                 <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
@@ -278,25 +278,25 @@
         </div>
     </div>
     <!-- Single Footer -->
+
+    <!-- Single Footer -->
+    <div class="col-md-4 col-lg-4">
+        <div class="single-footer">
+            <ul class="footer-nav">
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Single Footer -->
+
 
     <!-- Single Footer -->
     <div class="col-md-3 col-lg-3">
-        <div class="single-footer">
-            <ul class="footer-nav">
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- Single Footer -->
-
-
-    <!-- Single Footer -->
-    <div class="col-md-3  offset-md-2 col-lg-3 offset-lg-2">
         <div class="footer-promo">
             <img src="{{ asset('web/img/doctor.png') }}" alt="Promo">
         </div>
