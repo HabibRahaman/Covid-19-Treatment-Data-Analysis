@@ -15,6 +15,7 @@
     <script src="{{ asset('backend/js/pages/forms/parsley.min.js') }}"></script>
     <script src="{{ asset('backend/js/toastr.min.js') }}"></script>
     <script src="{{ asset('backend/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('web/js/all.min.js') }}"></script>
     <script src="{{ asset('backend/extra-libs/DataTables/datatables.min.js') }}"></script>
     <script src="{{ asset('backend/js/pages/datatable/datatable-advanced.init.js') }}"></script>
     <!-- ============================================================== -->

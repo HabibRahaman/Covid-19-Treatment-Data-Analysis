@@ -4,7 +4,7 @@
     <link href="{{ asset('backend/css/pages/form-page.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/pages/data-table.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/toastr.min.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('web/css/all.min.css') }}" rel="stylesheet">
 
     <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('backend/css/custom.css') }}" rel="stylesheet">
