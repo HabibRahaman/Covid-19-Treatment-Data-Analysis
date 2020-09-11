@@ -42,7 +42,7 @@
                                         <li class="tab col s3"><a href="#password">Reset Password</a></li>
                                     </ul>
                                 </div>
-                                <div id="profile" class="col s12">
+                                <div id="profile" class="col s12 profile-card">
                                     <div class="card-content">
                                         <div class="row">
                                             <div class="col m4 b-r"> <strong>Full Name</strong>

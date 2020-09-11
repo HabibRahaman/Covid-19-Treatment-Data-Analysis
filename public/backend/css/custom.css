@@ -18,10 +18,11 @@
 	padding: 4px;
 	border-bottom: 1px solid #ddd;
 }
-.btn-small {
-    height: auto;
-    line-height: 0px;
-    font-size: 15px;
-    padding: 0.8rem .45rem;
-    margin: 0rem .3rem;
+.input-field label span {
+    color: #ff6065;
+    font-size: 18px;
+}
+.profile-card strong {
+    font-weight: 700;
+    color: #00fe8e;
 }
