@@ -44,7 +44,16 @@ class ProfileController extends Controller
     {
         //
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'dob' => 'required',
+            'gender' => 'required',
+            'designation' => 'required',
+            'organization' => 'required',
+            'higher_degree' => 'required',
+            'academy' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'country' => 'required',
         ]);
 
         $input = $request->only(['name','email','gender','dob','designation','department','organization','higher_degree','academy','specialty','profile','phone','address','city','country']);

@@ -18,7 +18,7 @@
                             <div class="card-content">
                                 <div class="center-align m-t-30"> <img src="{{ asset('backend/images/users/5.jpg') }}" class="circle" width="150" />
                                     <h4 class="card-title m-t-10">{{ $user->name }}</h4>
-                                    <h6 class="card-subtitle">{{ $user->designation }}</h6>
+                                    <h6 class="card-subtitle">{{ $user->designation }}, {{ $user->organization }}</h6>
                                 </div>
                             </div>
                             <hr>
@@ -28,7 +28,7 @@
                                 <small>Phone</small>
                                 <h6>{{ $user->phone }}</h6>
                                 <small>Address</small>
-                                <h6>{{ $user->address }}</h6>
+                                <h6>{{ $user->address }}, {{ $user->city }}</h6>
                             </div>
                         </div>
                     </div>
@@ -45,25 +45,85 @@
                                 <div id="profile" class="col s12">
                                     <div class="card-content">
                                         <div class="row">
-                                            <div class="col m3 b-r"> <strong>Full Name</strong>
+                                            <div class="col m4 b-r"> <strong>Full Name</strong>
                                                 <br>
                                                 <p>{{ $user->name }}</p>
                                             </div>
-                                            <div class="col m3 b-r"> <strong>Mobile</strong>
+                                            <div class="col m4 b-r"> <strong>Mobile</strong>
                                                 <br>
                                                 <p>{{ $user->phone }}</p>
                                             </div>
-                                            <div class="col m3 b-r"> <strong>Email</strong>
+                                            <div class="col m4"> <strong>Email</strong>
                                                 <br>
                                                 <p>{{ $user->email }}</p>
                                             </div>
-                                            <div class="col m3"> <strong>Location</strong>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col m6 b-r"> <strong>Date Of Birth</strong>
+                                                <br>
+                                                <p>{{ $user->dob }}</p>
+                                            </div>
+                                            <div class="col m6"> <strong>Gender</strong>
+                                                <br>
+                                                <p>
+                                                    @if($user->gender == 1)
+                                                        Male
+                                                    @elseif($user->gender == 2)
+                                                        Female
+                                                    @endif
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col m4 b-r"> <strong>Designation</strong>
+                                                <br>
+                                                <p>{{ $user->designation }}</p>
+                                            </div>
+                                            <div class="col m4 b-r"> <strong>Department</strong>
+                                                <br>
+                                                <p>{{ $user->department }}</p>
+                                            </div>
+                                            <div class="col m4"> <strong>Organization</strong>
+                                                <br>
+                                                <p>{{ $user->organization }}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col m4 b-r"> <strong>Higher Degree</strong>
+                                                <br>
+                                                <p>{{ $user->higher_degree }}</p>
+                                            </div>
+                                            <div class="col m4 b-r"> <strong>Academy</strong>
+                                                <br>
+                                                <p>{{ $user->academy }}</p>
+                                            </div>
+                                            <div class="col m4"> <strong>Specialty</strong>
+                                                <br>
+                                                <p>{{ $user->specialty }}</p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col m4 b-r"> <strong>Address</strong>
+                                                <br>
+                                                <p>{{ $user->address }}</p>
+                                            </div>
+                                            <div class="col m4 b-r"> <strong>City</strong>
+                                                <br>
+                                                <p>{{ $user->city }}</p>
+                                            </div>
+                                            <div class="col m4"> <strong>Country</strong>
                                                 <br>
                                                 <p>{{ $user->country }}</p>
                                             </div>
                                         </div>
                                         <hr>
                                         <p class="m-t-30">
+                                            <strong>Profile</strong>
+                                            <br>
                                             {!! $user->profile !!}
                                         </p>
                                     </div>
@@ -80,32 +140,61 @@
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input name="dob" id="dob" type="date" value="{{ $user->dob }}" required>
-                                                    <label for="dob">Date of Birth <span>*</span></label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="input-field col s12">
-                                                    <input name="designation" id="designation" type="text" value="{{ $user->designation }}">
-                                                    <label for="designation">Designation</label>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="input-field col s12">
                                                     <input name="email" id="email" type="email" value="{{ $user->email }}" disabled="disabled">
                                                     <label for="email">Email <span>*</span></label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input name="phone" id="phone" type="text" value="{{ $user->phone }}">
-                                                    <label for="phone">Phone No</label>
+                                                    <span>Date of Birth</span> <span>*</span>
+                                                    <input name="dob" id="dob" type="date" value="{{ $user->dob }}" required>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <textarea name="address" id="Address" class="materialize-textarea">{{ $user->address }}</textarea>
-                                                    <label for="address">Address</label>
+                                                    <span>Gender: </span> <span>*</span>
+                                                    <p>
+                                                        <label for="male"><input type="radio" class="with-gap" name="gender" id="male" value="1" required @if($user->gender == '1') checked @endif> <span>Male</span></label>
+                                                    </p>
+                                                    <p>
+                                                        <label for="female"><input type="radio" class="with-gap" name="gender" id="female" value="2" required @if($user->gender == '2') checked @endif> <span>Female</span></label>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="designation" id="designation" type="text" value="{{ $user->designation }}" required>
+                                                    <label for="designation">Designation <span>*</span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="department" id="department" type="text" value="{{ $user->department }}">
+                                                    <label for="department">Department</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="organization" id="organization" type="text" value="{{ $user->organization }}" required>
+                                                    <label for="organization">Organization <span>*</span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="higher_degree" id="higher_degree" type="text" value="{{ $user->higher_degree }}" required>
+                                                    <label for="higher_degree">Higher Degree <span>*</span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="academy" id="academy" type="text" value="{{ $user->academy }}" required>
+                                                    <label for="academy">Academy <span>*</span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="specialty" id="specialty" type="text" value="{{ $user->specialty }}">
+                                                    <label for="specialty">Specialty</label>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -116,12 +205,30 @@
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <select name="country" id="country">
+                                                    <input name="phone" id="phone" type="text" value="{{ $user->phone }}">
+                                                    <label for="phone">Phone No</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <textarea name="address" id="Address" class="materialize-textarea" required>{{ $user->address }}</textarea>
+                                                    <label for="address">Address <span>*</span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input name="city" id="city" type="text" value="{{ $user->city }}" required>
+                                                    <label for="city">City <span>*</span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <select name="country" id="country" required>
                                                         <option value="" disabled>Choose Country</option>
-                                                        <option value="Bangladesh">Bangladesh</option>
-                                                        <option value="India">India</option>
+                                                        <option value="Bangladesh" @if($user->country == 'Bangladesh') selected @endif>Bangladesh</option>
+                                                        <option value="India" @if($user->country == 'India') selected @endif>India</option>
                                                     </select>
-                                                    <label for="country">Select Country</label>
+                                                    <label for="country">Select Country <span>*</span></label>
                                                 </div>
                                             </div>
                                             <div class="row">
