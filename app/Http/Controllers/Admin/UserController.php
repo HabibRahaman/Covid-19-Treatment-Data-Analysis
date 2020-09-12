@@ -136,7 +136,7 @@ class UserController extends Controller
         ]);
 
 
-        $input = $request->all();
+        $input = $request->only(['name','email','gender','dob','designation','department','organization','higher_degree','academy','specialty','profile','phone','address','city','country']);
 
         $user = User::find($id);
         $user->update($input);

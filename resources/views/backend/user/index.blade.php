@@ -16,7 +16,7 @@
             <!-- Container fluid scss in scafholding.scss -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-                <div class="row">
+                <div class="row el-element-overlay">
                     <div class="col s12">
                         <div class="card">
                             <div class="card-header">
@@ -113,6 +113,16 @@
                                                     <h5 class="m-b-0">{{ $user->name }}</h5>
                                                     <small>{{ $user->designation }}, {{ $user->organization }}</small>
                                                 </div>
+                                                <div class="m-t-15 no-block d-flex align-items-center">
+                                                    @if(!empty($user->getRoleNames()))
+                                                        @foreach($user->getRoleNames() as $v)
+                                                            <div class="chip">
+                                                                {{ $v }}
+                                                            </div>
+                                                        @endforeach
+                                                    @endif
+                                                </div>
+                                                <hr>
                                                 <div class="no-block d-flex align-items-center">
                                                     <a class="waves-effect waves-light btn btn-small green" href="{{ route($route.'edit', [$user->id]) }}"><i class="fas fa-edit"></i></a>
 

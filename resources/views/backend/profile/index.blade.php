@@ -16,7 +16,7 @@
                     <div class="col s12 m4">
                         <div class="card">
                             <div class="card-content">
-                                <div class="center-align m-t-30"> <img src="{{ asset('backend/images/users/5.jpg') }}" class="circle" width="150" />
+                                <div class="center-align m-t-30"> <img src="{{ asset('uploads/'.$path.'/'.$user->photo) }}" class="circle" width="150" />
                                     <h4 class="card-title m-t-10">{{ $user->name }}</h4>
                                     <h6 class="card-subtitle">{{ $user->designation }}, {{ $user->organization }}</h6>
                                 </div>
@@ -130,7 +130,7 @@
                                 </div>
                                 <div id="settings" class="col s12">
                                     <div class="card-content">
-                                        <form id="addnew" action="{{ route('admin.profile.store') }}" method="post">
+                                        <form id="addnew" action="{{ route('admin.profile.store') }}" method="post" enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="input-field col s12">
@@ -201,6 +201,14 @@
                                                 <div class="input-field col s12">
                                                     <textarea name="profile" id="profile" class="materialize-textarea">{{ $user->profile }}</textarea>
                                                     <label for="profile">Profile</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col s12">
+                                                    <div class="input-field">
+                                                        <span for="photo">Photo</span>
+                                                        <input type="file" name="photo" id="photo">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="row">

@@ -25,17 +25,102 @@
                                 <h5 class="card-title activator">Edit {{ $title }}</h5>
 
                                 <div class="row">
-                                    <div class="col s12">
-                                        <div class="input-field">
-                                            <input type="text" name="name" value="{{ $user->name }}" id="name" required>
-                                            <label for="name">User Name <span>*</span></label>
-                                        </div>
+                                    <div class="input-field col s12">
+                                        <input name="name" id="name" type="text" value="{{ $user->name }}" required>
+                                        <label for="name">Full Name <span>*</span></label>
                                     </div>
-                                    <div class="col s12">
-                                        <div class="input-field">
-                                            <input type="email" name="email" value="{{ $user->email }}" id="email" disabled>
-                                            <label for="email">Email</label>
-                                        </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="email" id="email" type="email" value="{{ $user->email }}" disabled="disabled">
+                                        <label for="email">Email <span>*</span></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <span>Date of Birth</span> <span>*</span>
+                                        <input name="dob" id="dob" type="date" value="{{ $user->dob }}" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <span>Gender: </span> <span>*</span>
+                                        <p>
+                                            <label for="male"><input type="radio" class="with-gap" name="gender" id="male" value="1" required @if($user->gender == '1') checked @endif> <span>Male</span></label>
+                                        </p>
+                                        <p>
+                                            <label for="female"><input type="radio" class="with-gap" name="gender" id="female" value="2" required @if($user->gender == '2') checked @endif> <span>Female</span></label>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="designation" id="designation" type="text" value="{{ $user->designation }}" required>
+                                        <label for="designation">Designation <span>*</span></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="department" id="department" type="text" value="{{ $user->department }}">
+                                        <label for="department">Department</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="organization" id="organization" type="text" value="{{ $user->organization }}" required>
+                                        <label for="organization">Organization <span>*</span></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="higher_degree" id="higher_degree" type="text" value="{{ $user->higher_degree }}" required>
+                                        <label for="higher_degree">Higher Degree <span>*</span></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="academy" id="academy" type="text" value="{{ $user->academy }}" required>
+                                        <label for="academy">Academy <span>*</span></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="specialty" id="specialty" type="text" value="{{ $user->specialty }}">
+                                        <label for="specialty">Specialty</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea name="profile" id="profile" class="materialize-textarea">{{ $user->profile }}</textarea>
+                                        <label for="profile">Profile</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="phone" id="phone" type="text" value="{{ $user->phone }}">
+                                        <label for="phone">Phone No</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <textarea name="address" id="Address" class="materialize-textarea" required>{{ $user->address }}</textarea>
+                                        <label for="address">Address <span>*</span></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input name="city" id="city" type="text" value="{{ $user->city }}" required>
+                                        <label for="city">City <span>*</span></label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <select name="country" id="country" required>
+                                            <option value="" disabled>Choose Country</option>
+                                            <option value="Bangladesh" @if($user->country == 'Bangladesh') selected @endif>Bangladesh</option>
+                                            <option value="India" @if($user->country == 'India') selected @endif>India</option>
+                                        </select>
+                                        <label for="country">Select Country <span>*</span></label>
                                     </div>
                                 </div>
                                 <div class="row">

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use File;
 use Auth;
 use Hash;
+use Image;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +17,7 @@ class ProfileController extends Controller
         $this->title     = 'Profile';
         $this->route     = 'admin.profile.';
         $this->view      = 'backend.profile';
-        $this->file_path = 'profile';
+        $this->path = 'profile';
     }
 
     /**
@@ -27,7 +29,7 @@ class ProfileController extends Controller
     {
         $data['title']     = $this->title;
         $data['route']     = $this->route;
-        $data['file_path'] = $this->file_path;
+        $data['path'] = $this->path;
         
         $data['user'] = User::find(Auth::guard('web')->user()->id);
 
@@ -54,12 +56,52 @@ class ProfileController extends Controller
             'address' => 'required',
             'city' => 'required',
             'country' => 'required',
+            'photo' => 'nullable | image',
         ]);
 
-        $input = $request->only(['name','email','gender','dob','designation','department','organization','higher_degree','academy','specialty','profile','phone','address','city','country']);
+
+        // image upload, fit and store inside public folder 
+        if($request->hasFile('photo')){
+            //Upload New Image
+            $filenameWithExt = $request->file('photo')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME); 
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $imageNameToStore = $filename.'_'.time().'.'.$extension;
+
+            //Crete Folder Location
+            $path = public_path('uploads/'.$this->path.'/');
+            if (! File::exists($path)) {
+                File::makeDirectory($path, 0777, true, true);
+            }
+
+            //Resize And Crop as Fit image here (400 width, 400 height)
+            $thumbnailpath = $path.$imageNameToStore;
+            $img = Image::make($request->file('photo')->getRealPath())->fit(400, 400, function ($constraint) { $constraint->upsize(); })->save($thumbnailpath);
+        }
+        else{
+            $imageNameToStore = Null;
+        }
+
         
+        // store data
         $user = User::find(Auth::guard('web')->user()->id);
-        $user->update($input);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->gender = $request->gender;
+        $user->dob = $request->dob;
+        $user->designation = $request->designation;
+        $user->department = $request->department;
+        $user->organization = $request->organization;
+        $user->higher_degree = $request->higher_degree;
+        $user->academy = $request->academy;
+        $user->specialty = $request->specialty;
+        $user->profile = $request->profile;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->city = $request->city;
+        $user->country = $request->country;
+        $user->photo = $imageNameToStore;
+        $user->save();
 
         toastr()->success('Update Successfully');
 
