@@ -31,10 +31,10 @@
                                         <input type="text" name="name" placeholder="Name" class="validate" value="{{ !empty($name) ? $name : "" }}">
                                     </div>
                                     <div class="input-field col s3">
-                                        <input type="text" name="email" placeholder="Email" class="validate" value="{{ !empty($email) ? $email : "" }}">
+                                        <input type="text" name="designation" placeholder="Designation" class="validate" value="{{ !empty($designation) ? $designation : "" }}">
                                     </div>
                                     <div class="input-field col s3">
-                                        <input type="text" name="area" placeholder="Area" class="validate" value="{{ !empty($area) ? $area : "" }}">
+                                        <input type="text" name="organization" placeholder="Organization" class="validate" value="{{ !empty($organization) ? $organization : "" }}">
                                     </div>
                                     <div class="input-field col s2">
                                         <button class="btn cyan waves-effect waves-light" type="submit" name="action">Search

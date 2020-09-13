@@ -34,7 +34,22 @@ class UserController extends Controller
         $data['route']     = $this->route;
         $data['path']      = $this->path;
 
-        $data['users'] = User::orderBy('id','DESC')->paginate(15);
+        $data['name'] = $name = $request->name;
+        $data['designation'] = $designation = $request->designation;
+        $data['organization'] = $organization = $request->organization;
+        
+        $users = User::where('id', '!=', null);
+                        if(!empty($name)){
+                            $users->where('name', 'LIKE', '%'.$name.'%');
+                        }
+                        if(!empty($designation)){
+                            $users->where('designation', 'LIKE', '%'.$designation.'%');
+                        }
+                        if(!empty($organization)){
+                            $users->where('organization', 'LIKE', '%'.$organization.'%');
+                        }
+        $data['users'] = $users->orderBy('id', 'desc')
+                            ->paginate(15);
 
         return view($this->view.'.index', $data)
                 ->with('i', ($request->input('page', 1) - 1) * 10);
