@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
+use File;
 use Hash;
+use Image;
 use App\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
@@ -18,7 +20,7 @@ class UserController extends Controller
         $this->title     = 'User';
         $this->route     = 'admin.user.';
         $this->view      = 'backend.user';
-        $this->file_path = 'user';
+        $this->path = 'profile';
     }
 
     /**
@@ -30,7 +32,7 @@ class UserController extends Controller
     {
         $data['title']     = $this->title;
         $data['route']     = $this->route;
-        $data['file_path'] = $this->file_path;
+        $data['path']      = $this->path;
 
         $data['users'] = User::orderBy('id','DESC')->paginate(15);
 
@@ -48,7 +50,7 @@ class UserController extends Controller
     {
         $data['title']     = $this->title;
         $data['route']     = $this->route;
-        $data['file_path'] = $this->file_path;
+        $data['path']      = $this->path;
 
         $data['roles'] = Role::all();
 
@@ -93,7 +95,7 @@ class UserController extends Controller
     {
         $data['title']     = $this->title;
         $data['route']     = $this->route;
-        $data['file_path'] = $this->file_path;
+        $data['path']      = $this->path;
 
         $data['user'] = User::find($id);
 
@@ -110,7 +112,7 @@ class UserController extends Controller
     {
         $data['title']     = $this->title;
         $data['route']     = $this->route;
-        $data['file_path'] = $this->file_path;
+        $data['path']      = $this->path;
 
         $data['user'] = $user = User::find($id);
 
@@ -129,17 +131,73 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
+        //
+        $request->validate([
             'name' => 'required',
+            'dob' => 'required',
+            'gender' => 'required',
+            'designation' => 'required',
+            'organization' => 'required',
+            'higher_degree' => 'required',
+            'academy' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+            'photo' => 'nullable | image',
             'email' => 'nullable|email|unique:users,email,'.$id,
             'roles' => 'required'
         ]);
 
 
-        $input = $request->only(['name','email','gender','dob','designation','department','organization','higher_degree','academy','specialty','profile','phone','address','city','country']);
-
         $user = User::find($id);
-        $user->update($input);
+
+        // image upload, fit and store inside public folder 
+        if($request->hasFile('photo')){
+
+            $thumb = public_path('uploads/'.$this->path.'/'.$user->photo);
+            if(File::isFile($thumb)){
+                File::delete($thumb);
+            }
+            
+            //Upload New Image
+            $filenameWithExt = $request->file('photo')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME); 
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $imageNameToStore = $filename.'_'.time().'.'.$extension;
+
+            //Crete Folder Location
+            $path = public_path('uploads/'.$this->path.'/');
+            if (! File::exists($path)) {
+                File::makeDirectory($path, 0777, true, true);
+            }
+
+            //Resize And Crop as Fit image here (400 width, 400 height)
+            $thumbnailpath = $path.$imageNameToStore;
+            $img = Image::make($request->file('photo')->getRealPath())->fit(400, 400, function ($constraint) { $constraint->upsize(); })->save($thumbnailpath);
+        }
+        else{
+            $imageNameToStore = $user->photo;
+        }
+
+        
+        // store data
+        $user->name = $request->name;
+        $user->gender = $request->gender;
+        $user->dob = $request->dob;
+        $user->designation = $request->designation;
+        $user->department = $request->department;
+        $user->organization = $request->organization;
+        $user->higher_degree = $request->higher_degree;
+        $user->academy = $request->academy;
+        $user->specialty = $request->specialty;
+        $user->profile = $request->profile;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->city = $request->city;
+        $user->country = $request->country;
+        $user->photo = $imageNameToStore;
+        $user->save();
+
 
         DB::table('model_has_roles')->where('model_id',$id)->delete();
 
@@ -159,7 +217,15 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::find($id)->delete();
+        $user = User::find($id);
+
+        // Delete
+        $thumb = public_path('uploads/'.$this->path.'/'.$user->photo);
+        if(File::isFile($thumb)){
+            File::delete($thumb);
+        }
+
+        $user->delete();
 
         toastr()->success('Delete Successfully');
 

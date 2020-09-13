@@ -43,56 +43,6 @@
                                 </form>
                             </div>
 
-                            <!-- ================================ -->
-                            <!-- Item List Table -->
-                            <!-- ================================ -->
-                                {{-- <table id="row_create_call" class="table table-striped table-bordered display" style="width:100%">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Roles</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($users as $user)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>
-                                            @if(!empty($user->getRoleNames()))
-                                              @foreach($user->getRoleNames() as $v)
-                                                <div class="chip">
-                                                    {{ $v }}
-                                                </div>
-                                              @endforeach
-                                            @endif
-                                            </td>
-                                            <td>
-
-                                                <a class="waves-effect waves-light btn btn-small green edit-btn" href="{{ route($route.'edit', [$user->id]) }}"><i class="fas fa-edit"></i></a>
-
-                                                <a class="waves-effect waves-light btn btn-small blue" href="{{ route($route.'show', [$user->id]) }}"><i class="fas fa-eye"></i></a>
-
-                                                <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Delete"
-                                                    onclick="alertFunction('delete',{{$user->id}});">
-                                                   <i class="fas fa-trash-alt"></i>
-                                                </a>
-                                                <form id="delete{{$user->id}}" action="{{ route($route.'destroy', [$user->id]) }}" method="POST" style="display: none;">
-                                                    {{ csrf_field() }}
-                                                    @method('DELETE')
-                                                </form>
-
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table> --}}
-
-
 
                             @foreach($users as $user)
                                 <div class="col m6 l3">
@@ -101,7 +51,7 @@
                                             <div class="el-card-item">
                                                 <div class="el-card-avatar el-overlay-1"> 
 
-                                                    <img src="{{ asset('uploads'.'/'.$file_path.'/'.$user->photo) }}" style="height: 300px; width: 100%;" alt="Thumbnail"/>
+                                                    <img src="{{ asset('uploads'.'/'.$path.'/'.$user->photo) }}" style="height: 300px; width: 100%;" alt="Thumbnail"/>
 
                                                     <div class="el-overlay">
                                                         <ul class="el-info">
@@ -128,6 +78,7 @@
 
                                                     <a class="waves-effect waves-light btn btn-small blue" href="{{ route($route.'show', [$user->id]) }}"><i class="fas fa-eye"></i></a>
 
+                                                    @if($user->is_admin != 1)
                                                     <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Delete"
                                                         onclick="alertFunction('delete',{{$user->id}});">
                                                        <i class="fas fa-trash-alt"></i>
@@ -136,6 +87,7 @@
                                                         {{ csrf_field() }}
                                                         @method('DELETE')
                                                     </form>
+                                                    @endif
                                                 </div>
 
 
