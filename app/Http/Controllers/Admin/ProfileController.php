@@ -60,8 +60,16 @@ class ProfileController extends Controller
         ]);
 
 
+        $user = User::find(Auth::guard('web')->user()->id);
+
         // image upload, fit and store inside public folder 
         if($request->hasFile('photo')){
+
+            $thumb = public_path('uploads/'.$this->path.'/'.$user->photo);
+            if(File::isFile($thumb)){
+                File::delete($thumb);
+            }
+            
             //Upload New Image
             $filenameWithExt = $request->file('photo')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME); 
@@ -79,14 +87,12 @@ class ProfileController extends Controller
             $img = Image::make($request->file('photo')->getRealPath())->fit(400, 400, function ($constraint) { $constraint->upsize(); })->save($thumbnailpath);
         }
         else{
-            $imageNameToStore = Null;
+            $imageNameToStore = $user->photo;
         }
 
         
         // store data
-        $user = User::find(Auth::guard('web')->user()->id);
         $user->name = $request->name;
-        $user->email = $request->email;
         $user->gender = $request->gender;
         $user->dob = $request->dob;
         $user->designation = $request->designation;
