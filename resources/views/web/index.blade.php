@@ -105,8 +105,8 @@
              <img src="{{ asset('web/img/services/test_tool.png') }}" alt="Icon">
          </div>
          <div class="service-text-area">
-             <div class="service-title">Online Testing</div>
-             <div class="service-subtitle">অনলাইন পরিক্ষা</div>
+             <div class="service-title">Probability Testing</div>
+             <div class="service-subtitle">সম্ভাব্যতা যাচাই</div>
              <p class="service-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
          </div>
        </a>
@@ -120,8 +120,8 @@
              <img src="{{ asset('web/img/services/join_doctor.png') }}" alt="Icon">
          </div>
          <div class="service-text-area">
-             <div class="service-title">Telemedicine</div>
-             <div class="service-subtitle">টেলিমেডিসিন</div>
+             <div class="service-title">Become a Covid Fighter</div>
+             <div class="service-subtitle">কোভিড যোদ্ধা হন</div>
              <p class="service-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
          </div>
        </a>
@@ -149,9 +149,69 @@
    <div class="row">
 
      <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">Real Chart</div>
+         </div>
+         <div class="single-graph-body">
+            <div class="demo-container" style="height:400px; width: 100%;">
+                <div id="placeholder" class="flot-chart-content"></div>
+            </div>
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">Moving Line Chart</div>
+         </div>
+         <div class="single-graph-body">
+            <div class="flot-chart">
+                <div class="flot-chart-content" id="flot-line-chart-moving"></div>
+            </div>
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">Pie Chart</div>
+         </div>
+         <div class="single-graph-body">
+            <div class="flot-chart">
+                <div class="flot-chart-content" id="flot-pie-chart"></div>
+            </div>
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">Sales Bar Chart</div>
+         </div>
+         <div class="single-graph-body">
+            <div class="flot-chart">
+                <div class="sales-bars-chart" style="height: 400px;"> </div>
+            </div>
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
      <div class="col-12 col-md-6 col-lg-3">
        <div class="signle-graph-box">
-         <div class="service-graph-header">
+         <div class="single-graph-header">
              <div class="graph-title">Title Here</div>
          </div>
          <div class="single-graph-body">
@@ -164,7 +224,7 @@
      <!-- Single Graph -->
      <div class="col-12 col-md-6 col-lg-3">
        <div class="signle-graph-box">
-         <div class="service-graph-header">
+         <div class="single-graph-header">
              <div class="graph-title">Title Here</div>
          </div>
          <div class="single-graph-body">
@@ -177,7 +237,7 @@
      <!-- Single Graph -->
      <div class="col-12 col-md-6 col-lg-3">
        <div class="signle-graph-box">
-         <div class="service-graph-header">
+         <div class="single-graph-header">
              <div class="graph-title">Title Here</div>
          </div>
          <div class="single-graph-body">
@@ -190,59 +250,7 @@
      <!-- Single Graph -->
      <div class="col-12 col-md-6 col-lg-3">
        <div class="signle-graph-box">
-         <div class="service-graph-header">
-             <div class="graph-title">Title Here</div>
-         </div>
-         <div class="single-graph-body">
-             
-         </div>
-       </div>
-     </div>
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-3">
-       <div class="signle-graph-box">
-         <div class="service-graph-header">
-             <div class="graph-title">Title Here</div>
-         </div>
-         <div class="single-graph-body">
-             
-         </div>
-       </div>
-     </div>
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-3">
-       <div class="signle-graph-box">
-         <div class="service-graph-header">
-             <div class="graph-title">Title Here</div>
-         </div>
-         <div class="single-graph-body">
-             
-         </div>
-       </div>
-     </div>
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-3">
-       <div class="signle-graph-box">
-         <div class="service-graph-header">
-             <div class="graph-title">Title Here</div>
-         </div>
-         <div class="single-graph-body">
-             
-         </div>
-       </div>
-     </div>
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-3">
-       <div class="signle-graph-box">
-         <div class="service-graph-header">
+         <div class="single-graph-header">
              <div class="graph-title">Title Here</div>
          </div>
          <div class="single-graph-body">
