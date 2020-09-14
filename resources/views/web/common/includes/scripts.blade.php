@@ -17,4 +17,12 @@
 <script type="text/javascript" src="{{ asset('backend/js/pages/flot/flot-data.js') }}"></script>
 
 
+<script type="text/javascript" src="{{ asset('backend/libs/echarts/dist/echarts-en.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/pages/echarts/bar/bar.js') }}"></script>
+
+
+<script type="text/javascript" src="{{ asset('backend/libs/echarts/dist/echarts-en.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('backend/js/pages/echarts/pie-doughnut/pie-doghnut.js') }}"></script>
+
+
   <script type="text/javascript" src="{{ asset('web/js/index.js') }}"></script>

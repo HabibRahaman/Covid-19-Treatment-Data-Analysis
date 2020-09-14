@@ -209,46 +209,111 @@
      <!-- Single Graph -->
 
      <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-3">
+     <div class="col-12 col-md-12 col-lg-12">
        <div class="signle-graph-box">
          <div class="single-graph-header">
-             <div class="graph-title">Title Here</div>
+             <div class="graph-title">Basic Bar Chart</div>
          </div>
          <div class="single-graph-body">
-             
+             <div id="basic-bar" style="height:400px;"></div>
          </div>
        </div>
      </div>
      <!-- Single Graph -->
 
      <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-3">
+     <div class="col-12 col-md-12 col-lg-12">
        <div class="signle-graph-box">
          <div class="single-graph-header">
-             <div class="graph-title">Title Here</div>
+             <div class="graph-title">Stacked Bar Chart</div>
          </div>
          <div class="single-graph-body">
-             
+             <div id="stacked-bar" style="height:400px;"></div>
          </div>
        </div>
      </div>
      <!-- Single Graph -->
 
      <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-3">
+     <div class="col-12 col-md-12 col-lg-12">
        <div class="signle-graph-box">
          <div class="single-graph-header">
-             <div class="graph-title">Title Here</div>
+             <div class="graph-title">Stacked column Chart</div>
          </div>
          <div class="single-graph-body">
-             
+             <div id="stacked-column" style="height:400px;"></div>
          </div>
        </div>
      </div>
      <!-- Single Graph -->
 
      <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-3">
+     <div class="col-12 col-md-12 col-lg-12">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">Bar Basic Chart</div>
+         </div>
+         <div class="single-graph-body">
+             <div id="bar-basic" style="height:400px;"></div>
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">Basic Pie chart</div>
+         </div>
+         <div class="single-graph-body">
+             <div id="basic-pie" style="height:400px;"></div>
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">Basic Doughnut Chart</div>
+         </div>
+         <div class="single-graph-body">
+             <div id="basic-doughnut" style="height:400px;"></div>
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     {{-- <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">Nested Pie Chart</div>
+         </div>
+         <div class="single-graph-body">
+             <div id="nested-pie" style="height:400px;"></div>
+         </div>
+       </div>
+     </div> --}}
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     {{-- <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">Pole Chart</div>
+         </div>
+         <div class="single-graph-body">
+             <div id="pole-chart" style="height:400px;"></div>
+         </div>
+       </div>
+     </div> --}}
+     <!-- Single Graph -->
+
+      <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-6">
        <div class="signle-graph-box">
          <div class="single-graph-header">
              <div class="graph-title">Title Here</div>
