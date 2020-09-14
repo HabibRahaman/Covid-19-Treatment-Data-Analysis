@@ -13,8 +13,10 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('web/css/owl.carousel.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('web/css/owl.theme.default.min.css') }}">
 
-  <!-- Pages -->
+  <!-- Chart CSS -->
   <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/pages/float-chart.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('backend/extra-libs/css-chart/css-chart.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/pages/easy-pie-chart.css') }}">
 
 
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/css/style.css') }}">

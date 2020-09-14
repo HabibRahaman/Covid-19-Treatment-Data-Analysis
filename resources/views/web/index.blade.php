@@ -313,13 +313,34 @@
      <!-- Single Graph -->
 
       <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-6">
+     <div class="col-12 col-md-12 col-lg-12">
        <div class="signle-graph-box">
          <div class="single-graph-header">
-             <div class="graph-title">Title Here</div>
+             <div class="graph-title">Easy Pie Chart</div>
          </div>
          <div class="single-graph-body">
-             
+             <div class="row">
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="chart easy-pie-chart-1" data-percent="75"> <span class="percent">8/100</span> </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="chart easy-pie-chart-2" data-percent="75"> <span class="percent">75</span> </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="easy-pie-chart-3 chart pie-chart" data-percent="25"> <span>25% <br>
+                        <small class="text-muted">/Fever</small></span> </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="chart easy-pie-chart-4" data-percent="75"> <span class="percent">8/100</span> </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="chart easy-pie-chart-5" data-percent="75"> <span class="percent">75</span> </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="easy-pie-chart-6 chart pie-chart" data-percent="25"> <span>25% <br>
+                      <small class="text-muted">/Cough</small></span> </div>
+                </div>
+            </div>
          </div>
        </div>
      </div>
