@@ -392,7 +392,7 @@
     <!-- Single Footer -->
     <div class="col-12 col-md-3 col-lg-3">
         <div class="footer-promo">
-            <img src="{{ asset('web/img/doctor.png') }}" alt="Promo">
+            <img src="{{ asset('web/img/thumb.png') }}" alt="Promo">
         </div>
     </div>
     <!-- Single Footer -->

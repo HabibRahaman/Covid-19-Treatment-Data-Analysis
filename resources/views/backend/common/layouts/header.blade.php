@@ -78,11 +78,11 @@
                         <!-- ============================================================== -->
                         <!-- Profile icon scss in header.scss -->
                         <!-- ============================================================== -->
-                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img src="{{ asset('backend/images/users/2.jpg') }}" alt="user" class="circle profile-pic"></a>
+                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img src="{{ asset('uploads/profile/'. Auth::user()->photo) }}" onerror="this.onerror=null;this.src='{{ asset('web/img/thumb.png') }}';" alt="user" class="circle profile-pic"></a>
                             <ul id="user_dropdown" class="mailbox dropdown-content dropdown-user">
                                 <li>
                                     <div class="dw-user-box">
-                                        <div class="u-img"><img src="{{ asset('backend/images/users/2.jpg') }}" alt="user"></div>
+                                        <div class="u-img"><img src="{{ asset('uploads/profile/'. Auth::user()->photo) }}" onerror="this.onerror=null;this.src='{{ asset('web/img/thumb.png') }}';" alt="user"></div>
                                         <div class="u-text">
                                             @if(Auth::user())
                                             <h4>{{Auth::user()->name}}</h4>
