@@ -31,7 +31,7 @@
                                             <div class="card-content">
                                                 <div class="center-align">
                                                     <h3 class="white-text m-b-0">44</h3>
-                                                    <span class="white-text">Total Orders</span>
+                                                    <span class="white-text">Total</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -43,7 +43,7 @@
                                             <div class="card-content">
                                                 <div class="center-align">
                                                     <h3 class="white-text m-b-0">33</h3>
-                                                    <span class="white-text">Pending Orders</span>
+                                                    <span class="white-text">Pending</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -55,7 +55,7 @@
                                             <div class="card-content">
                                                 <div class="center-align">
                                                     <h3 class="white-text m-b-0">66</h3>
-                                                    <span class="white-text">Progress Orders</span>
+                                                    <span class="white-text">Progress</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@
                                             <div class="card-content">
                                                 <div class="center-align">
                                                     <h3 class="white-text m-b-0">11</h3>
-                                                    <span class="white-text">Approve Orders</span>
+                                                    <span class="white-text">Approve</span>
                                                 </div>
                                             </div>
                                         </div>

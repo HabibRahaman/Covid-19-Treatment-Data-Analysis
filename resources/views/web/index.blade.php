@@ -77,7 +77,7 @@
          <div class="service-text-area">
              <div class="service-title">Attend Survey</div>
              <div class="service-subtitle">জরিপে অংশ নিন</div>
-             <p class="service-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+             <p class="service-details">Help others by share your recover information from covid disease.</p>
          </div>
        </a>
      </div>
@@ -92,7 +92,7 @@
          <div class="service-text-area">
              <div class="service-title">Search Treatment</div>
              <div class="service-subtitle">চিকিৎসা অনুসন্ধান করুন</div>
-             <p class="service-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+             <p class="service-details">Get medicine and care prescription online by share your health conditions.</p>
          </div>
        </a>
      </div>
@@ -107,7 +107,7 @@
          <div class="service-text-area">
              <div class="service-title">Probability Testing</div>
              <div class="service-subtitle">সম্ভাব্যতা যাচাই</div>
-             <p class="service-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+             <p class="service-details">Find Out your covid infection probability by share your current syndromes.</p>
          </div>
        </a>
      </div>
@@ -122,7 +122,7 @@
          <div class="service-text-area">
              <div class="service-title">Become a Covid Fighter</div>
              <div class="service-subtitle">কোভিড যোদ্ধা হন</div>
-             <p class="service-details">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+             <p class="service-details">If you are a doctor, Then join with us to provide digital treatments.</p>
          </div>
        </a>
      </div>
@@ -141,8 +141,8 @@
    <div class="row">
        <div class="col-12">
            <div class="section-title-area">
-                <div class="section-subtitle">Work</div>
-               <h2 class="section-title">How it's work</h2>
+                <div class="section-subtitle">Explore</div>
+               <h2 class="section-title">Analytical Statistics</h2>
            </div>
        </div>
    </div>
@@ -362,12 +362,12 @@
     <div class="col-md-4 offset-md-1 col-lg-4 offset-lg-1">
         <div class="single-footer">
             <ul class="footer-nav">
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Get parent and caregiver information</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> What to do next?</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Protect myself against COVID-19</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Symptoms probability</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Emergency symptoms</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Regular/Normal treatments</a></li>
             </ul>
         </div>
     </div>
@@ -377,12 +377,12 @@
     <div class="col-md-4 col-lg-4">
         <div class="single-footer">
             <ul class="footer-nav">
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
-                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Home Treatments</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Mental health during pandemic</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> When to seek emergency medical attention</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Prevention from virus infection</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> What to do about early symptoms?</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> How can I treat coronavirus symptoms?</a></li>
+                <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> A place to self-isolate</a></li>
             </ul>
         </div>
     </div>
