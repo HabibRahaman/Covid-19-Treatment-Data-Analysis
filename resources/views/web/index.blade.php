@@ -5,14 +5,14 @@
 <section class="section header-section">
   <div class="container-fluid">
    <div class="row">
-    <div class="col-md-2">
+    <div class="col-sm-12 col-md-2 col-lg-2">
         <!-- Logo Box -->
         <a href="#" class="header-logo">
             <img src="{{ asset('web/img/logo.png') }}" alt="Logo">
         </a>
         <!-- Logo Box -->
     </div>
-    <div class="col-md-10">
+    <div class="col-sm-12 col-md-10 col-lg-10">
         <div class="header-hotlines" style="background-image: url({{ asset('web/img/header_bg.png') }});">
 
             <!-- Single Hotline -->
@@ -69,7 +69,7 @@
    <div class="row">
 
      <!-- Single Service -->
-     <div class="col-12 col-md-6">
+     <div class="col-12 col-md-6 col-lg-6">
        <a href="#" class="signle-service-box">
          <div class="service-icon-area">
              <img src="{{ asset('web/img/services/online_survey.png') }}" alt="Icon">
@@ -84,7 +84,7 @@
      <!-- Single Service -->
 
      <!-- Single Service -->
-     <div class="col-12 col-md-6">
+     <div class="col-12 col-md-6 col-lg-6">
        <a href="#" class="signle-service-box">
          <div class="service-icon-area">
              <img src="{{ asset('web/img/services/medicine_search.png') }}" alt="Icon">
@@ -99,7 +99,7 @@
      <!-- Single Service -->
 
      <!-- Single Service -->
-     <div class="col-12 col-md-6">
+     <div class="col-12 col-md-6 col-lg-6">
        <a href="#" class="signle-service-box">
          <div class="service-icon-area">
              <img src="{{ asset('web/img/services/test_tool.png') }}" alt="Icon">
@@ -114,7 +114,7 @@
      <!-- Single Service -->
 
      <!-- Single Service -->
-     <div class="col-12 col-md-6">
+     <div class="col-12 col-md-6 col-lg-6">
        <a href="#" class="signle-service-box">
          <div class="service-icon-area">
              <img src="{{ asset('web/img/services/join_doctor.png') }}" alt="Icon">
@@ -139,7 +139,7 @@
 <section class="section">
   <div class="container">
    <div class="row">
-       <div class="col-12">
+       <div class="col-12 col-lg-12">
            <div class="section-title-area">
                 <div class="section-subtitle">Explore</div>
                <h2 class="section-title">Analytical Statistics</h2>
@@ -359,7 +359,7 @@
    <div class="row">
 
     <!-- Single Footer -->
-    <div class="col-md-4 offset-md-1 col-lg-4 offset-lg-1">
+    <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
         <div class="single-footer">
             <ul class="footer-nav">
                 <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Get parent and caregiver information</a></li>
@@ -374,7 +374,7 @@
     <!-- Single Footer -->
 
     <!-- Single Footer -->
-    <div class="col-md-4 col-lg-4">
+    <div class="col-12 col-md-6 col-lg-4">
         <div class="single-footer">
             <ul class="footer-nav">
                 <li><a href="#"><span><i class="far fa-hand-point-right"></i></span> Mental health during pandemic</a></li>
@@ -390,7 +390,7 @@
 
 
     <!-- Single Footer -->
-    <div class="col-md-3 col-lg-3">
+    <div class="col-12 col-md-3 col-lg-3">
         <div class="footer-promo">
             <img src="{{ asset('web/img/doctor.png') }}" alt="Promo">
         </div>
