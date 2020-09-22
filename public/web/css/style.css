@@ -426,6 +426,50 @@ section.service-section {
 	display: block;
 	overflow: hidden;
 	padding-left: 15px;
+	padding-bottom: 15px;
+	box-sizing: border-box;
+}
+
+.post-content h3 {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #5b666a;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+.post-content table {
+	float: left;
+	width: 100%;
+	margin-bottom: 40px;
+	background: transparent;
+	border-collapse: separate; 
+    border-spacing:0 15px; 
+}
+.post-content table tr {
+	height: 30px;
+}
+.post-content table tr th {
+	color: #5a5a5a;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 1.4;
+	text-align: center;
+}
+.post-content table tr td {
+	color: #5a5a5a;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 1.4;
+	text-align: left;
+	background-color: rgba(129, 240, 175, 0.4);
+	padding: 4px 10px;
 	box-sizing: border-box;
 }
 /** Post Header **/

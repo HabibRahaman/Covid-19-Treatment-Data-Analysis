@@ -29,6 +29,62 @@
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
+
+                <h3>Data comparison table</h3>
+
+                <table>
+                    <tr>
+                        <th>Symptom</th>
+                        <th>Covid19</th>
+                        <th>Seasonal fever</th>
+                        <th>Flu</th>
+                        <th>Allergy</th>
+                    </tr>
+                    <tr>
+                        <td>Fever</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td>Cough</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td>Weakness</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td>Fatigue</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td>Headache</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                    </tr>
+                    <tr>
+                        <td>Diarrhea</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                        <td>50%</td>
+                    </tr>
+                </table>
+
+
             </div>
         </div>
         <!-- Post Header -->
