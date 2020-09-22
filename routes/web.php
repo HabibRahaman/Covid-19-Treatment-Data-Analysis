@@ -21,6 +21,9 @@ Route::get('/', function () {
     return view('web.index');
 })->name('home');
 
+Route::get('/post', function () {
+    return view('web.post');
+})->name('post');
 
 // Set Lang Version
 Route::get('locale/{locale}', function ($locale){

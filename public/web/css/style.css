@@ -378,3 +378,54 @@ section.service-section {
 	height: auto;
 }
 /** Footer Box **/
+
+
+
+/** Post Header **/
+.post-area {
+	float: left;
+	width: 100%;
+	height: auto;
+	display: block;
+	overflow: hidden;
+}
+.post-title {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #5b666a;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 40px;
+	font-weight: 400;
+	letter-spacing: 4px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	margin-bottom: 35px;
+}
+.post-content,
+.post-content p {
+	float: left;
+	overflow: hidden;
+	color: #5b9166;
+	font-family: Roboto;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+.post-content {
+	width: 100%;
+	display: block;
+}
+.post-content p {
+	margin-bottom: 20px;
+}
+.post-content img.post-thumb {
+	float: right;
+	width: 50%;
+	max-width: 500px;
+	display: block;
+	overflow: hidden;
+	padding-left: 15px;
+	box-sizing: border-box;
+}
+/** Post Header **/
