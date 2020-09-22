@@ -381,7 +381,7 @@ section.service-section {
 
 
 
-/** Post Header **/
+/** Post Page **/
 .post-area {
 	float: left;
 	width: 100%;
@@ -408,7 +408,7 @@ section.service-section {
 	overflow: hidden;
 	color: #5b9166;
 	font-family: Roboto;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
 }
@@ -441,6 +441,7 @@ section.service-section {
 	letter-spacing: 2px;
 	line-height: 1.4;
 	margin-bottom: 20px;
+	margin-top: 10px;
 }
 .post-content table {
 	float: left;
@@ -472,4 +473,43 @@ section.service-section {
 	padding: 4px 10px;
 	box-sizing: border-box;
 }
-/** Post Header **/
+
+.post-content ul {
+	float: left;
+	width: 100%;
+	display: block;
+	margin-bottom: 30px;
+	overflow: hidden;
+	display: block;
+	padding: 0px;
+}
+.post-content ul li {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #5b666a;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 15px;
+	font-weight: 400;
+	letter-spacing: 1.5px;
+	line-height: 1.4;
+	padding: 5px 0px 5px 20px;
+	box-sizing: border-box;
+}
+.post-content ul li span {
+	float: left;
+	padding-right: 8px;
+	font-size: 18px;
+	color: #ff7171;
+	text-align: left;
+	box-sizing: border-box;
+}
+.post-content ul li::before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 400;
+	content: "\f0a4";
+	color: #ff7171;
+	left: 0;
+	padding-right: 10px;
+}
+/** Post Page **/

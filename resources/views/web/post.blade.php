@@ -85,6 +85,18 @@
                 </table>
 
 
+                <h3>List Items:</h3>
+
+                <ul>
+                    <li>Data Entry</li>
+                    <li>Website Audit</li>
+                    <li>Social Media marketing</li>
+                    <li>Email Marketing</li>
+                    <li>Website Research</li>
+                    <li>Product Research</li>
+                    <li>Lead Generation</li>
+                    <li>Keyword Research</li>
+                </ul>
             </div>
         </div>
         <!-- Post Header -->
@@ -93,22 +105,5 @@
   </div>
 </section>
 <!-- Service Box -->
-
-
-
-<!-- Graph Box -->
-<section class="section">
-  <div class="container">
-   <div class="row">
-       <div class="col-12 col-lg-12">
-           <div class="section-title-area">
-                <div class="section-subtitle">Explore</div>
-               <h2 class="section-title">Analytical Statistics</h2>
-           </div>
-       </div>
-   </div>
-  </div>
-</section>
-<!-- Graph Box -->
 
 @endsection
