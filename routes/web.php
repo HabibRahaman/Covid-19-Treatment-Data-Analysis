@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/', function () {
-    return view('welcome');
-})->name('home');*/
 
 Route::get('/', function () {
     return view('web.index');
@@ -24,6 +21,10 @@ Route::get('/', function () {
 Route::get('/post', function () {
     return view('web.post');
 })->name('post');
+
+Route::get('/form', function () {
+    return view('web.form');
+})->name('form');
 
 // Set Lang Version
 Route::get('locale/{locale}', function ($locale){
