@@ -644,6 +644,19 @@ section.service-section {
 	color: #ff6065;
 	padding-left: 2px;
 }
+.setup-content .form-row .error-text {
+	float: left;
+	text-align: left;
+	width: 100%;
+	display: block;
+	color: #ff7171;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.5;
+	padding: 4px 0px;
+	box-sizing: border-box;
+}
 .setup-content .form-row .form-control, 
 .setup-content .form-row .custom-select {
 	padding: .375rem .75rem;
@@ -665,6 +678,10 @@ section.service-section {
 	box-shadow: none;
 	outline: 0px;
 }
+.setup-content .form-row .form-control.has-error, 
+.setup-content .form-row .custom-select.has-error {
+	border-color: #ff7171;
+}
 .setup-content .form-row .custom-control {
 	float: left;
 	padding-left: 50px;
@@ -677,6 +694,9 @@ section.service-section {
 	background-color: transparent;
 	border: #707070 solid 2px;
 	box-sizing: border-box;
+} 
+.setup-content .form-row .form-inline.has-error .custom-control-label::before {
+	border-color: #ff7171;
 }
 .setup-content .custom-control-label::after {
 	top: -2px;
