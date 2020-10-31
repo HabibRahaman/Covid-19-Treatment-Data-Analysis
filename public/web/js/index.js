@@ -13,7 +13,7 @@ $(document).ready(function () {
         var $target = $($(this).attr('href')),
                 $item = $(this);
 
-        if (!$item.hasClass('disabled')) {
+        if (!$item.attr('disabled')) {
             navListItems.removeClass('active').addClass('inactive');
             $item.addClass('active');
             allWells.hide();

@@ -591,6 +591,9 @@ section.service-section {
 	background:  #4fe88f;
 	border-color: #4fe88f;
 }
+
+
+/* Form Elements */
 .setup-content {
 	float: left;
 	width: 100%;
@@ -600,7 +603,6 @@ section.service-section {
 	box-sizing: border-box;
 	margin-top: 10px;
 }
-
 .setup-content .wizard-section-title {
 	float: left;
 	width: 100%;
@@ -709,6 +711,254 @@ section.service-section {
 	border-color: #4fe88f;
 	background-color: #4fe88f;
 }
+
+
+/* Switch Single Form */
+.single-check-form {
+	float: left;
+	width: 100%;
+	height: auto;
+	display: block;
+	clear: both;
+	max-width: 400px;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-sizing: border-box;
+}
+.single-check-form .check-content {
+	float: left;
+	width: calc(100% - 110px);
+	height: auto;
+	display: inline;
+	overflow: hidden;
+}
+.single-check-form .check-content .single-check-title {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #848484;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 16px;
+	font-weight: 400;
+	font-style: normal;
+	letter-spacing: 1.6px;
+	line-height: 5px;
+	text-align: left;
+	line-height: 1.4;
+	padding-bottom: 6px;
+}
+.single-check-form .check-content .single-check-subtitle {
+	float: left;
+	width: 100%;
+	display: block;
+	color: #5b9166;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 12px;
+	font-weight: 400;
+	font-style: normal;
+	letter-spacing: 1.2px;
+	line-height: 5px;
+	text-align: left;
+	line-height: 1.4;
+}
+.single-check-form .check-btn {
+	float: left;
+	width: 110px;
+	height: auto;
+	display: inline;
+	overflow: hidden;
+	text-align: center;
+}
+
+
+/* Switch Normal */
+.setup-content .check-switch input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+.setup-content .check-switch label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 100px;
+  height: 40px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  background: #ff6065;
+}
+.setup-content .check-switch label:after {
+  content: 'Yes';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+.setup-content .check-switch input:checked + label {
+  background: #4fe88f;
+}
+.setup-content .check-switch input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+.setup-content .check-switch label:active:after {
+  width: 60px;
+}
+
+
+/* Switch With Text */
+.setup-content .switch {
+	position: relative;
+	display: block !important;
+	vertical-align: top !important;
+	width: 100px !important;
+	height: 30px;
+	padding: 3px;
+	margin: 0 10px 10px 0;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+	border-radius: 18px;
+	box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+	box-sizing:content-box;
+}
+.setup-content .switch-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	box-sizing:content-box;
+}
+.setup-content .switch-label {
+	position: relative;
+	display: block;
+	height: inherit;
+	font-size: 10px;
+	text-transform: uppercase;
+	background: #ff6065;
+	border-radius: inherit;
+	box-sizing:content-box;
+}
+.setup-content .switch-label:before, .switch-label:after {
+	position: absolute;
+	top: 50%;
+	margin-top: -.5em;
+	line-height: 1;
+	-webkit-transition: inherit;
+	-moz-transition: inherit;
+	-o-transition: inherit;
+	transition: inherit;
+	box-sizing:content-box;
+}
+.setup-content .switch-label:before {
+	content: attr(data-off);
+	right: 18px !important;
+	color: #FFFFFF !important;
+	font-family: 'Patrick Hand', cursive;
+	font-weight: 700;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+.setup-content .switch-label:after {
+	content: attr(data-on);
+	right: 18px !important;
+	color: #FFFFFF !important;
+	font-family: 'Patrick Hand', cursive;
+	font-weight: 700;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+}
+.switch-input:checked ~ .switch-label {
+	background: #ff6065 !important;
+}
+.setup-content .switch-input:checked ~ .switch-label:before {
+	opacity: 0;
+}
+.setup-content .switch-input:checked ~ .switch-label:after {
+	opacity: 1;
+}
+.setup-content .switch-handle {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 28px;
+	height: 28px;
+	background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+	background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+	border-radius: 100%;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.setup-content .switch-handle:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -6px;
+	width: 12px;
+	height: 12px;
+	background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+	background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+	border-radius: 6px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+.setup-content .switch-input:checked ~ .switch-handle {
+	left: 74px;
+	box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+ 
+/* Transition
+========================== */
+.setup-content .switch-label, .switch-handle {
+	transition: All 0.3s ease;
+	-webkit-transition: All 0.3s ease;
+	-moz-transition: All 0.3s ease;
+	-o-transition: All 0.3s ease;
+}
+
+.setup-content .switch-left-right .switch-label {
+	overflow: hidden;
+}
+.setup-content .switch-left-right .switch-label:before, 
+.setup-content .switch-left-right .switch-label:after {
+	width: 20px;
+	height: 20px;
+	top: 4px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 11px 0 0 0;
+	text-indent: -12px;
+	border-radius: 20px;
+}
+.setup-content .switch-left-right .switch-label:before {
+	background: #ff6065;
+	text-align: left;
+	padding-left: 80px;
+}
+.setup-content .switch-left-right .switch-label:after {
+	text-align: left;
+	text-indent: 9px;
+	background: #4fe88f;
+	left: -100px;
+	opacity: 1;
+	width: 100%;
+}
+.setup-content .switch-left-right .switch-input:checked ~ .switch-label:before {
+	opacity: 1;
+	left: 100px;
+}
+.setup-content .switch-left-right .switch-input:checked ~ .switch-label:after {
+	left: 0;
+}
+.setup-content .switch-left-right .switch-input:checked ~ .switch-label {
+	background: inherit;
+}
+
+
 .setup-content .nextBtn {
 	float: right;
 	margin-top: 10px;
@@ -716,6 +966,22 @@ section.service-section {
 	box-sizing: border-box;
 	border-radius: 6px;
 	background-color: #ff7171;
+	color: #ffffff;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 14px;
+	font-weight: 700;
+	font-style: normal;
+	letter-spacing: normal;
+	line-height: normal;
+	text-align: center;
+}
+.setup-content .lastBtn {
+	float: right;
+	margin-top: 10px;
+	padding: 8px 25px;
+	box-sizing: border-box;
+	border-radius: 6px;
+	background-color: #4fe88f;
 	color: #ffffff;
 	font-family: 'Patrick Hand', cursive;
 	font-size: 14px;
