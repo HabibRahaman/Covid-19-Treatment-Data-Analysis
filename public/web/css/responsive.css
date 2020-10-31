@@ -50,12 +50,27 @@
 
 @media screen and (max-width: 767.98px) {
 /* start of medium tablet styles */
-
+	.post-title {
+		font-size: 26px;
+	}
+	.stepwizard .stepwizard-step {
+		max-width: 100%;
+		min-width: 100px;
+	}
+	.stepwizard .stepwizard-step .wizard-btn-title {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 575.98px) {
 /* start of phone styles */
-
+	.setup-content {
+		padding: 15px 5px;
+	}
+	.single-check-form {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 
 }
 

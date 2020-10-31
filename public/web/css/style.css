@@ -595,7 +595,7 @@ section.service-section {
 
 /* Form Elements */
 .setup-content {
-	float: left;
+	margin: auto;
 	width: 100%;
 	height: auto;
 	background: #fff;
@@ -687,6 +687,8 @@ section.service-section {
 .setup-content .form-row .custom-control {
 	float: left;
 	padding-left: 50px;
+	margin-top: 10px;
+	margin-right: 18px;
 }
 .setup-content .form-row .custom-control-label::before {
 	top: -2px;
