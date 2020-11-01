@@ -1,5 +1,5 @@
 <h4 class="secondary"><strong>Hello {{ $data['name'] }}</strong></h4>
-<p>We have sent you this email in response to your request to reset your password on Bangladesh Tourism Guide.</p>
+<p>We have sent you this email in response to your request to reset your password on Covid-19 Treatment & Data Analysis.</p>
 
 <p>Click The Button For Reset Your Account Password</p>
 

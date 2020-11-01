@@ -482,7 +482,7 @@ ul.social li{
             	<tr>
             		<td>
             			<div class="text" style="text-align: center;">
-            				<h2>BTG_Uncharted Beauty Of Bangladesh</h2>
+            				<h2>Covid-19 Treatment & Data Analysis</h2>
             			</div>
             		</td>
             	</tr>
@@ -512,7 +512,7 @@ ul.social li{
                     <tr>
                       <td style="text-align: left; padding-right: 10px;">
                       	<h3 class="heading">About</h3>
-                      	<p>Bangladesh Tourism Guide is the place to discover the stunning beauty that resides in the tourism spots of Bangladesh.</p>
+                      	<p>Covid-19 Treatment & Data Analysis</p>
                       </td>
                     </tr>
                   </table>

@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Bangladesh Tourism Guide</title>
+    <title>Covid-19 Treatment & Data Analysis</title>
 
     <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet">
 </head>
@@ -24,7 +24,7 @@
                     <div class="col s12">
                         <div class="card printableArea">
                             <div class="card-content">
-                                <h4><b>INVOICE</b> <span class="right">#5669626</span></h4>
+                                <h4><b>Prescription</b> <span class="right">#5669626</span></h4>
                                 <hr>
                                 <div class="row">
                                     <div class="col s12">

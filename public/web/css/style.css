@@ -406,12 +406,29 @@ section.service-section {
 	margin-top: -20px;
 	margin-bottom: 30px;
 	float: left;
+	width: 100%;
 	overflow: hidden;
 	color: #5b9166;
 	font-family: Roboto;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
+}
+.post-btn,
+.post-btn:hover,
+.post-btn:focus {
+	clear: both;
+	float: left;
+	overflow: hidden;
+	color: #fff;
+	background: #00fe90;
+	font-family: 'Patrick Hand', cursive;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+	padding: 10px 30px;
+	box-sizing: border-box;
+	border-radius: 8px;
 }
 .post-content,
 .post-content p {
