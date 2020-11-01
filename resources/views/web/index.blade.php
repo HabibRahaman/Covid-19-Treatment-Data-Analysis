@@ -8,7 +8,7 @@
 
      <!-- Single Service -->
      <div class="col-12 col-md-6 col-lg-6">
-       <a href="#" class="signle-service-box">
+       <a href="{{ route('survey') }}" class="signle-service-box">
          <div class="service-icon-area">
              <img src="{{ asset('web/img/services/online_survey.png') }}" alt="Icon">
          </div>

@@ -28,6 +28,10 @@ Route::get('/form', function () {
 
 
 
+Route::get('/survey', function () {
+    return view('web.survey');
+})->name('survey');
+
 Route::get('/search', function () {
     return view('web.search');
 })->name('search');

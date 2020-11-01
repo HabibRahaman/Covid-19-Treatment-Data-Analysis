@@ -8,8 +8,8 @@
       <div class="col-12 col-lg-12 col-md-12">
         <!-- Post Header -->
         <div class="post-area">
-            <h2 class="post-title">Search Treatment</h2>
-            <div class="post-subtitle">Submit your health information for get specialist prescription by email.</div>
+            <h2 class="post-title">Attend Survey</h2>
+            <div class="post-subtitle">Submit your treatment information to help others survive from covid disease.</div>
         </div>
         <!-- Post Header -->
       </div>
@@ -27,15 +27,15 @@
             </div>
             <div class="stepwizard-step">
                 <a href="#step-2" type="button" class="btn inactive btn-circle" disabled="disabled">2</a>
-                <p class="wizard-btn-title">Common Symptoms</p>
+                <p class="wizard-btn-title">COVID Symptoms</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-3" type="button" class="btn inactive btn-circle" disabled="disabled">3</a>
-                <p class="wizard-btn-title">Emergency Symptoms</p>
+                <p class="wizard-btn-title">Medical Conditions</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-4" type="button" class="btn inactive btn-circle" disabled="disabled">4</a>
-                <p class="wizard-btn-title">Medical Conditions</p>
+                <p class="wizard-btn-title">Medical Treatments</p>
             </div>
         </div>
     </div>
@@ -183,6 +183,64 @@
                         <label class="custom-control-label" for="9">80+</label>
                     </div>
                 </div>
+
+                <div class="col-12 col-md-6 col-xl-6">
+                    <div class="single-check-form">
+                        <div class="check-content">
+                            <div class="single-check-title">Covid Test? <span>*</span></div>
+                        </div>
+                        <div class="check-btn">
+                            <label class="switch switch-left-right covid">
+                                <input class="switch-input" type="checkbox" />
+                                <span class="switch-label" data-on="Positive" data-off="Negative"></span> 
+                                <span class="switch-handle"></span> 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                    <div class="single-check-form">
+                        <div class="check-content">
+                            <div class="single-check-title">Ventilation? <span>*</span></div>
+                        </div>
+                        <div class="check-btn">
+                            <label class="switch switch-left-right">
+                                <input class="switch-input" type="checkbox" />
+                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
+                                <span class="switch-handle"></span> 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                    <div class="single-check-form">
+                        <div class="check-content">
+                            <div class="single-check-title">ICU? <span>*</span></div>
+                        </div>
+                        <div class="check-btn">
+                            <label class="switch switch-left-right">
+                                <input class="switch-input" type="checkbox" />
+                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
+                                <span class="switch-handle"></span> 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 form-inline">
+                  <label for="city">Health Condition <span>*</span></label>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="healthy" name="health_condition" value="1" required>
+                        <label class="custom-control-label" for="healthy">Healthy</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="illness" name="health_condition" value="2" required>
+                        <label class="custom-control-label" for="illness">Illness</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="death" name="health_condition" value="2" required>
+                        <label class="custom-control-label" for="death">Death</label>
+                    </div>
+                </div>
               </div>
             </div>
 
@@ -192,7 +250,7 @@
         </div>
         <div class="row setup-content" id="step-2">
             <div class="col-xs-12 col-lg-12">
-                <h3 class="wizard-section-title">Common Symptoms</h3>
+                <h3 class="wizard-section-title">COVID-19 Symptoms</h3>
             </div>
 
             <div class="col-xs-12 col-lg-12">
@@ -326,7 +384,7 @@
         </div>
         <div class="row setup-content" id="step-3">
             <div class="col-xs-12 col-lg-12">
-                <h3 class="wizard-section-title">Emergency Symptoms</h3>
+                <h3 class="wizard-section-title">Serious Medical Conditions</h3>
             </div>
 
             <div class="col-xs-12 col-lg-12">
@@ -334,8 +392,8 @@
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
+                            <div class="single-check-title">High blood pressure?</div>
+                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -349,8 +407,8 @@
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
+                            <div class="single-check-title">High blood pressure?</div>
+                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -364,8 +422,8 @@
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
+                            <div class="single-check-title">High blood pressure?</div>
+                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -379,8 +437,8 @@
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
+                            <div class="single-check-title">High blood pressure?</div>
+                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -394,8 +452,8 @@
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
+                            <div class="single-check-title">High blood pressure?</div>
+                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -409,8 +467,38 @@
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
+                            <div class="single-check-title">High blood pressure?</div>
+                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
+                        </div>
+                        <div class="check-btn">
+                            <label class="switch switch-left-right">
+                                <input class="switch-input" type="checkbox" />
+                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
+                                <span class="switch-handle"></span> 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                    <div class="single-check-form">
+                        <div class="check-content">
+                            <div class="single-check-title">High blood pressure?</div>
+                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
+                        </div>
+                        <div class="check-btn">
+                            <label class="switch switch-left-right">
+                                <input class="switch-input" type="checkbox" />
+                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
+                                <span class="switch-handle"></span> 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                    <div class="single-check-form">
+                        <div class="check-content">
+                            <div class="single-check-title">High blood pressure?</div>
+                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -430,7 +518,7 @@
         </div>
         <div class="row setup-content" id="step-4">
             <div class="col-xs-12 col-lg-12">
-                <h3 class="wizard-section-title">Serious Medical Conditions</h3>
+                <h3 class="wizard-section-title">Medical Treatments</h3>
             </div>
 
             <div class="col-xs-12 col-lg-12">

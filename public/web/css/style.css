@@ -958,6 +958,9 @@ section.service-section {
 	text-align: left;
 	padding-left: 80px;
 }
+.setup-content .switch-left-right.covid .switch-label:before {
+	padding-left: 50px;
+}
 .setup-content .switch-left-right .switch-label:after {
 	text-align: left;
 	text-indent: 9px;
