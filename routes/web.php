@@ -30,6 +30,10 @@ Route::get('/join', function () {
     return view('web.join');
 })->name('join');
 
+Route::get('/online-test', function () {
+    return view('web.online-test');
+})->name('test');
+
 // Set Lang Version
 Route::get('locale/{locale}', function ($locale){
     if (! in_array($locale, ['en', 'bn'])) {
