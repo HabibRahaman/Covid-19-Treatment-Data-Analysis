@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePatientsTable extends Migration
+class CreateTestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePatientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('patients', function (Blueprint $table) {
+        Schema::create('tests', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('reg_id');
-            $table->string('name');
-            $table->string('email');
+            $table->string('session_id');
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
             $table->integer('gender')->nullable();
             $table->date('dob')->nullable();
             $table->integer('age')->nullable();
@@ -25,12 +25,6 @@ class CreatePatientsTable extends Migration
             $table->string('phone')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();
-            $table->integer('medical_test')->default('0');
-            $table->integer('ventilation')->default('0');
-            $table->integer('icu')->default('0');
-            $table->integer('health_condition')->default('1');
-            $table->integer('entry_type')->default('0');
-            $table->integer('status')->default('1');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -43,6 +37,6 @@ class CreatePatientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('patients');
+        Schema::dropIfExists('tests');
     }
 }
