@@ -9,9 +9,6 @@
   <!-- css -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/css/all.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('web/css/jquery.fancybox.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('web/css/owl.carousel.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('web/css/owl.theme.default.min.css') }}">
 
   <!-- Chart CSS -->
   <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/pages/float-chart.css') }}">
@@ -19,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/pages/easy-pie-chart.css') }}">
 
 
+  <!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('web/css/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('web/css/responsive.css') }}">
 

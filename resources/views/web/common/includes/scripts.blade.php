@@ -2,10 +2,6 @@
   <!-- js -->
   <script type="text/javascript" src="{{ asset('web/js/bootstrap.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('web/js/all.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('web/js/jquery.fancybox.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('web/js/owl.carousel.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('web/js/jquery.lazy.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('web/js/index.js') }}"></script>
 
 	<!-- Flot Chart JS -->
 	<script type="text/javascript" src="{{ asset('backend/libs/flot/excanvas.min.js') }}"></script>
@@ -27,3 +23,7 @@
 	<!-- Easy Pie Chart JS -->
 	<script type="text/javascript" src="{{ asset('backend/extra-libs/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('backend/extra-libs/jquery.easy-pie-chart/easy-pie-chart.init.js') }}"></script>
+
+
+	<!-- Custom JS -->
+	<script type="text/javascript" src="{{ asset('web/js/index.js') }}"></script>

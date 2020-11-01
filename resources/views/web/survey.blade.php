@@ -375,6 +375,11 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12 col-md-12 col-xl-12">
+                  <hr/>
+                  <label for="others">Others</label>
+                  <textarea class="form-control" rows="2" name="others" id="others"></textarea>
+                </div>
               </div>
             </div>
 
@@ -642,6 +647,11 @@
                             </label>
                         </div>
                     </div>
+                </div>
+                <div class="col-12 col-md-12 col-xl-12">
+                  <hr/>
+                  <label for="others">Others</label>
+                  <textarea class="form-control" rows="2" name="others" id="others"></textarea>
                 </div>
               </div>
             </div>

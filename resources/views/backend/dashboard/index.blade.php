@@ -23,15 +23,15 @@
                     <div class="col s12">
                         <div class="card">
                             <div class="card-content">
-                                <h5 class="card-title">Orders</h5>
+                                <h5 class="card-title">Counter</h5>
                                 <div class="row">
                                     <!-- Column -->
                                     <div class="col l3 m6">
                                         <div class="card danger-gradient">
                                             <div class="card-content">
                                                 <div class="center-align">
-                                                    <h3 class="white-text m-b-0">44</h3>
-                                                    <span class="white-text">Total</span>
+                                                    <h3 class="white-text m-b-0">{{ $users }}</h3>
+                                                    <span class="white-text">Total Specialist</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -42,8 +42,8 @@
                                         <div class="card info-gradient">
                                             <div class="card-content">
                                                 <div class="center-align">
-                                                    <h3 class="white-text m-b-0">33</h3>
-                                                    <span class="white-text">Pending</span>
+                                                    <h3 class="white-text m-b-0">{{ $search }}</h3>
+                                                    <span class="white-text">Total Search</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -54,8 +54,8 @@
                                         <div class="card success-gradient">
                                             <div class="card-content">
                                                 <div class="center-align">
-                                                    <h3 class="white-text m-b-0">66</h3>
-                                                    <span class="white-text">Progress</span>
+                                                    <h3 class="white-text m-b-0">{{ $survey }}</h3>
+                                                    <span class="white-text">Total Survey</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@
                                             <div class="card-content">
                                                 <div class="center-align">
                                                     <h3 class="white-text m-b-0">11</h3>
-                                                    <span class="white-text">Approve</span>
+                                                    <span class="white-text">Total Test</span>
                                                 </div>
                                             </div>
                                         </div>

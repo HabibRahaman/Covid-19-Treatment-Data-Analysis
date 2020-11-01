@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Auth;
 use App\User;
+use App\Model\Patient;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -26,7 +27,9 @@ class DashboardController extends Controller
         $data['title']     = $this->title;
         $data['route']     = $this->route;
         
-        $data['user'] = User::find(Auth::guard('web')->user()->id);
+        $data['users'] = User::count();
+        $data['search'] = Patient::where('entry_type', 0)->count();
+        $data['survey'] = Patient::where('entry_type', 1)->count();
 
         return view($this->view.'.index', $data);
     }
