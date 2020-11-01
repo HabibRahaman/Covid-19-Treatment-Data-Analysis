@@ -39,6 +39,26 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest:web')->except('logout');
+        $this->middleware('guest:patient')->except('logout');
+    }
+
+
+    public function showPatientLoginForm()
+    {
+        return view('auth.login', ['url' => 'patient']);
+    }
+
+    public function patientLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email'
+        ]);
+
+        if (Auth::guard('patient')->attempt(['email' => $request->email])){
+
+            return redirect()->intended('/patient');
+        }
+        return back()->withInput($request->only('email'));
     }
 
 
@@ -47,7 +67,6 @@ class LoginController extends Controller
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6',
-            // 'g-recaptcha-response' => 'required|captcha'
         ]);
 
 

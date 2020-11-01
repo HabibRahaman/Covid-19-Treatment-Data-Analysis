@@ -41,19 +41,6 @@
                                     @enderror
                                 </div>
                             </div>
-                            <!-- capcha -->
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    {!! NoCaptcha::renderJs() !!}
-                                    {!! NoCaptcha::display(['data-theme' => 'default']) !!}
-
-                                    @if ($errors->has('g-recaptcha-response'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
                             <!-- pwd -->
                             <div class="row m-t-5">
                                 <div class="col s7">

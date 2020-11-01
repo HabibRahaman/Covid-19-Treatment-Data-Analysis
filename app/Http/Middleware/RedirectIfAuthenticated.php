@@ -16,8 +16,11 @@ class RedirectIfAuthenticated
      * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = "web")
+    public function handle($request, Closure $next, $guard = null)
     {
+        if ($guard == "patient" && Auth::guard($guard)->check()) {
+            return redirect('/patient');
+        }
         if (Auth::guard($guard)->check()) {
             return redirect(RouteServiceProvider::HOME);
         }

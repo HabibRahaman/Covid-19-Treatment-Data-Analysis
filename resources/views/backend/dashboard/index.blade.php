@@ -66,7 +66,7 @@
                                         <div class="card warning-gradient">
                                             <div class="card-content">
                                                 <div class="center-align">
-                                                    <h3 class="white-text m-b-0">11</h3>
+                                                    <h3 class="white-text m-b-0">{{ $tests }}</h3>
                                                     <span class="white-text">Total Test</span>
                                                 </div>
                                             </div>
