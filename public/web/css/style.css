@@ -618,12 +618,18 @@ section.service-section {
 	text-align: left;
 	margin-bottom: 20px;
 }
+.setup-content .wizard-section-subtitle {
+	margin-bottom: 20px;
+}
 .setup-content .form-row {
 	padding: 20px 0px;
 	box-sizing: border-box;
 }
 .setup-content .form-row > div {
 	margin-top: 30px;
+}
+.setup-content .form-row .form-element {
+	margin-bottom: 30px;
 }
 .setup-content .form-row .form-group {
 	padding-top: 20px;

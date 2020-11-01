@@ -53,7 +53,7 @@
 
      <!-- Single Service -->
      <div class="col-12 col-md-6 col-lg-6">
-       <a href="#" class="signle-service-box">
+       <a href="{{ route('join') }}" class="signle-service-box">
          <div class="service-icon-area">
              <img src="{{ asset('web/img/services/join_doctor.png') }}" alt="Icon">
          </div>
@@ -199,7 +199,7 @@
      <!-- Single Graph -->
 
      <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-6">
+     {{-- <div class="col-12 col-md-6 col-lg-6">
        <div class="signle-graph-box">
          <div class="single-graph-header">
              <div class="graph-title">Basic Pie chart</div>
@@ -208,11 +208,11 @@
              <div id="basic-pie" style="height:400px;"></div>
          </div>
        </div>
-     </div>
+     </div> --}}
      <!-- Single Graph -->
 
      <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-6">
+     {{-- <div class="col-12 col-md-6 col-lg-6">
        <div class="signle-graph-box">
          <div class="single-graph-header">
              <div class="graph-title">Basic Doughnut Chart</div>
@@ -221,7 +221,7 @@
              <div id="basic-doughnut" style="height:400px;"></div>
          </div>
        </div>
-     </div>
+     </div> --}}
      <!-- Single Graph -->
 
      <!-- Single Graph -->
