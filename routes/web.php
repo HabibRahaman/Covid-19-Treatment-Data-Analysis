@@ -26,13 +26,19 @@ Route::get('/form', function () {
     return view('web.form');
 })->name('form');
 
-Route::get('/join', function () {
-    return view('web.join');
-})->name('join');
+
+
+Route::get('/search', function () {
+    return view('web.search');
+})->name('search');
 
 Route::get('/online-test', function () {
     return view('web.online-test');
 })->name('test');
+
+Route::get('/join', function () {
+    return view('web.join');
+})->name('join');
 
 // Set Lang Version
 Route::get('locale/{locale}', function ($locale){
