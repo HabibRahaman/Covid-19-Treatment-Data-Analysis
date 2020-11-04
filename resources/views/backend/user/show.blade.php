@@ -20,7 +20,7 @@
                                 <a class="waves-effect waves-light btn blue" href="{{ route($route.'index') }}">Back</i></a>
                             </div>
                             <div class="card-content">
-                                <div class="center-align m-t-30"> <img src="{{ asset('uploads/'.$path.'/'.$user->photo) }}" class="circle" width="150" />
+                                <div class="center-align m-t-30"> <img src="{{ asset('uploads/'.$path.'/'.$user->photo) }}" onerror="this.onerror=null;this.src='{{ asset('web/img/thumb.png') }}';" class="circle" width="150" />
                                     <h4 class="card-title m-t-10">{{ $user->name }}</h4>
                                     <h6 class="card-subtitle">{{ $user->designation }}, {{ $user->organization }}</h6>
                                 </div>

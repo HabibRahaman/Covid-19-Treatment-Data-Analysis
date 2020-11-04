@@ -51,7 +51,7 @@
                                             <div class="el-card-item">
                                                 <div class="el-card-avatar el-overlay-1"> 
 
-                                                    <img src="{{ asset('uploads'.'/'.$path.'/'.$user->photo) }}" style="height: 300px; width: 100%;" alt="Thumbnail"/>
+                                                    <img src="{{ asset('uploads'.'/'.$path.'/'.$user->photo) }}" style="height: 300px; width: 100%;" onerror="this.onerror=null;this.src='{{ asset('web/img/thumb.png') }}';" alt="Thumbnail"/>
 
                                                     <div class="el-overlay">
                                                         <ul class="el-info">
