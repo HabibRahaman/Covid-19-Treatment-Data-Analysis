@@ -72,6 +72,7 @@
                             <table id="file_export" class="table table-striped display" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th>No</th>
                                         <th>Name</th>
                                         <th>Thumbnail</th>
                                         <th>Status</th>
@@ -79,8 +80,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($blogs as $blog)
+                                    @foreach($blogs as $key => $blog)
                                     <tr>
+                                        <td>{{ $key + 1 }}</td>
                                         <td>{{ $blog->name }}</td>
                                         <td>
                                             @if(is_file('uploads/'.$path.'/'.$blog->thumb))
@@ -180,7 +182,7 @@
                                                         
                                                     <div class="row">
                                                       <div class="col s12">
-                                                          <span class="card-title">{{ $blog->name }}</span>
+                                                          <h1 class="">{{ $blog->name }}</h1>
                                                       </div>
                                                     </div>
                                                     <div class="row m-t-20">
