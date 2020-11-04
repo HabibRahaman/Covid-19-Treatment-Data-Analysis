@@ -4,7 +4,7 @@
         <!-- ============================================================== -->
         <!-- Auth box.scss -->
         <!-- ============================================================== -->
-        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url({{ asset('backend/images/big/auth-bg.jpg') }}) no-repeat center center;">
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center">
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
@@ -66,7 +66,9 @@
                         </form>
                     </div>
                     <div class="center-align m-t-20 db">
+                        @if (Route::has('register'))
                         Don't have an account? <a href="{{ route('register') }}">Sign Up!</a>
+                        @endif
                     </div>
                 </div>
             </div>

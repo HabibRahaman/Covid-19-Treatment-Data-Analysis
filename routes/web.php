@@ -44,29 +44,6 @@ Route::get('/join', function () {
     return view('web.join');
 })->name('join');
 
-// Set Lang Version
-Route::get('locale/{locale}', function ($locale){
-    if (! in_array($locale, ['en', 'bn'])) {
-        abort(404);
-    }
-
-    Session::put('locale', $locale);
-
-    return redirect()->back();
-})->name('version');
-
-
-Route::get('welcome/{locale}', function ($locale) {
-    if (! in_array($locale, ['en', 'bn'])) {
-        abort(404);
-    }
-
-    App::setLocale($locale);
-
-    //
-    return $locale = App::getLocale();
-});
-
 
 
 //Admin panel 
@@ -80,8 +57,8 @@ Route::get('/dashboard/table', function () {
 
 
 Route::group(['prefix' => 'dashboard'], function() {
-	Auth::routes();
-    // Route::auth(['register' => false]);
+	// Auth::routes();
+    Route::auth(['register' => false]);
 });
 
 
@@ -132,24 +109,10 @@ Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')
 // Patient Auth Routes
 Route::name('patient.')->namespace('Auth')->prefix('patient')->group(function () {
 
-    Route::get('/login', 'PatientLoginController@showLoginForm')->name('login');
-    Route::post('/login', 'PatientLoginController@login')->name('login.post');
-    Route::get('/register', 'PatientRegisterController@showRegisterForm')->name('register');
-    Route::post('/register', 'PatientRegisterController@register')->name('register.post');
-    Route::post('/logout', 'PatientLoginController@logout')->name('logout');
-
-    // Forgot Password Routes
-    Route::get('/forgot-password', 'PatientForgotPasswordController@forgotPassword')->name('forgot-password');
-    Route::post('/email-password', 'PatientForgotPasswordController@emailForgotPasswordLink')->name('email-password');
-    Route::get('/verify-email/{id}/{token}', 'PatientForgotPasswordController@verifyEmail')->name('verify-email');
-    Route::post('/reset-password', 'PatientForgotPasswordController@resetPassword')->name('reset-password');
 
 });
 
-
-
 Route::middleware(['patient'])->name('patient.')->namespace('Patient')->prefix('patient')->group(function() {
-    // Route::get('/home', 'HomeController@index');
-
+    
     
 });

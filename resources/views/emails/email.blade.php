@@ -467,8 +467,7 @@ ul.social li{
 			          <td width="60%" class="logo" style="text-align: right;">
 			            <ul class="navigation">
 			            	<li><a href="{{ route('home') }}">Home</a></li>
-			            	<li><a href="{{ route('discover') }}">Discover</a></li>
-			            	<li><a href="{{ route('packages') }}">Packages</a></li>
+			            	<li><a href="{{ route('post') }}">Post</a></li>
 			            </ul>
 			          </td>
           		</tr>
@@ -476,7 +475,7 @@ ul.social li{
           </td>
 	      </tr><!-- end tr -->
 				<tr>
-          <td valign="middle" class="hero bg_white" style="background-image: url({{ asset('email/header.png') }}); background-size: cover; height: 400px;">
+          <td valign="middle" class="hero bg_white">
           	<div class="overlay"></div>
             <table>
             	<tr>

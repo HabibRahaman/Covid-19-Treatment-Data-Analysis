@@ -3,7 +3,7 @@
         <!-- ============================================================== -->
         <!-- Auth box.scss -->
         <!-- ============================================================== -->
-        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url({{ asset('backend/images/big/auth-bg.jpg') }}) no-repeat center center;">
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center">
             <div class="auth-box">
                 <div id="loginform">
                     <div class="logo">
