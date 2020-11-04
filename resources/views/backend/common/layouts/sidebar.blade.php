@@ -28,7 +28,7 @@
                         </li>
                         @endcan
 
-                        @can('Conditions')
+                        @can('MedicalConditions')
                         <li>
                             <a href="{{ route('admin.condition.index') }}" class="collapsible-header"><i><span class="fas fa-procedures"></span></i><span class="hide-menu"> Medical Conditions </span></a>
                         </li>
@@ -40,7 +40,7 @@
                         </li>
                         @endcan
 
-                        @can('Blogs')
+                        @can('InfoBlogs')
                         <li>
                             <a href="{{ route('admin.blog.index') }}" class="collapsible-header"><i><span class="fas fa-comment-medical"></span></i><span class="hide-menu"> Info Blogs </span></a>
                         </li>
