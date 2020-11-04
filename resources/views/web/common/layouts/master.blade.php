@@ -98,12 +98,16 @@
     <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
         <div class="single-footer">
             <ul class="footer-nav">
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Get parent and caregiver information</a></li>
+                @foreach($blogs as $blog)
+                <li><a href="{{ route('blog.single', $blog->slug) }}"><span><i class="far fa-hand-point-right"></i></span> {{ $blog->name }}</a></li>
+                @endforeach
+
+                {{-- <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Get parent and caregiver information</a></li>
                 <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> What to do next?</a></li>
                 <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Protect myself against COVID-19</a></li>
                 <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Symptoms probability</a></li>
                 <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Emergency symptoms</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Regular/Normal treatments</a></li>
+                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Regular/Normal treatments</a></li> --}}
             </ul>
         </div>
     </div>

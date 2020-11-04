@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+// Static Web Routes
 Route::get('/', function () {
     return view('web.index');
 })->name('home');
@@ -25,7 +26,6 @@ Route::get('/post', function () {
 Route::get('/form', function () {
     return view('web.form');
 })->name('form');
-
 
 
 Route::get('/survey', function () {
@@ -46,16 +46,15 @@ Route::get('/join', function () {
 
 
 
-//Admin panel 
-Route::get('/dashboard/form', function () {
-    return view('dashboard.form');
+// Dynamic Web Routes
+Route::namespace('Web')->group(function () {
+
+    // Health Blog
+    Route::get('blog/{slug}','BlogController@show')->name('blog.single');
 });
-Route::get('/dashboard/table', function () {
-    return view('dashboard.table');
-});
 
 
-
+// Authentication Routes
 Route::group(['prefix' => 'dashboard'], function() {
 	// Auth::routes();
     Route::auth(['register' => false]);
@@ -70,7 +69,7 @@ Route::middleware(['auth'])->namespace('Admin')->group(function () {
 });
 
 
-
+// Admin Panel Routes
 Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
 
     // Diseases
