@@ -35,6 +35,7 @@ class CreateUsersTable extends Migration
             $table->string('country')->nullable();
             $table->rememberToken();
             $table->boolean('is_admin')->default('0');
+            $table->boolean('status')->default('0');
             $table->timestamps();
         });
     }
