@@ -13,7 +13,7 @@ class BlogController extends Controller
 {
     public function __construct () 
     {
-        // $this->middleware('permission:Places');
+        $this->middleware('permission:InfoBlogs');
         
         $this->title = 'Blog';
         $this->route = 'admin.blog.';
@@ -79,9 +79,9 @@ class BlogController extends Controller
                 File::makeDirectory($path, 0777, true, true);
             }
 
-            //Resize And Crop as Fit image here (640 width, 400 height)
+            //Resize And Crop as Fit image here (800 width, 500 height)
             $thumbnailpath = $path.$imageNameToStore;
-            $img = Image::make($request->file('thumb')->getRealPath())->fit(640, 400, function ($constraint) { $constraint->upsize(); })->save($thumbnailpath);
+            $img = Image::make($request->file('thumb')->getRealPath())->fit(800, 500, function ($constraint) { $constraint->upsize(); })->save($thumbnailpath);
         }
         else{
             $imageNameToStore = Null;
@@ -162,9 +162,9 @@ class BlogController extends Controller
                 File::makeDirectory($path, 0777, true, true);
             }
 
-            //Resize And Crop as Fit image here (640 width, 400 height)
+            //Resize And Crop as Fit image here (800 width, 500 height)
             $thumbnailpath = $path.$imageNameToStore;
-            $img = Image::make($request->file('thumb')->getRealPath())->fit(640, 400, function ($constraint) { $constraint->upsize(); })->save($thumbnailpath);
+            $img = Image::make($request->file('thumb')->getRealPath())->fit(800, 500, function ($constraint) { $constraint->upsize(); })->save($thumbnailpath);
         }
         else{
 
