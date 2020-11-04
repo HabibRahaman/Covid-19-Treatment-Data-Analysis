@@ -42,6 +42,9 @@
                                 <div id="profile" class="col s12 profile-card">
                                     <div class="card-content">
                                         <div class="row">
+                                            <h6>Personal info</h6>
+                                        </div>
+                                        <div class="row">
                                             <div class="col m4 b-r"> <strong>Full Name</strong>
                                                 <br>
                                                 <p>{{ $user->name }}</p>
@@ -74,6 +77,9 @@
                                         </div>
                                         <hr>
                                         <div class="row">
+                                            <h6>Professional info</h6>
+                                        </div>
+                                        <div class="row">
                                             <div class="col m4 b-r"> <strong>Designation</strong>
                                                 <br>
                                                 <p>{{ $user->designation }}</p>
@@ -89,6 +95,9 @@
                                         </div>
                                         <hr>
                                         <div class="row">
+                                            <h6>Educational info</h6>
+                                        </div>
+                                        <div class="row">
                                             <div class="col m4 b-r"> <strong>Higher Degree</strong>
                                                 <br>
                                                 <p>{{ $user->higher_degree }}</p>
@@ -103,6 +112,9 @@
                                             </div>
                                         </div>
                                         <hr>
+                                        <div class="row">
+                                            <h6>Address info</h6>
+                                        </div>
                                         <div class="row">
                                             <div class="col m4 b-r"> <strong>Address</strong>
                                                 <br>

@@ -21,9 +21,13 @@
                         <a class="waves-effect waves-light btn blue" href="{{ route($route.'index') }}">Back</i></a>
 
                         <div class="card">
-                            <div class="card-content">
+                            <div class="card-header">
                                 <h5 class="card-title activator">Edit {{ $title }}</h5>
-
+                            </div>
+                            <div class="card-content">
+                                <div class="row">
+                                    <h6>Personal info</h6>
+                                </div>
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <input name="name" id="name" type="text" value="{{ $user->name }}" required>
@@ -52,6 +56,9 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <h6>Professional info</h6>
+                                </div>
+                                <div class="row">
                                     <div class="input-field col s4">
                                         <input name="designation" id="designation" type="text" value="{{ $user->designation }}" required>
                                         <label for="designation">Designation <span>*</span></label>
@@ -68,6 +75,9 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <h6>Educational info</h6>
+                                </div>
+                                <div class="row">
                                     <div class="input-field col s4">
                                         <input name="higher_degree" id="higher_degree" type="text" value="{{ $user->higher_degree }}" required>
                                         <label for="higher_degree">Higher Degree <span>*</span></label>
@@ -82,6 +92,9 @@
                                         <input name="specialty" id="specialty" type="text" value="{{ $user->specialty }}">
                                         <label for="specialty">Specialty</label>
                                     </div>
+                                </div>
+                                <div class="row">
+                                    <h6>Others info</h6>
                                 </div>
                                 <div class="row">
                                     <div class="input-field file-field col s6">

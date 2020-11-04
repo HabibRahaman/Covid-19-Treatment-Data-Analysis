@@ -45,6 +45,9 @@
                                 <div id="profile" class="col s12 profile-card">
                                     <div class="card-content">
                                         <div class="row">
+                                            <h6>Personal info</h6>
+                                        </div>
+                                        <div class="row">
                                             <div class="col m4 b-r"> <strong>Full Name</strong>
                                                 <br>
                                                 <p>{{ $user->name }}</p>
@@ -77,6 +80,9 @@
                                         </div>
                                         <hr>
                                         <div class="row">
+                                            <h6>Professional info</h6>
+                                        </div>
+                                        <div class="row">
                                             <div class="col m4 b-r"> <strong>Designation</strong>
                                                 <br>
                                                 <p>{{ $user->designation }}</p>
@@ -92,6 +98,9 @@
                                         </div>
                                         <hr>
                                         <div class="row">
+                                            <h6>Educational info</h6>
+                                        </div>
+                                        <div class="row">
                                             <div class="col m4 b-r"> <strong>Higher Degree</strong>
                                                 <br>
                                                 <p>{{ $user->higher_degree }}</p>
@@ -106,6 +115,9 @@
                                             </div>
                                         </div>
                                         <hr>
+                                        <div class="row">
+                                            <h6>Address Info</h6>
+                                        </div>
                                         <div class="row">
                                             <div class="col m4 b-r"> <strong>Address</strong>
                                                 <br>
@@ -132,6 +144,9 @@
                                     <div class="card-content">
                                         <form id="addnew" action="{{ route('admin.profile.store') }}" method="post" enctype="multipart/form-data">
                                             @csrf
+                                            <div class="row">
+                                                <h6>Personal info</h6>
+                                            </div>
                                             <div class="row">
                                                 <div class="input-field col s6">
                                                     <input name="name" id="name" type="text" value="{{ $user->name }}" required>
@@ -160,6 +175,9 @@
                                                 </div>
                                             </div>
                                             <div class="row">
+                                                <h6>Professional info</h6>
+                                            </div>
+                                            <div class="row">
                                                 <div class="input-field col s4">
                                                     <input name="designation" id="designation" type="text" value="{{ $user->designation }}" required>
                                                     <label for="designation">Designation <span>*</span></label>
@@ -174,6 +192,9 @@
                                                     <input name="organization" id="organization" type="text" value="{{ $user->organization }}" required>
                                                     <label for="organization">Organization <span>*</span></label>
                                                 </div>
+                                            </div>
+                                            <div class="row">
+                                                <h6>Educational info</h6>
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s4">
