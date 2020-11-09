@@ -12,7 +12,7 @@ class HealthCareController extends Controller
 {
     public function __construct () 
     {
-        // $this->middleware('permission:Places');
+        $this->middleware('permission:HealthCares');
         
         $this->title = 'Health Care';
         $this->route = 'admin.healthcare.';

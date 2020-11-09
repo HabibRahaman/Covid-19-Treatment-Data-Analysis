@@ -94,16 +94,20 @@
   <div class="container">
    <div class="row">
 
+    @php
+        $tolal_blogs = count($blogs);
+        $blog_list = round($tolal_blogs / 2);
+    @endphp
+
     <!-- Single Footer -->
     <div class="col-12 col-md-6 col-lg-4 offset-lg-1">
         <div class="single-footer">
             <ul class="footer-nav">
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Get parent and caregiver information</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> What to do next?</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Protect myself against COVID-19</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Symptoms probability</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Emergency symptoms</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Regular/Normal treatments</a></li>
+                @foreach($blogs as $key => $blog)
+                @if($key + 1 <= $blog_list)
+                <li><a href="{{ route('blog.single', $blog->slug) }}"><span><i class="far fa-hand-point-right"></i></span> {{ $blog->name }}</a></li>
+                @endif
+                @endforeach
             </ul>
         </div>
     </div>
@@ -113,12 +117,11 @@
     <div class="col-12 col-md-6 col-lg-4">
         <div class="single-footer">
             <ul class="footer-nav">
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Mental health during pandemic</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> When to seek emergency medical attention</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> Prevention from virus infection</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> What to do about early symptoms?</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> How can I treat coronavirus symptoms?</a></li>
-                <li><a href="{{ route('post') }}"><span><i class="far fa-hand-point-right"></i></span> A place to self-isolate</a></li>
+                @foreach($blogs as $key => $blog)
+                @if($key + 1 > $blog_list)
+                <li><a href="{{ route('blog.single', $blog->slug) }}"><span><i class="far fa-hand-point-right"></i></span> {{ $blog->name }}</a></li>
+                @endif
+                @endforeach
             </ul>
         </div>
     </div>

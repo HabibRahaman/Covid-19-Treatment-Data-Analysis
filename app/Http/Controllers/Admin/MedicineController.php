@@ -12,7 +12,7 @@ class MedicineController extends Controller
 {
     public function __construct () 
     {
-        // $this->middleware('permission:Places');
+        $this->middleware('permission:Medicines');
         
         $this->title = 'Medicine';
         $this->route = 'admin.medicine.';
@@ -63,8 +63,15 @@ class MedicineController extends Controller
         // Slug
         $slug = $slug = Str::slug($request->name, '-');
 
-        $request->request->add(['slug' => $slug]); //add request
-        //filter the request
+        // Show status
+        if($request->show == null || $request->show != 1){
+            $show = 0; 
+        }
+        else {
+            $show = 1; 
+        }
+
+        $request->request->add(['slug' => $slug, 'show' => $show]); //add request
         $input = $request->only(['group_id','name','slug','details','group','risk_level','show']);
 
         // store data

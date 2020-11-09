@@ -30,7 +30,21 @@
             </div>
         </div>
     </div>
-    <form role="form">
+    <form role="form" action="{{ route('join.doctor') }}" method="post">
+      @csrf
+
+        @if($errors->any())
+        <div class="row">
+          <div class="col-12">
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger" role="alert">
+                  {{ $error }}
+                </div>
+            @endforeach
+          </div>
+        </div>
+        @endif
+
         <div class="row setup-content" id="step-1">
             <div class="col-xs-12 col-lg-12">
                 <h3 class="wizard-section-title">Account Information</h3>
@@ -40,23 +54,23 @@
               <div class="form-row">
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="name">Full Name <span>*</span></label>
-                  <input type="text" class="form-control" name="name" id="name" required>
+                  <input type="text" class="form-control" name="name" value="{{ old('name') }}" id="name" required>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="email">Your Email <span>*</span></label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <input type="email" class="form-control" name="email" value="{{ old('email') }}" id="email" required>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="phone">Phone No <span>*</span></label>
-                  <input type="text" class="form-control" name="phone" id="phone" required>
+                  <input type="text" class="form-control" name="phone" value="{{ old('phone') }}" id="phone" required>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="dob">Date Of Birth <span>*</span></label>
-                  <input type="date" class="form-control" name="dob" id="dob" required>
+                  <input type="date" class="form-control" name="dob" value="{{ old('dob') }}" id="dob" required>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="address">Address <span>*</span></label>
-                  <input type="text" class="form-control" name="address" id="address" required>
+                  <input type="text" class="form-control" name="address" value="{{ old('address') }}" id="address" required>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="city">City / District <span>*</span></label>
@@ -135,21 +149,21 @@
                     </div> --}}
 
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="male" name="gender" value="1" required>
+                        <input type="radio" class="custom-control-input" id="male" name="gender" value="1" @if(old('gender') == 1) checked @endif required>
                         <label class="custom-control-label" for="male">Male</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="female" name="gender" value="2" required>
+                        <input type="radio" class="custom-control-input" id="female" name="gender" value="2" @if(old('gender') == 2) checked @endif required>
                         <label class="custom-control-label" for="female">Female</label>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="password">Password <span>*</span></label>
-                  <input type="password" class="form-control" name="password" id="password" required>
+                  <input type="password" class="form-control" name="password" value="{{ old('password') }}" id="password" required>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
-                  <label for="password">Confirm Password <span>*</span></label>
-                  <input type="password" class="form-control" name="password" id="password" required>
+                  <label for="password_confirmation">Confirm Password <span>*</span></label>
+                  <input type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}" id="password_confirmation" required autocomplete="password">
                 </div>
               </div>
             </div>
@@ -170,17 +184,17 @@
 
                   <div class="form-element">
                   <label for="designation">Designation <span>*</span></label>
-                  <input type="text" class="form-control" name="designation" id="designation" required>
+                  <input type="text" class="form-control" name="designation" value="{{ old('designation') }}" id="designation" required>
                   </div>
 
                   <div class="form-element">
                   <label for="department">Department <span>*</span></label>
-                  <input type="text" class="form-control" name="department" id="department" required>
+                  <input type="text" class="form-control" name="department" value="{{ old('department') }}" id="department" required>
                   </div>
 
                   <div class="form-element">
                   <label for="organization">Organization <span>*</span></label>
-                  <input type="text" class="form-control" name="organization" id="organization" required>
+                  <input type="text" class="form-control" name="organization" value="{{ old('organization') }}" id="organization" required>
                   </div>
                     
                 </div>
@@ -189,24 +203,24 @@
                     
                   <div class="form-element">
                   <label for="higher_degree">Higher Degree <span>*</span></label>
-                  <input type="text" class="form-control" name="higher_degree" id="higher_degree" required>
+                  <input type="text" class="form-control" name="higher_degree" value="{{ old('higher_degree') }}" id="higher_degree" required>
                   </div>
 
                   <div class="form-element">
                   <label for="academy">Academy <span>*</span></label>
-                  <input type="text" class="form-control" name="academy" id="academy" required>
+                  <input type="text" class="form-control" name="academy" value="{{ old('academy') }}" id="academy" required>
                   </div>
 
                   <div class="form-element">
                   <label for="specialty">Specialty <span>*</span></label>
-                  <input type="text" class="form-control" name="specialty" id="specialty" required>
+                  <input type="text" class="form-control" name="specialty" value="{{ old('specialty') }}" id="specialty" required>
                   </div>
 
                 </div>
                 <div class="col-12 col-md-12 col-xl-12">
                   <hr/>
                   <label for="profile">About You</label>
-                  <textarea class="form-control" rows="4" name="profile" id="profile"></textarea>
+                  <textarea class="form-control" rows="4" name="profile" value="{{ old('profile') }}" id="profile"></textarea>
                 </div>
               </div>
             </div>

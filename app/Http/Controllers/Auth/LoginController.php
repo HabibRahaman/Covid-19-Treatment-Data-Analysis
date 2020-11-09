@@ -60,20 +60,4 @@ class LoginController extends Controller
         }
         return back()->withInput($request->only('email'));
     }
-
-
-    public function login(Request $request)
-    {
-        $this->validate($request, [
-            'email'   => 'required|email',
-            'password' => 'required|min:6',
-        ]);
-
-
-        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-
-            return redirect()->route('dashboard.index');
-        }
-        return back()->withInput($request->only('email', 'remember'));
-    }
 }

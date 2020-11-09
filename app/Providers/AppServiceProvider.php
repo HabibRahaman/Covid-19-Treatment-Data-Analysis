@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Pagination\LengthAwarePaginator;
+use App\Model\Blog;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +27,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Share view for Common Data
+        $blogs = Blog::where('status', '1')->get();
+
+
+        View::share(['blogs' => $blogs]);
     }
 }
