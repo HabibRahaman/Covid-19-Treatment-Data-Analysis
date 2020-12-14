@@ -55,7 +55,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="{{ route('admin.symptom.index') }}" class="hide-menu"><i><span class="fas fa-head-side-cough"></span></i><span class="hide-menu"> Symptoms </span></a>
+                                        <a href="{{ route('admin.testing-symptom.index') }}" class="hide-menu"><i><span class="fas fa-head-side-cough"></span></i><span class="hide-menu"> Symptoms </span></a>
                                     </li>
 
                                     <li>

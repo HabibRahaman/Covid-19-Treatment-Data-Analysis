@@ -65,7 +65,7 @@ class TestingDiseaseController extends Controller
         $input = $request->only(['name','slug','details','type','risk_level']);
 
         // store data
-        $disease = TestingDisease::create($input);
+        $testingDisease = TestingDisease::create($input);
 
         toastr()->success('Create Successfully');
 
