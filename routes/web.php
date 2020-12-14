@@ -91,6 +91,9 @@ Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')
     // Blogs
     Route::resource('blog','BlogController');
 
+    // Testing Diseases
+    Route::resource('testing-disease','TestingDiseaseController');
+
     // Roles And Permission Routes
     Route::resource('role','RoleController');
 

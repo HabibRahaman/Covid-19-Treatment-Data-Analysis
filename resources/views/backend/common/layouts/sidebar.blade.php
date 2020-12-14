@@ -51,7 +51,7 @@
                             <div class="collapsible-body">
                                 <ul>
                                     <li>
-                                        <a href="{{ route('admin.disease.index') }}" class="hide-menu"><i><span class="fas fa-viruses"></span></i><span class="hide-menu"> Diseases </span></a>
+                                        <a href="{{ route('admin.testing-disease.index') }}" class="hide-menu"><i><span class="fas fa-viruses"></span></i><span class="hide-menu"> Diseases </span></a>
                                     </li>
 
                                     <li>
