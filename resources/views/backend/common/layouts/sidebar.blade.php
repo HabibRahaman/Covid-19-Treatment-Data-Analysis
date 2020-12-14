@@ -46,6 +46,25 @@
                         </li>
                         @endcan
 
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i><span class="fas fa-vial"></span></i><span class="hide-menu"> Testing Tool</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                        <a href="{{ route('admin.disease.index') }}" class="hide-menu"><i><span class="fas fa-viruses"></span></i><span class="hide-menu"> Diseases </span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ route('admin.symptom.index') }}" class="hide-menu"><i><span class="fas fa-head-side-cough"></span></i><span class="hide-menu"> Symptoms </span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="hide-menu"><i><span class="fas fa-clipboard"></span></i><span class="hide-menu"> Test Report </span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
                         @can('Roles')
                         <li>
                             <a href="{{ route('admin.role.index') }}" class="collapsible-header"><i><span class="fas fa-user-tag"></span></i><span class="hide-menu"> Roles </span></a>
