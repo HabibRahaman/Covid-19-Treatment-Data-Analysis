@@ -42,11 +42,13 @@
 
             <div class="col-xs-12 col-lg-12">
               <div class="form-row">
+
+                @foreach($commons as $common)
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
+                            <div class="single-check-title">{{ $common->name }}</div>
+                            {{-- <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div> --}}
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -57,111 +59,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
               </div>
             </div>
 
@@ -176,11 +75,13 @@
 
             <div class="col-xs-12 col-lg-12">
               <div class="form-row">
+                
+                @foreach($emergencies as $emergency)
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
+                            <div class="single-check-title">{{ $emergency->name }}</div>
+                            {{-- <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div> --}}
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -191,81 +92,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                
               </div>
             </div>
 

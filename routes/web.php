@@ -52,6 +52,8 @@ Route::namespace('Web')->group(function () {
     // Health Blog
     Route::get('blog/{slug}','BlogController@show')->name('blog.single');
     Route::post('join/doctor','JoinController@register')->name('join.doctor');
+    Route::get('online-test','TestingController@search')->name('testing.search');
+    Route::post('online-test','TestingController@result')->name('testing.result');
 });
 
 
