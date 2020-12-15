@@ -16,6 +16,7 @@ class CreateTestingDiseaseSymptomTable extends Migration
         Schema::create('testing_disease_symptom', function (Blueprint $table) {
             $table->integer('disease_id')->unsigned();
             $table->integer('symptom_id')->unsigned();
+            $table->integer('priority')->nullable();
 
             $table->foreign('disease_id')->references('id')->on('testing_diseases')->onDelete('cascade');
             $table->foreign('symptom_id')->references('id')->on('testing_symptoms')->onDelete('cascade');

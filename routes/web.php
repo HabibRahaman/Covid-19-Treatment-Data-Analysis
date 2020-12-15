@@ -99,6 +99,9 @@ Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')
     // Testing Symptoms
     Route::resource('testing-symptom','TestingSymptomController');
 
+    // Testing Priorities
+    Route::resource('testing-priority','TestingPriorityController');
+
     // Roles And Permission Routes
     Route::resource('role','RoleController');
 

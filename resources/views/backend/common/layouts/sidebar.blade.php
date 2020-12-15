@@ -59,6 +59,10 @@
                                     </li>
 
                                     <li>
+                                        <a href="{{ route('admin.testing-priority.index') }}" class="hide-menu"><i><span class="fas fa-tasks"></span></i><span class="hide-menu"> Priorities </span></a>
+                                    </li>
+
+                                    <li>
                                         <a href="#" class="hide-menu"><i><span class="fas fa-clipboard"></span></i><span class="hide-menu"> Test Report </span></a>
                                     </li>
                                 </ul>
