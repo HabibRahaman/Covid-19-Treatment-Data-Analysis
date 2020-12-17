@@ -63,7 +63,7 @@
                                     </li>
 
                                     <li>
-                                        <a href="#" class="hide-menu"><i><span class="fas fa-clipboard"></span></i><span class="hide-menu"> Test Report </span></a>
+                                        <a href="{{ route('admin.testing-report.index') }}" class="hide-menu"><i><span class="fas fa-clipboard"></span></i><span class="hide-menu"> Test Report </span></a>
                                     </li>
                                 </ul>
                             </div>
