@@ -38,7 +38,7 @@
 
      <!-- Single Service -->
      <div class="col-12 col-md-6 col-lg-6">
-       <a href="{{ route('test') }}" class="signle-service-box">
+       <a href="{{ route('testing.search') }}" class="signle-service-box">
          <div class="service-icon-area">
              <img src="{{ asset('web/img/services/test_tool.png') }}" alt="Icon">
          </div>
