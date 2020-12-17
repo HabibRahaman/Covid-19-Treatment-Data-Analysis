@@ -16,7 +16,7 @@ class CreateDiseaseReportTable extends Migration
         Schema::create('disease_report', function (Blueprint $table) {
             $table->integer('disease_id')->unsigned();
             $table->bigInteger('report_id')->unsigned();
-            $table->integer('probability')->nullable();
+            $table->decimal('probability', 8,2)->default('0');
 
             $table->foreign('disease_id')->references('id')->on('testing_diseases')->onDelete('cascade');
             $table->foreign('report_id')->references('id')->on('test_reports')->onDelete('cascade');
