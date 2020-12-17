@@ -20,4 +20,9 @@ class TestingSymptom extends Model
     {
         return $this->belongsToMany('App\Model\TestingDisease', 'testing_disease_symptom', 'symptom_id', 'disease_id')->withPivot('priority');
     }
+
+    public function reports()
+    {
+        return $this->belongsToMany('App\Model\TestReport', 'symptom_report', 'symptom_id', 'report_id');
+    }
 }
