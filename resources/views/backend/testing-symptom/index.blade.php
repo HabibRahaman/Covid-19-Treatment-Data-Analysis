@@ -99,8 +99,9 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Priority</th>
+                                        {{-- <th>Priority</th> --}}
                                         <th>Risk Level</th>
+                                        <th>Diseases</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -109,7 +110,7 @@
                                     @foreach($symptoms as $symptom)
                                     <tr>
                                         <td>{{ $symptom->name }}</td>
-                                        <td>
+                                        {{-- <td>
                                             @if($symptom->priority == 1)
                                             <span class="new badge blue">Lower</span>
                                             @elseif($symptom->priority == 2)
@@ -117,7 +118,7 @@
                                             @elseif($symptom->priority == 3)
                                             <span class="new badge red">Higher</span>
                                             @endif
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             @if($symptom->risk_level == 1)
                                             <span class="new badge blue">Lower</span>
@@ -126,6 +127,11 @@
                                             @elseif($symptom->risk_level == 3)
                                             <span class="new badge red">Higher</span>
                                             @endif
+                                        </td>
+                                        <td>
+                                            @foreach($symptom->diseases as $disease)
+                                                <span class="new badge blue">{{ $disease->name }}</span>
+                                            @endforeach
                                         </td>
                                         <td>
                                             @if($symptom->status == 1)
@@ -177,7 +183,7 @@
                                                                     <textarea class="textEditor" name="details" id="details">{{ $symptom->details }}</textarea>
                                                                 </div>
                                                             </div>
-                                                            <div class="col s12">
+                                                            {{-- <div class="col s12">
                                                                 <div class="input-field">
                                                                     <select name="priority" id="priority" required>
                                                                         <option value="">Select</option>
@@ -187,7 +193,7 @@
                                                                     </select> 
                                                                     <label for="priority">Priority <span>*</span></label>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col s12">
                                                                 <div class="input-field">
                                                                     <select name="risk_level" id="risk_level" required>

@@ -78,7 +78,7 @@ class TestingSymptomController extends Controller
         $testingSymptom = TestingSymptom::create($input);
 
         // Attach
-        $testingSymptom->diseases()->attach($request->diseases);
+        $testingSymptom->diseases()->attach($request->diseases, ['priority' => $request->priority]);
 
         toastr()->success('Create Successfully');
 
@@ -118,7 +118,7 @@ class TestingSymptomController extends Controller
     {
         $request->validate([
             'name' => 'required | unique:testing_symptoms,name,'.$testingSymptom->id,
-            'priority'  => 'required',
+            // 'priority'  => 'required',
             'risk_level'  => 'required',
             'diseases'  => 'required',
         ]);
