@@ -18,6 +18,7 @@ class JoinController extends Controller
      */
     public function register(Request $request)
     {
+        // Validation
         $request->validate([
             'name' => 'required',
             'phone' => 'required',
