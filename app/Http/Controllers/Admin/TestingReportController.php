@@ -93,8 +93,10 @@ class TestingReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TestReport $testReport)
+    public function destroy($id)
     {
+        $testReport = TestReport::find($id);
+        
         // Detach
         $testReport->symptoms()->detach();
         $testReport->diseases()->detach();

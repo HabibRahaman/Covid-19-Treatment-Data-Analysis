@@ -26,7 +26,7 @@ $(document).ready(function () {
         var curStep = $(this).closest(".setup-content"),
             curStepBtn = curStep.attr("id"),
             nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='text'],input[type='email'],input[type='radio'],input[type='checkbox'],select"),
+            curInputs = curStep.find("input[type='text'],input[type='password'],input[type='date'],input[type='email'],input[type='radio'],input[type='checkbox'],select"),
             isValid = true;
 
         $(".form-control, .custom-select, .form-inline").removeClass("has-error");
