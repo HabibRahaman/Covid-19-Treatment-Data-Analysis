@@ -43,3 +43,12 @@ $(document).ready(function () {
 
     $('div.setup-panel div a.active').trigger('click');
 });
+
+
+
+//close the alert after 5 seconds.
+$(document).ready(function(){
+    setTimeout(function() {
+        $(".alert").alert('close');
+    }, 5000);
+});

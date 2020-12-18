@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\User;
+use Session;
 use Auth;
 
 class JoinController extends Controller
@@ -53,7 +54,8 @@ class JoinController extends Controller
 	        // Logout other
 	        Auth()->logout();
 
-	        toastr()->success('Join Successfully');
+	        toastr()->success('Account Registered Successfully');
+            Session::flash('success', 'Account Registered Successfully!');
 
 	        return redirect()->route('login');
         }

@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Auth;
 use App\User;
-use App\Model\Test;
 use App\Model\Patient;
+use App\Model\TestReport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -29,7 +29,7 @@ class DashboardController extends Controller
         $data['route']     = $this->route;
         
         $data['users'] = User::count();
-        $data['tests'] = Test::count();
+        $data['tests'] = TestReport::count();
         $data['search'] = Patient::where('entry_type', 0)->count();
         $data['survey'] = Patient::where('entry_type', 1)->count();
 

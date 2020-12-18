@@ -21,7 +21,13 @@
     <div class="stepwizard">
         <div class="stepwizard-row setup-panel">
             <div class="stepwizard-step">
-                <a href="#step-1" type="button" class="btn active btn-circle">1</a>
+                <a href="#step-1" type="button" class="btn 
+                @if(isset($report))
+                inactive 
+                @else
+                active 
+                @endif
+                btn-circle" @if(isset($report)) disabled="disabled" @endif>1</a>
                 <p class="wizard-btn-title">Patient Information</p>
             </div>
             <div class="stepwizard-step">
@@ -33,7 +39,13 @@
                 <p class="wizard-btn-title">Emergency Symptoms</p>
             </div>
             <div class="stepwizard-step">
-                <a href="#step-4" type="button" class="btn inactive btn-circle" disabled="disabled">4</a>
+                <a href="#step-4" type="button" class="btn 
+                @if(isset($report))
+                active 
+                @else
+                inactive 
+                @endif
+                btn-circle" @if(isset($report)) @else disabled="disabled" @endif>4</a>
                 <p class="wizard-btn-title">Probable Result</p>
             </div>
         </div>
@@ -45,10 +57,27 @@
         <div class="row">
           <div class="col-12">
             @foreach ($errors->all() as $error)
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
                   {{ $error }}
                 </div>
             @endforeach
+          </div>
+        </div>
+        @endif
+
+        <!-- Message Display -->
+        @if(Session::has('success'))
+        <div class="row">
+          <div class="col-12">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ Session::get('success') }}
+            </div>
           </div>
         </div>
         @endif
@@ -271,7 +300,60 @@
             </div>
 
             <div class="col-xs-12 col-lg-12">
-              
+              <div class="post-content">
+              @if(isset($report))
+
+                <h3>Infection Probability</h3>
+
+                <table>
+                    <tr>
+                      @foreach($report->diseases as $disease)
+                        <th>{{ $disease->name }}</th>
+                      @endforeach
+                    </tr>
+                    <tr>
+                      @foreach($report->diseases as $disease)
+                        <td>{{ $disease->pivot->probability }} %</td>
+                      @endforeach
+                    </tr>
+                </table>
+
+
+
+                <h3>Patient Symptoms:</h3>
+
+                <ul>
+                    @foreach($report->symptoms as $symptom)
+                      <li>{{ $symptom->name }}</li>
+                    @endforeach
+                </ul>
+
+
+                <h3>Emergency Symptoms:</h3>
+
+                @php
+                  $emergency_issue = 0;
+                @endphp
+                <ul>
+                    @foreach($report->symptoms as $symptom)
+                      @if($symptom->risk_level == 3)
+                      <li>{{ $symptom->name }}</li>
+
+                      @php
+                        $emergency_issue = 1;
+                      @endphp
+                      @endif
+                    @endforeach
+                </ul>
+
+                @if($emergency_issue == 0)
+                  <p>You don't have any emergency syndromes. Stay home and take care of your health.</p>
+                @else
+                  <p>You have emergency syndromes. You might be need health support. Please connect with doctor or call to 999.</p>
+                @endif
+
+              @endif
+              </div>
             </div>
         </div>
     </form>

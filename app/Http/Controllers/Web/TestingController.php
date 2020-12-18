@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use Session;
 use App\Model\TestReport;
 use Illuminate\Http\Request;
 use App\Model\TestingDisease;
@@ -50,7 +51,7 @@ class TestingController extends Controller
         $input = $request->only(['name', 'email', 'gender', 'dob', 'age', 'designation', 'phone', 'city', 'country']);
 
         // store data
-        $report = TestReport::create($input);
+        $data['report'] = $report = TestReport::create($input);
 
         // Attach
         $report->symptoms()->attach($request->symptoms);
@@ -98,6 +99,9 @@ class TestingController extends Controller
         $data['emergencies'] = TestingSymptom::where('status', 1)
                             ->where('risk_level', 3)
                             ->get();
+
+
+        Session::flash('success', 'Test Report Generated Successfully!');
 
         return view('web.online-test', $data);
     }
