@@ -96,9 +96,15 @@
                                                       <div class="col s12">
                                                           <span class="card-title">{{ $report->name }}</span>
 
+                                                          @if(isset($report->email))
+                                                          <br/>
                                                           Email : {{ $report->email }}
+                                                          @endif
+
+                                                          @if(isset($report->phone))
                                                           <br/>
                                                           Phone : {{ $report->phone }}
+                                                          @endif
                                                       </div>
                                                     </div>
 

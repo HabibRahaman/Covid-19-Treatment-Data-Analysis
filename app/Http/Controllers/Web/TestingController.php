@@ -101,7 +101,7 @@ class TestingController extends Controller
                             ->get();
 
 
-        Session::flash('success', 'Test Report Generated Successfully!');
+        // Session::flash('success', 'Test Report Generated Successfully!');
 
         return view('web.online-test', $data);
     }

@@ -93,14 +93,14 @@
                   <label for="name">Full Name <span>*</span></label>
                   <input type="text" class="form-control" name="name" value="{{ old('name') }}" id="name" required>
                 </div>
-                <div class="col-12 col-md-6 col-xl-6">
+                {{-- <div class="col-12 col-md-6 col-xl-6">
                   <label for="email">Your Email (Optional)</label>
                   <input type="email" class="form-control" name="email" value="{{ old('email') }}" id="email">
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="phone">Phone No (Optional)</label>
                   <input type="text" class="form-control" name="phone" value="{{ old('phone') }}" id="phone">
-                </div>
+                </div> --}}
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="city">City / District <span>*</span></label>
                   <select class="custom-select" name="city" id="city" required>
@@ -354,6 +354,10 @@
 
               @endif
               </div>
+            </div>
+
+            <div class="col-xs-12 col-lg-12">
+                <a class="btn link" href="{{ route('testing.search') }}">Check Again</a>
             </div>
         </div>
     </form>
