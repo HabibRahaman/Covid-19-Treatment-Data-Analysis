@@ -27,7 +27,7 @@
             </div>
             <div class="stepwizard-step">
                 <a href="#step-2" type="button" class="btn inactive btn-circle" disabled="disabled">2</a>
-                <p class="wizard-btn-title">COVID Symptoms</p>
+                <p class="wizard-btn-title">Symptoms</p>
             </div>
             <div class="stepwizard-step">
                 <a href="#step-3" type="button" class="btn inactive btn-circle" disabled="disabled">3</a>
@@ -35,11 +35,42 @@
             </div>
             <div class="stepwizard-step">
                 <a href="#step-4" type="button" class="btn inactive btn-circle" disabled="disabled">4</a>
-                <p class="wizard-btn-title">Medical Treatments</p>
+                <p class="wizard-btn-title">Medicines</p>
             </div>
         </div>
     </div>
-    <form role="form">
+    <form role="form" action="{{ route('survey.store') }}" method="post">
+      @csrf
+
+        @if($errors->any())
+        <div class="row">
+          <div class="col-12">
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                  {{ $error }}
+                </div>
+            @endforeach
+          </div>
+        </div>
+        @endif
+
+        <!-- Message Display -->
+        @if(Session::has('success'))
+        <div class="row">
+          <div class="col-12">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ Session::get('success') }}
+            </div>
+          </div>
+        </div>
+        @endif
+
         <div class="row setup-content" id="step-1">
             <div class="col-xs-12 col-lg-12">
                 <h3 class="wizard-section-title">Patient Information</h3>
@@ -49,15 +80,15 @@
               <div class="form-row">
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="name">Full Name <span>*</span></label>
-                  <input type="text" class="form-control" name="name" id="name" required>
+                  <input type="text" class="form-control" name="name" value="{{ old('name') }}" id="name" required>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="email">Your Email <span>*</span></label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                  <input type="email" class="form-control" name="email" value="{{ old('email') }}" id="email" required>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="phone">Phone No (Optional)</label>
-                  <input type="text" class="form-control" name="phone" id="phone">
+                  <input type="text" class="form-control" name="phone" value="{{ old('phone') }}" id="phone">
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
                   <label for="city">City / District <span>*</span></label>
@@ -131,55 +162,51 @@
                 </div>
                 <div class="col-12 col-md-12 col-xl-12 form-inline">
                   <label for="city">Gender <span>*</span></label>
-                    {{-- <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="gender" id="common" value="2" hidden="">
-                    </div> --}}
-
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="male" name="gender" value="1" required>
+                        <input type="radio" class="custom-control-input" id="male" name="gender" value="1" @if(old('gender') == 1) checked @endif required>
                         <label class="custom-control-label" for="male">Male</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="female" name="gender" value="2" required>
+                        <input type="radio" class="custom-control-input" id="female" name="gender" value="2" @if(old('gender') == 2) checked @endif required>
                         <label class="custom-control-label" for="female">Female</label>
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-xl-12 form-inline">
                   <label for="city">Age <span>*</span></label>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="1" name="age" value="1" required>
+                        <input type="radio" class="custom-control-input" id="1" name="age" value="1" @if(old('age') == 1) checked @endif required>
                         <label class="custom-control-label" for="1">1 - 10</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="2" name="age" value="2" required>
+                        <input type="radio" class="custom-control-input" id="2" name="age" value="2" @if(old('age') == 2) checked @endif required>
                         <label class="custom-control-label" for="2">11 - 20</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="3" name="age" value="2" required>
+                        <input type="radio" class="custom-control-input" id="3" name="age" value="3" @if(old('age') == 3) checked @endif required>
                         <label class="custom-control-label" for="3">21 - 30</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="4" name="age" value="2" required>
+                        <input type="radio" class="custom-control-input" id="4" name="age" value="4" @if(old('age') == 4) checked @endif required>
                         <label class="custom-control-label" for="4">31 - 40</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="5" name="age" value="2" required>
+                        <input type="radio" class="custom-control-input" id="5" name="age" value="5" @if(old('age') == 5) checked @endif required>
                         <label class="custom-control-label" for="5">41 - 50</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="6" name="age" value="2" required>
+                        <input type="radio" class="custom-control-input" id="6" name="age" value="6" @if(old('age') == 6) checked @endif required>
                         <label class="custom-control-label" for="6">51 - 60</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="7" name="age" value="2" required>
+                        <input type="radio" class="custom-control-input" id="7" name="age" value="7" @if(old('age') == 7) checked @endif required>
                         <label class="custom-control-label" for="7">61 - 70</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="8" name="age" value="2" required>
+                        <input type="radio" class="custom-control-input" id="8" name="age" value="8" @if(old('age') == 8) checked @endif required>
                         <label class="custom-control-label" for="8">71 - 80</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="9" name="age" value="2" required>
+                        <input type="radio" class="custom-control-input" id="9" name="age" value="9" @if(old('age') == 9) checked @endif required>
                         <label class="custom-control-label" for="9">80+</label>
                     </div>
                 </div>
@@ -191,7 +218,7 @@
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right covid">
-                                <input class="switch-input" type="checkbox" />
+                                <input class="switch-input" type="checkbox" name="test_result" value="1" @if(old('test_result') == 1) checked @endif>
                                 <span class="switch-label" data-on="Positive" data-off="Negative"></span> 
                                 <span class="switch-handle"></span> 
                             </label>
@@ -205,7 +232,7 @@
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
+                                <input class="switch-input" type="checkbox" name="ventilation" value="1" @if(old('ventilation') == 1) checked @endif>
                                 <span class="switch-label" data-on="Yes" data-off="No"></span> 
                                 <span class="switch-handle"></span> 
                             </label>
@@ -219,7 +246,7 @@
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
+                                <input class="switch-input" type="checkbox" name="icu" value="1" @if(old('icu') == 1) checked @endif>
                                 <span class="switch-label" data-on="Yes" data-off="No"></span> 
                                 <span class="switch-handle"></span> 
                             </label>
@@ -229,15 +256,15 @@
                 <div class="col-12 col-md-6 col-xl-6 form-inline">
                   <label for="city">Health Condition <span>*</span></label>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="healthy" name="health_condition" value="1" required>
+                        <input type="radio" class="custom-control-input" id="healthy" name="health_condition" value="1" @if(old('health_condition') == 1) checked @endif required>
                         <label class="custom-control-label" for="healthy">Healthy</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="illness" name="health_condition" value="2" required>
+                        <input type="radio" class="custom-control-input" id="illness" name="health_condition" value="2" @if(old('health_condition') == 2) checked @endif required>
                         <label class="custom-control-label" for="illness">Illness</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="death" name="health_condition" value="2" required>
+                        <input type="radio" class="custom-control-input" id="death" name="health_condition" value="0" @if(old('health_condition') == 0) checked @endif required>
                         <label class="custom-control-label" for="death">Death</label>
                     </div>
                 </div>
@@ -255,131 +282,25 @@
 
             <div class="col-xs-12 col-lg-12">
               <div class="form-row">
+
+                @foreach($disease->symptoms as $symptom)
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
+                            <div class="single-check-title">{{ $symptom->name }}</div>
+                            {{-- <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div> --}}
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
+                                <input class="switch-input" type="checkbox" name="symptoms[]" value="{{ $symptom->id }}">
                                 <span class="switch-label" data-on="Yes" data-off="No"></span> 
                                 <span class="switch-handle"></span> 
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">Do you have fever?</div>
-                            <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-12 col-xl-12">
-                  <hr/>
-                  <label for="others">Others</label>
-                  <textarea class="form-control" rows="2" name="others" id="others"></textarea>
-                </div>
+                @endforeach
+
               </div>
             </div>
 
@@ -389,131 +310,30 @@
         </div>
         <div class="row setup-content" id="step-3">
             <div class="col-xs-12 col-lg-12">
-                <h3 class="wizard-section-title">Serious Medical Conditions</h3>
+                <h3 class="wizard-section-title">Serious Medical Conditions / Health Issues</h3>
             </div>
 
             <div class="col-xs-12 col-lg-12">
               <div class="form-row">
+
+                @foreach($disease->conditions as $condition)
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
+                            <div class="single-check-title">{{ $condition->name }}</div>
+                            {{-- <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div> --}}
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
+                                <input class="switch-input" type="checkbox" name="conditions[]" value="{{ $condition->id }}">
                                 <span class="switch-label" data-on="Yes" data-off="No"></span> 
                                 <span class="switch-handle"></span> 
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
               </div>
             </div>
 
@@ -523,136 +343,37 @@
         </div>
         <div class="row setup-content" id="step-4">
             <div class="col-xs-12 col-lg-12">
-                <h3 class="wizard-section-title">Medical Treatments</h3>
+                <h3 class="wizard-section-title">Medicine Treatments</h3>
             </div>
 
             <div class="col-xs-12 col-lg-12">
               <div class="form-row">
+
+                @foreach($disease->symptoms as $symptom)
+                @foreach($symptom->medicines as $medicine)
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
+                            <div class="single-check-title">{{ $medicine->name }}</div>
+                            {{-- <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div> --}}
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
+                                <input class="switch-input" type="checkbox" name="medicines[]" value="{{ $medicine->id }}">
                                 <span class="switch-label" data-on="Yes" data-off="No"></span> 
                                 <span class="switch-handle"></span> 
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-xl-6">
-                    <div class="single-check-form">
-                        <div class="check-content">
-                            <div class="single-check-title">High blood pressure?</div>
-                            <div class="single-check-subtitle">(উচ্চ্ রক্তচাপ)</div>
-                        </div>
-                        <div class="check-btn">
-                            <label class="switch switch-left-right">
-                                <input class="switch-input" type="checkbox" />
-                                <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                                <span class="switch-handle"></span> 
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-12 col-xl-12">
+                @endforeach
+                @endforeach
+
+                {{-- <div class="col-12 col-md-12 col-xl-12">
                   <hr/>
                   <label for="others">Others</label>
                   <textarea class="form-control" rows="2" name="others" id="others"></textarea>
-                </div>
+                </div> --}}
               </div>
             </div>
 

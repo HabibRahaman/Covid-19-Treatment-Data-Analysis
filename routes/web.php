@@ -36,13 +36,13 @@ Route::get('/search', function () {
     return view('web.search');
 })->name('search');
 
-Route::get('/online-test', function () {
+/*Route::get('/online-test', function () {
     return view('web.online-test');
 })->name('test');
 
 Route::get('/join', function () {
     return view('web.join');
-})->name('join');
+})->name('join');*/
 
 
 
@@ -51,9 +51,17 @@ Route::namespace('Web')->group(function () {
 
     // Health Blog
     Route::get('blog/{slug}','BlogController@show')->name('blog.single');
+
+    // Doctor Join
     Route::post('join/doctor','JoinController@register')->name('join.doctor');
+
+    // Probability Test
     Route::get('online-test','TestingController@search')->name('testing.search');
     Route::post('online-test','TestingController@result')->name('testing.result');
+
+    // Survey
+    Route::get('survey','SurveyController@index')->name('survey.index');
+    Route::post('survey','SurveyController@store')->name('survey.store');
 });
 
 

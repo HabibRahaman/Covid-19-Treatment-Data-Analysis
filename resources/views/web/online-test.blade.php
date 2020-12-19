@@ -31,7 +31,7 @@
                 <p class="wizard-btn-title">Patient Information</p>
             </div>
             <div class="stepwizard-step">
-                <a href="#step-2" type="button" class="btn inactive btn-circle">2</a>
+                <a href="#step-2" type="button" class="btn inactive btn-circle" disabled="disabled">2</a>
                 <p class="wizard-btn-title">Common Symptoms</p>
             </div>
             <div class="stepwizard-step">
