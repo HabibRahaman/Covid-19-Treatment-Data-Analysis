@@ -21,6 +21,11 @@ class Disease extends Model
         return $this->belongsToMany('App\Model\Symptom', 'disease_symptom', 'disease_id', 'symptom_id');
     }
 
+    public function medicines()
+    {
+        return $this->belongsToMany('App\Model\Medicine', 'disease_medicine', 'disease_id', 'medicine_id');
+    }
+
     public function conditions()
     {
         return $this->belongsToMany('App\Model\MedicalCondition', 'disease_medical_condition', 'disease_id', 'medical_condition_id');

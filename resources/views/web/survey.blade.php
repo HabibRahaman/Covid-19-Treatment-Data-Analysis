@@ -349,8 +349,7 @@
             <div class="col-xs-12 col-lg-12">
               <div class="form-row">
 
-                @foreach($disease->symptoms as $symptom)
-                @foreach($symptom->medicines as $medicine)
+                @foreach($disease->medicines as $medicine)
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
@@ -366,7 +365,6 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
                 @endforeach
 
                 {{-- <div class="col-12 col-md-12 col-xl-12">

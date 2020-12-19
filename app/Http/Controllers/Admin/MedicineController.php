@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Disease;
 use App\Model\Symptom;
 use App\Model\Medicine;
 use Illuminate\Support\Str;
@@ -30,6 +31,7 @@ class MedicineController extends Controller
         $data['route'] = $this->route;
         
         $data['symptoms'] = Symptom::orderBy('name', 'asc')->get();
+        $data['diseases'] = Disease::orderBy('name', 'asc')->get();
         $data['medicine_groups'] = Medicine::where('group', 1)->orderBy('name', 'asc')->get();
         $data['medicines'] = Medicine::orderBy('name', 'asc')->get();
 
@@ -56,8 +58,9 @@ class MedicineController extends Controller
     {
         $request->validate([
             'name'  => 'required | unique:medicines,name',
-            'group'  => 'required',
+            // 'group'  => 'required',
             'risk_level'  => 'required',
+            'diseases'  => 'required',
         ]);
 
         // Slug
@@ -79,6 +82,7 @@ class MedicineController extends Controller
 
         // Attach
         $medicine->symptoms()->attach($request->symptoms);
+        $medicine->diseases()->attach($request->diseases);
 
         toastr()->success('Create Successfully');
 
@@ -118,8 +122,9 @@ class MedicineController extends Controller
     {
         $request->validate([
             'name' => 'required | unique:medicines,name,'.$medicine->id,
-            'group'  => 'required',
+            // 'group'  => 'required',
             'risk_level'  => 'required',
+            'diseases'  => 'required',
         ]);
 
         // Slug
@@ -142,6 +147,7 @@ class MedicineController extends Controller
 
         // Attach Update
         $medicine->symptoms()->sync($request->symptoms);
+        $medicine->diseases()->sync($request->diseases);
 
         toastr()->success('Update Successfully');
 
@@ -158,6 +164,7 @@ class MedicineController extends Controller
     {
         // Detach
         $medicine->symptoms()->detach();
+        $medicine->diseases()->detach();
 
         // Delete
         $medicine->delete();

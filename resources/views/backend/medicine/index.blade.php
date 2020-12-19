@@ -44,7 +44,7 @@
                                                         <textarea class="textEditor" name="details" id="details"></textarea>
                                                     </div>
                                                 </div>
-                                                <div class="col s12">
+                                                {{-- <div class="col s12">
                                                     <div class="input-field">
                                                         <select name="group_id" id="group_id">
                                                             <option value="">Select</option>
@@ -54,8 +54,8 @@
                                                         </select> 
                                                         <label for="group_id">Parent Group <span>*</span></label>
                                                     </div>
-                                                </div>
-                                                <div class="col s12">
+                                                </div> --}}
+                                                {{-- <div class="col s12">
                                                     <div class="input-field">
                                                         <select name="group" id="group" required>
                                                             <option value="0">No</option>
@@ -63,7 +63,7 @@
                                                         </select> 
                                                         <label for="group">Is it Group Name? <span>*</span></label>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <div class="col s12">
                                                     <div class="input-field">
                                                         <select name="risk_level" id="risk_level" required>
@@ -85,15 +85,25 @@
                                                         <label for="symptoms">Symptoms <span>*</span></label>
                                                     </div>
                                                 </div>
+                                                <div class="col s12">
+                                                    <div class="input-field">
+                                                        <select name="diseases[]" id="diseases" required multiple>
+                                                            @foreach($diseases as $disease)
+                                                            <option value="{{ $disease->id }}">{{ $disease->name }}</option>
+                                                            @endforeach
+                                                        </select> 
+                                                        <label for="diseases">Diseases <span>*</span></label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="row">
+                                            {{-- <div class="row">
                                                 <div class="col s12">
                                                     <label>
                                                         <input type="checkbox" name="show" class="filled-in" value="1" />
                                                         <span>Show</span>
                                                     </label>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="row">
                                                 <div class="col s12">
                                                     <a href="#!" class="modal-action modal-close waves-effect waves-light btn grey darken-4">Cancel</a>
@@ -116,10 +126,10 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Group Name</th>
-                                        <th>Group</th>
+                                        {{-- <th>Group Name</th>
+                                        <th>Group</th> --}}
                                         <th>Risk Level</th>
-                                        <th>Show</th>
+                                        {{-- <th>Show</th> --}}
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -128,20 +138,20 @@
                                     @foreach($medicines as $medicine)
                                     <tr>
                                         <td>{{ $medicine->name }}</td>
-                                        <td>
+                                        {{-- <td>
                                             @foreach($medicine_groups as $medicine_group)
                                                 @if($medicine->group_id == $medicine_group->id)
                                                     {{ $medicine_group->name }}
                                                 @endif
                                             @endforeach
-                                        </td>
-                                        <td>
+                                        </td> --}}
+                                        {{-- <td>
                                             @if($medicine->group == 1)
                                             <span class="new badge green">Yes</span>
                                             @else
                                             <span class="new badge red">No</span>
                                             @endif
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             @if($medicine->risk_level == 1)
                                             <span class="new badge blue">Lower</span>
@@ -151,13 +161,13 @@
                                             <span class="new badge red">Higher</span>
                                             @endif
                                         </td>
-                                        <td>
+                                        {{-- <td>
                                             @if($medicine->show == 1)
                                             <span class="new badge green">Yes</span>
                                             @else
                                             <span class="new badge black">No</span>
                                             @endif
-                                        </td>
+                                        </td> --}}
                                         <td>
                                             @if($medicine->status == 1)
                                             <span class="new badge blue">Active</span>
@@ -208,7 +218,7 @@
                                                                     <textarea class="textEditor" name="details" id="details">{{ $medicine->details }}</textarea>
                                                                 </div>
                                                             </div>
-                                                            <div class="col s12">
+                                                            {{-- <div class="col s12">
                                                                 <div class="input-field">
                                                                     <select name="group_id" id="group_id">
                                                                         <option value="">Select</option>
@@ -218,8 +228,8 @@
                                                                     </select> 
                                                                     <label for="group_id">Parent Group <span>*</span></label>
                                                                 </div>
-                                                            </div>
-                                                            <div class="col s12">
+                                                            </div> --}}
+                                                            {{-- <div class="col s12">
                                                                 <div class="input-field">
                                                                     <select name="group" id="group" required>
                                                                         <option value="0" @if($medicine->group == 0) selected @endif>No</option>
@@ -227,7 +237,7 @@
                                                                     </select> 
                                                                     <label for="group">Is it Group Name? <span>*</span></label>
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col s12">
                                                                 <div class="input-field">
                                                                     <select name="risk_level" id="risk_level" required>
@@ -258,6 +268,23 @@
                                                             </div>
                                                             <div class="col s12">
                                                                 <div class="input-field">
+                                                                    <select name="diseases[]" id="diseases" required multiple>
+                                                                        @foreach($diseases as $disease)
+                                                                        <option value="{{ $disease->id }}"
+
+                                                                            @foreach($medicine->diseases as $selected_disease)
+                                                                            @if($selected_disease->id == $disease->id) selected @endif 
+                                                                            @endforeach
+
+                                                                        >{{ $disease->name }}
+                                                                        </option>
+                                                                        @endforeach
+                                                                    </select> 
+                                                                    <label for="diseases">Diseases <span>*</span></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12">
+                                                                <div class="input-field">
                                                                     <select name="status" id="status{{$medicine->id}}">
                                                                         <option value="1" @if( $medicine->status == 1 ) selected @endif>Active</option>
                                                                         <option value="0" @if( $medicine->status == 0 ) selected @endif>Inactive</option>
@@ -266,14 +293,14 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="row">
+                                                        {{-- <div class="row">
                                                             <div class="col s12">
                                                                 <label>
                                                                     <input type="checkbox" name="show" class="filled-in" value="1" @if($medicine->show == 1) checked="checked" @endif/>
                                                                     <span>Show</span>
                                                                 </label>
                                                             </div>
-                                                        </div>  
+                                                        </div>   --}}
                                                         <div class="row">
                                                             <div class="col s12">
                                                                 <a href="#!" class="modal-action modal-close waves-effect waves-light btn grey darken-4">Cancel</a>
@@ -302,15 +329,22 @@
                                                       <div class="col s12">
                                                           <span class="card-title">{{ $medicine->name }}</span>
 
-                                                          @foreach($medicine_groups as $medicine_group)
+                                                          {{-- @foreach($medicine_groups as $medicine_group)
                                                             @if($medicine->group_id == $medicine_group->id)
                                                                 <h6>Group: {{ $medicine_group->name }}</h6><br/>
                                                             @endif
+                                                          @endforeach --}}
+
+                                                          <h6>Diseases:</h6>
+                                                          @foreach($medicine->diseases as $disease)
+                                                            <span class="new badge blue">{{ $disease->name }}</span>
                                                           @endforeach
+
+                                                          <br/><br/>
                                                           
                                                           <h6>Symptoms:</h6>
                                                           @foreach($medicine->symptoms as $symptom)
-                                                            <span class="new badge blue">{{ $symptom->name }}</span>
+                                                            <span class="new badge green">{{ $symptom->name }}</span>
                                                           @endforeach
                                                       </div>
                                                     </div>

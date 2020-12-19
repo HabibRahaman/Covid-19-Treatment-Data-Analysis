@@ -15,17 +15,6 @@ class Medicine extends Model
         'group_id', 'name', 'slug', 'details', 'group', 'risk_level', 'show', 'status',
     ];
 
-
-    /*public function medicines()
-    {
-        return $this->hasMany('App\Model\Medicine', 'group_id');
-    }*/
-
-    /*public function group()
-    {
-        return $this->hasOne('App\Model\Medicine', 'group_id');
-    }*/
-
     public function group()
     {
         return $this->belongsTo('App\Model\Medicine','group_id')->where('group_id',0);
@@ -36,6 +25,11 @@ class Medicine extends Model
         return $this->hasMany('App\Model\Medicine','group_id');
     }
 
+
+    public function diseases()
+    {
+        return $this->belongsToMany('App\Model\Disease', 'disease_medicine', 'medicine_id', 'disease_id');
+    }
 
     public function symptoms()
     {
