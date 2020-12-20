@@ -36,4 +36,20 @@ class Patient extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function symptoms()
+    {
+        return $this->belongsToMany('App\Model\Symptom', 'patient_symptom', 'patient_id', 'symptom_id');
+    }
+
+    public function medicines()
+    {
+        return $this->belongsToMany('App\Model\Medicine', 'patient_medicine', 'patient_id', 'medicine_id');
+    }
+
+    public function conditions()
+    {
+        return $this->belongsToMany('App\Model\MedicalCondition', 'patient_medical_condition', 'patient_id', 'medical_condition_id');
+    }
 }

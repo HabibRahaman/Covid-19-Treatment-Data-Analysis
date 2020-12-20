@@ -25,4 +25,9 @@ class Symptom extends Model
     {
         return $this->belongsToMany('App\Model\Medicine', 'symptom_medicine', 'symptom_id', 'medicine_id');
     }
+
+    public function patients()
+    {
+        return $this->belongsToMany('App\Model\Patient', 'patient_symptom', 'symptom_id', 'patient_id');
+    }
 }

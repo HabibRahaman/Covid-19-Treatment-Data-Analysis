@@ -35,4 +35,9 @@ class Medicine extends Model
     {
         return $this->belongsToMany('App\Model\Symptom', 'symptom_medicine', 'medicine_id', 'symptom_id');
     }
+
+    public function patients()
+    {
+        return $this->belongsToMany('App\Model\Patient', 'patient_medicine', 'medicine_id', 'patient_id');
+    }
 }
