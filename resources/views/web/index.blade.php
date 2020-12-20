@@ -8,7 +8,7 @@
 
      <!-- Single Service -->
      <div class="col-12 col-md-6 col-lg-6">
-       <a href="{{ route('survey') }}" class="signle-service-box">
+       <a href="{{ route('survey.index') }}" class="signle-service-box">
          <div class="service-icon-area">
              <img src="{{ asset('web/img/services/online_survey.png') }}" alt="Icon">
          </div>
@@ -53,7 +53,7 @@
 
      <!-- Single Service -->
      <div class="col-12 col-md-6 col-lg-6">
-       <a href="{{ route('join') }}" class="signle-service-box">
+       <a href="{{ route('join.doctor') }}" class="signle-service-box">
          <div class="service-icon-area">
              <img src="{{ asset('web/img/services/join_doctor.png') }}" alt="Icon">
          </div>

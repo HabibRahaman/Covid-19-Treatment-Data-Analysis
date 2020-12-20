@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Web;
 
 use Session;
-use Illuminate\Http\Request;
+use App\Model\Patient;
 use App\Model\Disease;
-use App\Model\TestingSymptom;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class SurveyController extends Controller
@@ -22,5 +22,40 @@ class SurveyController extends Controller
         					->firstOrFail();
 
         return view('web.survey', $data);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        // Validation
+        $request->validate([
+            'name' => 'required',
+            'city' => 'required',
+            'gender' => 'required',
+            'age' => 'required',
+            'email' => 'nullable | email',
+        ]);
+
+        //filter the request
+        $input = $request->only(['reg_id', 'name', 'email', 'gender', 'dob', 'age', 'designation', 'phone', 'city', 'country', 'medical_test', 'ventilation', 'icu', 'health_condition', 'entry_type']);
+
+        // store data
+        $data['patient'] = $patient = Patient::create($input);
+
+        $patient->reg_id = 5000 + $patient->id;
+        $patient->entry_type = 2;
+        $patient->save();
+
+        // Attach
+        $patient->symptoms()->attach($request->symptoms);
+
+
+        Session::flash('success', 'Thank you for attending this survey');
+
+        return view('web.online-test', $data);
     }
 }
