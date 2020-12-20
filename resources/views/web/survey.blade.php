@@ -218,7 +218,7 @@
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right covid">
-                                <input class="switch-input" type="checkbox" name="test_result" value="1" @if(old('test_result') == 1) checked @endif>
+                                <input class="switch-input" type="checkbox" name="medical_test" value="1" @if(old('medical_test') == 1) checked @endif>
                                 <span class="switch-label" data-on="Positive" data-off="Negative"></span> 
                                 <span class="switch-handle"></span> 
                             </label>

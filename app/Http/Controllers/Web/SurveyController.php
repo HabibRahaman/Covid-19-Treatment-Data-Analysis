@@ -44,7 +44,7 @@ class SurveyController extends Controller
         $input = $request->only(['reg_id', 'name', 'email', 'gender', 'dob', 'age', 'designation', 'phone', 'city', 'country', 'medical_test', 'ventilation', 'icu', 'health_condition', 'entry_type']);
 
         // store data
-        $data['patient'] = $patient = Patient::create($input);
+        $patient = Patient::create($input);
 
         $patient->reg_id = 5000 + $patient->id;
         $patient->entry_type = 2;
@@ -52,10 +52,12 @@ class SurveyController extends Controller
 
         // Attach
         $patient->symptoms()->attach($request->symptoms);
+        $patient->conditions()->attach($request->conditions);
+        $patient->medicines()->attach($request->medicines);
 
 
         Session::flash('success', 'Thank you for attending this survey');
 
-        return view('web.online-test', $data);
+        return redirect()->back();
     }
 }
