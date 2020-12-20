@@ -113,6 +113,9 @@ Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')
     // Testing Reports
     Route::resource('testing-report','TestingReportController');
 
+    // Survey
+    Route::resource('survey','SurveyController');
+
     // Roles And Permission Routes
     Route::resource('role','RoleController');
 

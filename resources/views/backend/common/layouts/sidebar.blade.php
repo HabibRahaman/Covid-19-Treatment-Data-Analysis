@@ -69,6 +69,10 @@
                             </div>
                         </li>
 
+                        <li>
+                            <a href="{{ route('admin.survey.index') }}" class="collapsible-header"><i><span class="fas fa-poll"></span></i><span class="hide-menu"> Surveys </span></a>
+                        </li>
+
                         @can('Roles')
                         <li>
                             <a href="{{ route('admin.role.index') }}" class="collapsible-header"><i><span class="fas fa-user-tag"></span></i><span class="hide-menu"> Roles </span></a>

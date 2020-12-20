@@ -214,7 +214,7 @@
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
-                            <div class="single-check-title">Covid Test? <span>*</span></div>
+                            <div class="single-check-title">Medical Test? <span>*</span></div>
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right covid">
