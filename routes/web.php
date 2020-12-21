@@ -19,31 +19,6 @@ Route::get('/', function () {
     return view('web.index');
 })->name('home');
 
-Route::get('/post', function () {
-    return view('web.post');
-})->name('post');
-
-Route::get('/form', function () {
-    return view('web.form');
-})->name('form');
-
-
-Route::get('/survey', function () {
-    return view('web.survey');
-})->name('survey');
-
-Route::get('/search', function () {
-    return view('web.search');
-})->name('search');
-
-/*Route::get('/online-test', function () {
-    return view('web.online-test');
-})->name('test');
-
-Route::get('/join', function () {
-    return view('web.join');
-})->name('join');*/
-
 
 
 // Dynamic Web Routes
@@ -53,6 +28,7 @@ Route::namespace('Web')->group(function () {
     Route::get('blog/{slug}','BlogController@show')->name('blog.single');
 
     // Doctor Join
+    Route::get('join','JoinController@index')->name('join.index');
     Route::post('join/doctor','JoinController@register')->name('join.doctor');
 
     // Probability Test
@@ -62,6 +38,10 @@ Route::namespace('Web')->group(function () {
     // Survey
     Route::get('survey','SurveyController@index')->name('survey.index');
     Route::post('survey','SurveyController@store')->name('survey.store');
+
+    // Search
+    Route::get('search','SearchController@index')->name('search.index');
+    Route::post('search','SearchController@store')->name('search.store');
 });
 
 
