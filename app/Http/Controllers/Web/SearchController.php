@@ -47,16 +47,14 @@ class SearchController extends Controller
         $patient = Patient::create($input);
 
         $patient->reg_id = 5000 + $patient->id;
-        $patient->entry_type = 2;
+        $patient->entry_type = 1;
         $patient->save();
 
         // Attach
         $patient->symptoms()->attach($request->symptoms);
         $patient->conditions()->attach($request->conditions);
-        $patient->medicines()->attach($request->medicines);
 
-
-        Session::flash('success', 'Thank you for attending this survey');
+        Session::flash('success', 'Your request has been submitted successfully. Prescription will be mailed in your email address.');
 
         return redirect()->back();
     }
