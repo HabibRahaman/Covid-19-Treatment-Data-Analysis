@@ -30,8 +30,8 @@ class DashboardController extends Controller
         
         $data['users'] = User::count();
         $data['tests'] = TestReport::count();
-        $data['search'] = Patient::where('entry_type', 0)->count();
-        $data['survey'] = Patient::where('entry_type', 1)->count();
+        $data['search'] = Patient::where('entry_type', 1)->count();
+        $data['survey'] = Patient::where('entry_type', 2)->count();
 
         return view($this->view.'.index', $data);
     }

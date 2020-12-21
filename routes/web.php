@@ -96,6 +96,9 @@ Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')
     // Survey
     Route::resource('survey','SurveyController');
 
+    // Patients
+    Route::resource('patient','PatientController');
+
     // Roles And Permission Routes
     Route::resource('role','RoleController');
 
