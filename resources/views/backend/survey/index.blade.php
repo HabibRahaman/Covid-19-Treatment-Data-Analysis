@@ -27,6 +27,8 @@
                             <table id="file_export" class="table table-striped display" style="width:100%">
                                 <thead>
                                     <tr>
+                                        <th>SL</th>
+                                        <th>Reg ID</th>
                                         <th>Name</th>
                                         <th>Gender</th>
                                         <th>Age</th>
@@ -37,8 +39,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($surveys as $survey)
+                                    @foreach($surveys as $key => $survey)
                                     <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $survey->reg_id }}</td>
                                         <td>{{ $survey->name }}</td>
                                         <td>
                                             @if($survey->gender == 1)

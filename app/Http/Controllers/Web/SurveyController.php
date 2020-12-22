@@ -37,7 +37,7 @@ class SurveyController extends Controller
             'city' => 'required',
             'gender' => 'required',
             'age' => 'required',
-            'email' => 'nullable | email',
+            'email' => 'nullable | email | unique:patients,email',
         ]);
 
         //filter the request
