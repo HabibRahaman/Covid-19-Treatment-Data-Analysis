@@ -31,6 +31,7 @@
                                         <th>Gender</th>
                                         <th>Age</th>
                                         <th>City</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -68,18 +69,104 @@
                                         </td>
                                         <td>{{ $patient->city }}</td>
                                         <td>
-                                        <a class="waves-effect waves-light btn btn-small blue modal-trigger" href="#viewitem-{{ $patient->id }}" data-toggle="tooltip" data-placement="top" title="Edit">
+                                            @if($patient->status == 1)
+                                            <span class="new badge blue">Pending</span>
+                                            @elseif($patient->status == 2)
+                                            <span class="new badge green">Sent</span>
+                                            @elseif($patient->status == 0)
+                                            <span class="new badge red">Reject</span>
+                                            @endif
+                                        </td>
+                                        <td>
+                                        <a class="waves-effect waves-light btn btn-small green modal-trigger edit-btn" href="#edititem-{{ $patient->id }}" data-toggle="tooltip" data-placement="top" title="Prescription">
+                                            <i class="fas fa-file-prescription"></i>
+                                        </a>
+
+                                        <a class="waves-effect waves-light btn btn-small blue modal-trigger" href="#viewitem-{{ $patient->id }}" data-toggle="tooltip" data-placement="top" title="View">
                                             <i class="fas fa-eye "></i>
                                         </a>
 
-                                        <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Delete"
-                                            onclick="alertFunction('delete',{{$patient->id}});">
-                                           <i class="fas fa-trash-alt"></i>
+                                        <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Reject" href="#">
+                                           <i class="fas fa-window-close"></i>
                                         </a>
-                                        <form id="delete{{$patient->id}}" action="{{ route($route.'destroy', [$patient->id]) }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                            @method('DELETE')
-                                        </form>
+
+                                        <!-- ================================ -->
+                                        <!-- Edit Item Modal -->
+                                        <!-- ================================ -->
+                                        <!-- Modal Structure -->
+                                        <div id="edititem-{{ $patient->id }}" class="modal">
+                                            <div class="modal-content">
+                                            <div class="card">
+                                                <div class="card-content">
+                                                    <h5 class="card-title activator">{{ $title }} Prescription</h5>
+                                                    <form  action="{{ route($route.'update', [$patient->id]) }}" method="post" novalidate>
+                                                        @csrf
+                                                        @method('PUT')
+
+                                                        <div class="row">
+                                                          <div class="col s12">
+                                                              <h6>Symptoms:</h6>
+                                                              @foreach($patient->symptoms as $symptom)
+                                                                <span class="new badge green">{{ $symptom->name }}</span>
+                                                              @endforeach
+                                                          </div>
+                                                        </div>
+
+                                                        <div class="row m-t-20">
+                                                          <div class="col s12">
+                                                              <h6>Medical Conditions:</h6>
+                                                              @foreach($patient->conditions as $condition)
+                                                                <span class="new badge blue">{{ $condition->name }}</span>
+                                                              @endforeach
+                                                          </div>
+                                                        </div>
+
+                                                        <div class="row m-t-20">
+                                                          <div class="col s12">
+                                                              <h6>Medicines:</h6>
+                                                              @foreach($patient->medicines as $medicine)
+                                                                <span class="new badge orange">{{ $medicine->name }}</span>
+                                                              @endforeach
+                                                          </div>
+                                                        </div>
+
+                                                        <div class="row m-t-20">
+                                                            <div class="col s12">
+                                                                <div class="input-field">
+                                                                    <select name="medicines[]" id="medicines" required multiple>
+                                                                        @foreach($disease->medicines as $medicine)
+                                                                        <option value="{{ $medicine->id }}"
+
+                                                                            @foreach($patient->medicines as $selected_medicine)
+                                                                            @if($selected_medicine->id == $medicine->id) selected @endif 
+                                                                            @endforeach
+
+                                                                        >{{ $medicine->name }}
+                                                                        </option>
+                                                                        @endforeach
+                                                                    </select> 
+                                                                    <label for="medicines">Medicines <span>*</span></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col s12">
+                                                                <div class="input-field">
+                                                                    <span for="details">Note</span><br/>
+                                                                    <textarea class="textEditor" name="details" id="details"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col s12">
+                                                                <a href="#!" class="modal-action modal-close waves-effect waves-light btn grey darken-4">Cancel</a>
+                                                                <button type="submit" class="waves-effect waves-light btn cyan submit-btn">Send</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                            </div>
+                                        </div>
 
 
                                         <!-- ================================ -->

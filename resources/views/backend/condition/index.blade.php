@@ -140,7 +140,7 @@
                                             <i class="fas fa-edit "></i>
                                         </a>
 
-                                        <a class="waves-effect waves-light btn btn-small blue modal-trigger" href="#viewitem-{{ $condition->id }}" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <a class="waves-effect waves-light btn btn-small blue modal-trigger" href="#viewitem-{{ $condition->id }}" data-toggle="tooltip" data-placement="top" title="View">
                                             <i class="fas fa-eye "></i>
                                         </a>
 

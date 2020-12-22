@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Model\Patient;
+use App\Model\Disease;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -26,6 +27,9 @@ class PatientController extends Controller
     {
         $data['title'] = $this->title;
         $data['route'] = $this->route;
+
+        // Disease
+        $data['disease'] = Disease::where('status', 1)->firstOrFail();
         
         $data['patients'] = Patient::where('entry_type', 1)->orderBy('id', 'desc')->get();
 

@@ -49,7 +49,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                        <a class="waves-effect waves-light btn btn-small green modal-trigger edit-btn" href="#edititem-{{ $disease->id }}-{{ $symptom->id }}" data-toggle="tooltip" data-placement="top" title="Edit">
+                                        <a class="waves-effect waves-light btn btn-small green modal-trigger edit-btn" href="#edititem-{{ $disease->id }}-{{ $symptom->id }}" data-toggle="tooltip" data-placement="top" title="View">
                                             <i class="fas fa-edit "></i>
                                         </a>
 
