@@ -52,4 +52,9 @@ class Patient extends Authenticatable
     {
         return $this->belongsToMany('App\Model\MedicalCondition', 'patient_medical_condition', 'patient_id', 'medical_condition_id');
     }
+
+    public function prescriptions()
+    {
+        return $this->hasMany('App\Model\Prescription', 'patient_id', 'id');
+    }
 }
