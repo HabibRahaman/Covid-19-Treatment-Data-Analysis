@@ -6,6 +6,7 @@ use Session;
 use App\Model\Patient;
 use App\Model\Disease;
 use App\Model\Symptom;
+use App\Model\Prescription;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -82,6 +83,12 @@ class SearchController extends Controller
                 $patient->medicines()->attach($value);
             }
         }
+
+        
+        // Create Prescription
+        $prescription = new Prescription();
+        $prescription->patient_id = $patient->id;
+        $prescription->save();
 
         Session::flash('success', 'Your request has been submitted successfully. Prescription will be mailed in your email address.');
 

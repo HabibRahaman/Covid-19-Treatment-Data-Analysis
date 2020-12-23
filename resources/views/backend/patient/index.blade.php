@@ -90,7 +90,7 @@
                                             <i class="fas fa-eye "></i>
                                         </a>
 
-                                        <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Reject" href="#">
+                                        <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Reject" href="{{ route($route.'edit', [$patient->id]) }}">
                                            <i class="fas fa-window-close"></i>
                                         </a>
 
@@ -155,7 +155,7 @@
                                                             <div class="col s12">
                                                                 <div class="input-field">
                                                                     <span for="details">Note</span><br/>
-                                                                    <textarea class="textEditor" name="details" id="details"></textarea>
+                                                                    <textarea class="textEditor" name="details" id="details">{{ $patient->prescription->details }}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -223,6 +223,13 @@
                                                           @foreach($patient->medicines as $medicine)
                                                             <span class="new badge orange">{{ $medicine->name }}</span>
                                                           @endforeach
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="row m-t-20">
+                                                      <div class="col s12">
+                                                          <h6>Note:</h6>
+                                                          {!! $patient->prescription->details !!}
                                                       </div>
                                                     </div>
                                                 </div>

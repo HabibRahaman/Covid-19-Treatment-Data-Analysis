@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Model\Patient;
 use App\Model\Disease;
+use App\Model\Prescription;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -76,7 +77,13 @@ class PatientController extends Controller
      */
     public function edit($id)
     {
-        //
+        $patient = Patient::find($id);
+        $patient->status = 0;
+        $patient->save();
+
+        toastr()->success('Rejected Successfully');
+
+        return redirect()->back();
     }
 
     /**
@@ -89,6 +96,21 @@ class PatientController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $patient = Patient::find($id);
+        $patient->status = 2;
+        $patient->save();
+
+        // Create Prescription
+        $prescription = Prescription::where('patient_id', $id)->first();
+        $prescription->details = $request->details;
+        $prescription->save();
+
+        // Attach
+        $patient->medicines()->sync($request->medicines);
+
+        toastr()->success('Prescription Sent Successfully');
+
+        return redirect()->back();
     }
 
     /**
@@ -99,18 +121,6 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-        $patient = Patient::find($id);
-        
-        // Detach
-        $patient->symptoms()->detach();
-        $patient->medicines()->detach();
-        $patient->conditions()->detach();
-
-        // Delete
-        $patient->delete();
-
-        toastr()->success('Delete Successfully');
-
-        return redirect()->back();
+        //
     }
 }
