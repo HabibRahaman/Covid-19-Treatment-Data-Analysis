@@ -3,11 +3,11 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
-class PatientForgetPassword extends Mailable
+class Prescription extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -30,6 +30,6 @@ class PatientForgetPassword extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->data['subject'])->view('emails.patientForgotPassword');
+        return $this->from($this->data['from'])->subject($this->data['subject'])->view('emails.prescription');
     }
 }

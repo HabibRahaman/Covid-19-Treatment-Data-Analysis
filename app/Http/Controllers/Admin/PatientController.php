@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Mail;
+use Carbon\Carbon;
 use App\Model\Patient;
 use App\Model\Disease;
 use App\Model\Prescription;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Mail\Prescription as PrescriptionMail;
 
 class PatientController extends Controller
 {
@@ -107,6 +110,22 @@ class PatientController extends Controller
 
         // Attach
         $patient->medicines()->sync($request->medicines);
+
+
+        // Passing data to email template
+        $data['name'] = $patient->name;
+        $data['email'] = $patient->email;
+        $data['reg_id'] = $patient->reg_id;
+        $data['date'] = Carbon::today();
+
+        // Mail Information
+        $data['subject'] = 'Prescription';
+        $data['from'] = 'info@example.com';
+        $data['message'] = $request->details;
+
+        // Send Mail
+        Mail::to($data['email'])->send(new PrescriptionMail($data));
+
 
         toastr()->success('Prescription Sent Successfully');
 
