@@ -112,14 +112,24 @@ class PatientController extends Controller
         $patient->medicines()->sync($request->medicines);
 
 
+        $disease = Disease::where('status', 1)
+                            ->firstOrFail();
+
+        foreach ($disease->health_cares as $health_care) {
+            // Attach
+            $patient->health_cares()->sync($health_care->id);
+        }
+
+
         // Passing data to email template
         $data['name'] = $patient->name;
         $data['email'] = $patient->email;
         $data['reg_id'] = $patient->reg_id;
-        $data['date'] = Carbon::today();
+        $data['date'] = Carbon::now();
+        $data['patient'] = $patient;
 
         // Mail Information
-        $data['subject'] = 'Prescription';
+        $data['subject'] = 'Virtual Prescription';
         $data['from'] = 'info@example.com';
         $data['message'] = $request->details;
 

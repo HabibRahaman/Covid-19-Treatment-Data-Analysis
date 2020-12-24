@@ -241,9 +241,42 @@ p {
                                 <p>Date: {{ $data['date'] }}</p>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="full-width">
+                                <strong>Symptoms:</strong> 
+                                @foreach ($data['patient']->symptoms as $symptom)
+                                    {{ $symptom->name }}, 
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="full-width">
+                                <strong>Health Conditions:</strong> 
+                                @foreach ($data['patient']->conditions as $condition)
+                                    {{ $condition->name }}, 
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="full-width">
+                                <strong>Medicines:</strong> 
+                                @foreach ($data['patient']->medicines as $medicine)
+                                    {{ $medicine->name }}, 
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="full-width">
+                                <strong>Health Cares:</strong> 
+                                @foreach ($data['patient']->health_cares as $health_care)
+                                    {{ $health_care->name }}, 
+                                @endforeach
+                            </td>
+                        </tr>
                         @if(isset($data['message']))
                         <tr>
                             <td class="full-width">
+                                <strong>Note: </strong>
                                 {!! strip_tags($data['message'], '<p><a><b><i><u><strong><br><table><tr><th><td><ul><ol><li><h1><h2><h3><h4><h5><h6><del><ins><sup><sub><pre>') !!}
                             </td>
                         </tr>
