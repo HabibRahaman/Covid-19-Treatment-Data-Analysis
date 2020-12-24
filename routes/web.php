@@ -14,15 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Static Web Routes
-Route::get('/', function () {
-    return view('web.index');
-})->name('home');
-
-
-
 // Dynamic Web Routes
 Route::namespace('Web')->group(function () {
+
+    // Home
+    Route::get('/','HomeController@index')->name('home');
+    Route::get('/prescription/{reg_id}','HomeController@download')->name('download');
 
     // Health Blog
     Route::get('blog/{slug}','BlogController@show')->name('blog.single');
@@ -109,18 +106,4 @@ Route::middleware(['auth'])->name('admin.')->namespace('Admin')->prefix('admin')
     Route::get('profile', 'ProfileController@index')->name('profile.index');
     Route::post('profile/store', 'ProfileController@store')->name('profile.store');
     Route::post('profile/changePass', 'ProfileController@changePass')->name('profile.changePass');
-});
-
-
-
-
-// Patient Auth Routes
-Route::name('patient.')->namespace('Auth')->prefix('patient')->group(function () {
-
-
-});
-
-Route::middleware(['patient'])->name('patient.')->namespace('Patient')->prefix('patient')->group(function() {
-    
-    
 });

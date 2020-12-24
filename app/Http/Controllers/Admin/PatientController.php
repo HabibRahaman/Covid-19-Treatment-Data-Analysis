@@ -125,7 +125,7 @@ class PatientController extends Controller
         $data['name'] = $patient->name;
         $data['email'] = $patient->email;
         $data['reg_id'] = $patient->reg_id;
-        $data['date'] = Carbon::now();
+        $data['date'] = $patient->prescription->updated_at;
         $data['patient'] = $patient;
 
         // Mail Information

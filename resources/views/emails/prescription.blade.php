@@ -284,7 +284,7 @@ p {
                         <tr>
                             <td colspan="2">
                                 <center>
-                                    <a href="#" class="payment-btn">Download PDF</a>
+                                    <a href="{{ route('download', $data['patient']->reg_id) }}" class="payment-btn">Download PDF</a>
                                 </center>
                                 <b>- Thanks</b>
                             </td>

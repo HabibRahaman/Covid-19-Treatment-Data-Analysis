@@ -4,130 +4,296 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Covid-19 Treatment & Data Analysis</title>
+    <title>Prescription</title>
 
-    <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet">
+
+<!-- CSS Reset : BEGIN -->
+<style>
+
+/* What it does: Remove spaces around the email design added by some email clients. */
+/* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+html,
+body {
+    margin:0px !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    mso-line-height-rule: exactly; 
+    background: #f8f8f8; 
+}
+/* What it does: Stops email clients resizing small text. */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* What it does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
+
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table,
+td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+
+/* What it does: Fixes webkit padding issue. */
+table {
+    width: 100% !important;
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto !important;
+}
+
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+    -ms-interpolation-mode:bicubic;
+}
+
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+a {
+    text-decoration: none;
+}
+
+/* What it does: A work-around for email clients meddling in triggered links. */
+*[x-apple-data-detectors],  /* iOS */
+.unstyle-auto-detected-links *,
+.aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+.a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+.im {
+    color: inherit !important;
+}
+
+/* If the above doesn't work, add a .g-img class to any image in question. */
+img.g-img + div {
+    display: none !important;
+}
+
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+.invoice-container {
+    margin: 0 auto !important;
+    max-width: 800px !important; 
+}
+
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    .invoice-container {
+        min-width: 320px !important;
+    }
+}
+/* iPhone 6, 6S, 7, 8, and X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    .invoice-container {
+        min-width: 375px !important;
+    }
+}
+/* iPhone 6+, 7+, and 8+ */
+@media only screen and (min-device-width: 414px) {
+    .invoice-container {
+        min-width: 414px !important;
+    }
+}
+</style>
+
+<!-- CSS Reset : END -->
+
+
+<!-- Invoice CSS : Start -->
+<style>
+.invoice-container {
+    background: #f8f8f8; 
+    padding: 0px 0px; 
+    font-family:arial; 
+    line-height:28px; 
+    color: #514d6a;
+}
+.inner-container {
+    max-width: 700px; 
+    padding:50px 0;  
+    margin: 0px auto; 
+    font-size: 14px
+}
+
+p {
+    font-family: 'arial'; 
+    font-size: 14px; 
+    line-height: 1.5;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.header-top {
+    vertical-align: top; 
+    padding-bottom:30px;
+    margin-bottom: 20px
+    width: 100%; 
+}
+.header-top img {
+    border:none; 
+    max-width: 120px; 
+    max-height: 80px; 
+    margin: auto; 
+    overflow: hidden;
+}
+.header-bottom {
+    background:#36bea6; 
+    padding:20px; 
+    color:#fff; 
+    text-align:center;
+}
+.invoice-body {
+    padding: 40px; 
+    background: #fff;
+}
+.full-width {
+    padding-top: 25px;
+    width: 100%;
+}
+.invoice-body-bottom {
+    padding:20px 0; 
+    border-top:1px solid #f6f6f6;
+}
+.invoice-body-bottom .total td {
+    font-family: 'arial'; 
+    font-size: 14px; 
+    vertical-align: middle; 
+    border-top-width: 1px; 
+    border-top-color: #f6f6f6; 
+    border-top-style: solid; 
+    margin: 0; 
+    padding: 0px 0; 
+    font-weight:bold;
+}
+.payment-btn {
+    display: inline-block; 
+    padding: 11px 30px; 
+    margin: 20px 0px 30px; 
+    font-size: 15px; 
+    color: #fff; 
+    background: #2962FF; 
+    border-radius: 60px; 
+    text-decoration:none;
+}
+.attach-btn {
+    display: inline-block; 
+    padding: 11px 30px; 
+    margin: 20px 0px 30px; 
+    font-size: 15px; 
+    color: #fff; 
+    background: #230548; 
+    border-radius: 60px; 
+    text-decoration:none;
+}
+</style>
+<!-- Invoice CSS : End -->
 </head>
 
 <body>
-    <div class="main-wrapper">
-
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card printableArea">
-                            <div class="card-content">
-                                <h4><b>Prescription</b> <span class="right">#5669626</span></h4>
-                                <hr>
-                                <div class="row">
-                                    <div class="col s12">
-                                        <div class="left">
-                                            <address>
-                                                <h4><b class="red-text">Material Admin</b></h4>
-                                                <p class="m-l-5">F-1, Soccer House,
-                                                    <br/> opp. Castelldefels,
-                                                    <br/> Barcelona-1478,
-                                                    <br/> Catalonia,
-                                                    <br/> Spain</p>
-                                            </address>
-                                        </div>
-                                        <div class="right right-align">
-                                            <address>
-                                                <h4>To,</h4>
-                                                <h5 class="font-bold">Gaala & Sons</h5>
-                                                <p class="m-l-30">E 101, Peace Villa,
-                                                    <br/> Nr. Lords Street,
-                                                    <br/> Washington-254865,
-                                                    <br/> USA</p>
-                                                <p class="m-t-30"><b>Invoice Date :</b> <i class="fa fa-calendar"></i> 23rd Jan 2017</p>
-                                                <p><b>Due Date :</b> <i class="fa fa-calendar"></i> 25th Jan 2017</p>
-                                            </address>
-                                        </div>
-                                    </div>
-                                    <div class="col s12">
-                                        <div class="m-t-40" style="clear: both;">
-                                            <table class="table highlight responsive-table">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="center-align">#</th>
-                                                        <th>Description</th>
-                                                        <th class="right-align">Quantity</th>
-                                                        <th class="right-align">Unit Cost</th>
-                                                        <th class="right-align">Total</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td class="center-align">1</td>
-                                                        <td>Milk Powder</td>
-                                                        <td class="right-align">2 </td>
-                                                        <td class="right-align"> $24 </td>
-                                                        <td class="right-align"> $48 </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="center-align">2</td>
-                                                        <td>Air Conditioner</td>
-                                                        <td class="right-align"> 3 </td>
-                                                        <td class="right-align"> $500 </td>
-                                                        <td class="right-align"> $1500 </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="center-align">3</td>
-                                                        <td>RC Cars</td>
-                                                        <td class="right-align"> 20 </td>
-                                                        <td class="right-align"> $600 </td>
-                                                        <td class="right-align"> $12000 </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="center-align">4</td>
-                                                        <td>Down Coat</td>
-                                                        <td class="right-align"> 60 </td>
-                                                        <td class="right-align">$5 </td>
-                                                        <td class="right-align"> $300 </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="col s12">
-                                        <div class="right m-t-30 right-align">
-                                            <p>Sub - Total amount: $13,848</p>
-                                            <p>vat (10%) : $138 </p>
-                                            <hr>
-                                            <h4><b>Total :</b> $13,986</h4>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                        <hr>
-                                        <div class="right-align">
-                                            <button class="btn" type="submit"> Proceed to payment </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="invoice-container">
+        <div class="inner-container">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="header-top" align="center"><a href="{{ route('home') }}" target="_blank"><img src="{{ asset('web/img/logo.png') }}" alt="Logo">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="header-bottom"> {{ $subject }} </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="invoice-body">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <b>Name: {{ $name }}</b><br/>
+                                <p>Email: {{ $email }}</p>
+                                
+                            </td>
+                            <td align="right" width="40%">
+                                <b>Reg. ID: {{ $reg_id }}</b>
+                                <p>Date: {{ $date }}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="full-width">
+                                <strong>Symptoms:</strong> 
+                                @foreach ($patient->symptoms as $symptom)
+                                    {{ $symptom->name }}, 
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="full-width">
+                                <strong>Health Conditions:</strong> 
+                                @foreach ($patient->conditions as $condition)
+                                    {{ $condition->name }}, 
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="full-width">
+                                <strong>Medicines:</strong> 
+                                @foreach ($patient->medicines as $medicine)
+                                    {{ $medicine->name }}, 
+                                @endforeach
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="full-width">
+                                <strong>Health Cares:</strong> 
+                                @foreach ($patient->health_cares as $health_care)
+                                    {{ $health_care->name }}, 
+                                @endforeach
+                            </td>
+                        </tr>
+                        @if(isset($message))
+                        <tr>
+                            <td class="full-width">
+                                <strong>Note: </strong>
+                                {!! strip_tags($message, '<p><a><b><i><u><strong><br><table><tr><th><td><ul><ol><li><h1><h2><h3><h4><h5><h6><del><ins><sup><sub><pre>') !!}
+                            </td>
+                        </tr>
+                        @endif
+                        <tr>
+                            <td colspan="2">
+                                <center>
+                                    <a href="{{ route('download', $reg_id) }}" class="payment-btn">Download PDF</a>
+                                </center>
+                                <b>- Thanks</b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
-            <!-- ============================================================== -->
         </div>
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- All Required js -->
-    <!-- ============================================================== -->
-    {{-- <script src="{{ asset('backend/libs/jquery/dist/jquery.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('backend/js/materialize.min.js') }}"></script> --}}
 </body>
 
 </html>
