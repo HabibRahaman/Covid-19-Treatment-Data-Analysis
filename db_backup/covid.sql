@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 25, 2020 at 01:15 PM
+-- Generation Time: Dec 25, 2020 at 07:32 PM
 -- Server version: 5.7.32-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
@@ -108,10 +108,7 @@ CREATE TABLE `diseases` (
 --
 
 INSERT INTO `diseases` (`id`, `name`, `slug`, `details`, `type`, `risk_level`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'COVID-19', 'covid-19', '<p>COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.</p>', 1, 2, 1, '2020-08-26 23:33:54', '2020-12-25 05:46:28'),
-(7, 'Plague', 'plague', '<p>Plague</p>', 1, 3, 0, '2020-09-11 00:17:50', '2020-12-19 00:36:22'),
-(9, 'Ebola', 'ebola', '<p>Ebola</p>', 1, 3, 0, '2020-09-11 00:19:04', '2020-12-19 00:36:15'),
-(12, 'Dengu', 'dengu', '<p>Dengu</p>', 1, 2, 0, '2020-09-11 00:21:11', '2020-11-04 22:26:46');
+(1, 'COVID-19', 'covid-19', '<p>COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.</p>', 1, 2, 1, '2020-08-26 23:33:54', '2020-12-25 05:46:28');
 
 -- --------------------------------------------------------
 
@@ -517,15 +514,15 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`id`, `reg_id`, `name`, `email`, `gender`, `dob`, `age`, `designation`, `phone`, `city`, `country`, `medical_test`, `ventilation`, `icu`, `health_condition`, `entry_type`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
-(13, 5013, 'Mostafizur Rahman', 'mostafizur112@gmail.com', 1, NULL, 5, NULL, NULL, 'Gaibandha', NULL, 1, 0, 0, 2, 2, 1, NULL, '2020-12-25 04:21:52', '2020-12-25 04:21:52'),
-(14, 5014, 'Aminur Rahman', 'aminur789@gmail.com', 1, NULL, 4, NULL, NULL, 'Gaibandha', NULL, 1, 0, 0, 0, 2, 1, NULL, '2020-12-25 04:32:02', '2020-12-25 04:32:02'),
-(15, 5015, 'Rehnuma Rahman', 'rehnumaakter11@gmail.com', 2, NULL, 5, NULL, NULL, 'Gaibandha', NULL, 1, 0, 0, 1, 2, 1, NULL, '2020-12-25 04:36:06', '2020-12-25 04:36:07'),
-(16, 5016, 'Ekramul Haque', 'ekramulhaque60@gmail.com', 1, NULL, 5, NULL, NULL, 'Kurigram', NULL, 1, 1, 0, 0, 2, 1, NULL, '2020-12-25 06:26:59', '2020-12-25 06:26:59'),
-(17, 5017, 'Mominul Islam', 'mominul.islam@gmail.com', 1, NULL, 6, NULL, NULL, 'Kurigram', NULL, 1, 0, 0, 0, 2, 1, NULL, '2020-12-25 06:33:11', '2020-12-25 06:33:11'),
-(18, 5018, 'Sazu miah', 'sazu-miah32@gmail.com', 1, NULL, 5, NULL, NULL, 'Rangpur', NULL, 1, 0, 0, 2, 2, 1, NULL, '2020-12-25 06:38:00', '2020-12-25 06:38:00'),
-(19, 5019, 'Angur Molla', 'angur445@gmail.com', 1, NULL, 5, NULL, NULL, 'Kurigram', NULL, 1, 0, 0, 1, 2, 1, NULL, '2020-12-25 06:38:11', '2020-12-25 06:38:11'),
-(20, 5020, 'Mamun Mondol', 'mamunbabu007@gmail.com', 1, NULL, 4, NULL, NULL, 'Rangpur', NULL, 1, 1, 0, 1, 2, 1, NULL, '2020-12-25 06:42:45', '2020-12-25 06:42:45'),
-(21, 5021, 'Rabeya Akter', 'rabeyaakter029@gmail.com', 2, NULL, 6, NULL, NULL, 'Rangpur', NULL, 1, 0, 0, 1, 2, 1, NULL, '2020-12-25 06:45:04', '2020-12-25 06:45:04'),
+(13, 5013, 'Mostafizur Rahman', 'mostafizur112@gmail.com', 1, NULL, 5, NULL, NULL, 'Gaibandha', NULL, 1, 0, 0, 2, 2, 2, NULL, '2020-12-25 04:21:52', '2020-12-25 12:03:19'),
+(14, 5014, 'Aminur Rahman', 'aminur789@gmail.com', 1, NULL, 4, NULL, NULL, 'Gaibandha', NULL, 1, 0, 0, 0, 2, 2, NULL, '2020-12-25 04:32:02', '2020-12-25 12:03:17'),
+(15, 5015, 'Rehnuma Rahman', 'rehnumaakter11@gmail.com', 2, NULL, 5, NULL, NULL, 'Gaibandha', NULL, 1, 0, 0, 1, 2, 2, NULL, '2020-12-25 04:36:06', '2020-12-25 12:03:11'),
+(16, 5016, 'Ekramul Haque', 'ekramulhaque60@gmail.com', 1, NULL, 5, NULL, NULL, 'Kurigram', NULL, 1, 1, 0, 0, 2, 2, NULL, '2020-12-25 06:26:59', '2020-12-25 12:03:08'),
+(17, 5017, 'Mominul Islam', 'mominul.islam@gmail.com', 1, NULL, 6, NULL, NULL, 'Kurigram', NULL, 1, 0, 0, 0, 2, 2, NULL, '2020-12-25 06:33:11', '2020-12-25 12:03:05'),
+(18, 5018, 'Sazu miah', 'sazu-miah32@gmail.com', 1, NULL, 5, NULL, NULL, 'Rangpur', NULL, 1, 0, 0, 2, 2, 0, NULL, '2020-12-25 06:38:00', '2020-12-25 12:03:31'),
+(19, 5019, 'Angur Molla', 'angur445@gmail.com', 1, NULL, 5, NULL, NULL, 'Kurigram', NULL, 1, 0, 0, 1, 2, 2, NULL, '2020-12-25 06:38:11', '2020-12-25 12:02:59'),
+(20, 5020, 'Mamun Mondol', 'mamunbabu007@gmail.com', 1, NULL, 4, NULL, NULL, 'Rangpur', NULL, 1, 1, 0, 1, 2, 2, NULL, '2020-12-25 06:42:45', '2020-12-25 12:02:56'),
+(21, 5021, 'Rabeya Akter', 'rabeyaakter029@gmail.com', 2, NULL, 6, NULL, NULL, 'Rangpur', NULL, 1, 0, 0, 1, 2, 2, NULL, '2020-12-25 06:45:04', '2020-12-25 12:02:49'),
 (22, 5022, 'Arman Hossain', 'armanhossain123@gmail.com', 1, NULL, 2, NULL, NULL, 'Kurigram', NULL, 0, 0, 0, 1, 1, 2, NULL, '2020-12-25 06:50:34', '2020-12-25 06:52:24'),
 (23, 5023, 'Mim Akter', 'mimi.akter2020@gmail.com', 2, NULL, 3, NULL, NULL, 'Rangpur', NULL, 0, 0, 0, 1, 1, 2, NULL, '2020-12-25 06:54:20', '2020-12-25 07:10:33');
 
@@ -545,10 +542,10 @@ CREATE TABLE `patient_health_care` (
 --
 
 INSERT INTO `patient_health_care` (`patient_id`, `health_care_id`) VALUES
-(22, 1),
-(22, 2),
 (23, 1),
-(23, 2);
+(23, 2),
+(22, 1),
+(22, 2);
 
 -- --------------------------------------------------------
 
@@ -644,16 +641,16 @@ INSERT INTO `patient_medicine` (`patient_id`, `medicine_id`) VALUES
 (21, 6),
 (21, 19),
 (21, 20),
-(22, 2),
-(22, 1),
-(22, 19),
-(22, 20),
 (23, 2),
 (23, 1),
 (23, 6),
 (23, 19),
 (23, 20),
-(23, 21);
+(23, 21),
+(22, 2),
+(22, 1),
+(22, 19),
+(22, 20);
 
 -- --------------------------------------------------------
 
@@ -1471,7 +1468,7 @@ ALTER TABLE `testing_symptoms`
 -- AUTO_INCREMENT for table `test_reports`
 --
 ALTER TABLE `test_reports`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `users`
 --

@@ -294,5 +294,99 @@
 		        }
 		    });
 		});
+
+
+		@php
+            $death_percent = round(100 / $total_patients) * $total_death;
+            $healthy_percent = round(100 / $total_patients) * $total_healthy;
+            $illness_percent = round(100 / $total_patients) * $total_illness;
+        @endphp
+		//Health Chart
+		$(function() {
+		    var data = [{
+		        label: "Death",
+		        data: {{ $death_percent }},
+		        color: "#ed2d2d",
+		    }, {
+		        label: "Healthy",
+		        data: {{ $healthy_percent }},
+		        color: "#42ba3a",
+		    }, {
+		        label: "Illness",
+		        data: {{ $illness_percent }},
+		        color: "#5752e3",
+		    }];
+		    var plotObj = $.plot($("#health-chart"), data, {
+		        series: {
+		            pie: {
+		                innerRadius: 0.5,
+		                show: true
+		            }
+		        },
+		        grid: {
+		            hoverable: true
+		        },
+		        color: null,
+		        legend: {
+		            show: false
+		        },
+		        tooltip: true,
+		        tooltipOpts: {
+		            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+		            shifts: {
+		                x: 20,
+		                y: 0
+		            },
+		            defaultTheme: false
+		        }
+		    });
+		});
+
+
+		@php
+            $ventilation_percent = round(100 / $total_patients) * $total_ventilation;
+            $icu_percent = round(100 / $total_patients) * $total_icu;
+            $none_percent = 100- ($ventilation_percent + $icu_percent);
+        @endphp
+		//Treatment Chart
+		$(function() {
+		    var data = [{
+		        label: "Ventilation",
+		        data: {{ $ventilation_percent }},
+		        color: "#4f5467",
+		    }, {
+		        label: "ICU",
+		        data: {{ $icu_percent }},
+		        color: "#26c6da",
+		    }, {
+		        label: "None",
+		        data: {{ $none_percent }},
+		        color: "#5752e3",
+		    }];
+		    var plotObj = $.plot($("#treatment-chart"), data, {
+		        series: {
+		            pie: {
+		                innerRadius: 0.5,
+		                show: true
+		            }
+		        },
+		        grid: {
+		            hoverable: true
+		        },
+		        color: null,
+		        legend: {
+		            show: false
+		        },
+		        tooltip: true,
+		        tooltipOpts: {
+		            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+		            shifts: {
+		                x: 20,
+		                y: 0
+		            },
+		            defaultTheme: false
+		        }
+		    });
+		});
     </script>
 @endsection

@@ -152,6 +152,36 @@
      </div>
      <!-- Single Graph -->
 
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">By Health Condition</div>
+         </div>
+         <div class="single-graph-body">
+            <div class="flot-chart">
+                <div class="flot-chart-content" id="health-chart"></div>
+            </div>
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
+     <!-- Single Graph -->
+     <div class="col-12 col-md-6 col-lg-6">
+       <div class="signle-graph-box">
+         <div class="single-graph-header">
+             <div class="graph-title">By Treatment</div>
+         </div>
+         <div class="single-graph-body">
+            <div class="flot-chart">
+                <div class="flot-chart-content" id="treatment-chart"></div>
+            </div>
+         </div>
+       </div>
+     </div>
+     <!-- Single Graph -->
+
     </div> 
   </div>
 </section>

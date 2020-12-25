@@ -36,6 +36,15 @@ class HomeController extends Controller
         $data['total_age8'] = Patient::where('status', 2)->where('age', 8)->count();
         $data['total_age9'] = Patient::where('status', 2)->where('age', 9)->count();
 
+        // By Health Condition
+        $data['total_death'] = Patient::where('entry_type', 2)->where('status', 2)->where('health_condition', 0)->count();
+        $data['total_healthy'] = Patient::where('entry_type', 2)->where('status', 2)->where('health_condition', 1)->count();
+        $data['total_illness'] = Patient::where('entry_type', 2)->where('status', 2)->where('health_condition', 2)->count();
+
+        // By Treatment
+        $data['total_ventilation'] = Patient::where('entry_type', 2)->where('status', 2)->where('ventilation', 1)->count();
+        $data['total_icu'] = Patient::where('entry_type', 2)->where('status', 2)->where('icu', 1)->count();
+
         // Symptoms
         $data['symptoms'] = Symptom::withCount('patients')
                                     ->where('status', 1)
