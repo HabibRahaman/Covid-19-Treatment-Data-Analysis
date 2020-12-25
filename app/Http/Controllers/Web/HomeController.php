@@ -6,6 +6,7 @@ use PDF;
 use App\Model\Patient;
 use App\Model\Symptom;
 use Illuminate\Http\Request;
+use App\Model\MedicalCondition;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -40,6 +41,10 @@ class HomeController extends Controller
                                     ->where('status', 1)
                                     ->orderBy('patients_count', 'desc')
                                     ->limit(6)
+                                    ->get();
+
+        // Medical Conditions
+        $data['conditions'] = MedicalCondition::where('status', 1)
                                     ->get();
 
         return view('web.index', $data);

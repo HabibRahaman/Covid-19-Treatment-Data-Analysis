@@ -87,36 +87,6 @@
    <div class="row">
 
      <!-- Single Graph -->
-     {{-- <div class="col-12 col-md-6 col-lg-6">
-       <div class="signle-graph-box">
-         <div class="single-graph-header">
-             <div class="graph-title">Real Chart</div>
-         </div>
-         <div class="single-graph-body">
-            <div class="demo-container" style="height:400px; width: 100%;">
-                <div id="placeholder" class="flot-chart-content"></div>
-            </div>
-         </div>
-       </div>
-     </div> --}}
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     {{-- <div class="col-12 col-md-6 col-lg-6">
-       <div class="signle-graph-box">
-         <div class="single-graph-header">
-             <div class="graph-title">Moving Line Chart</div>
-         </div>
-         <div class="single-graph-body">
-            <div class="flot-chart">
-                <div class="flot-chart-content" id="flot-line-chart-moving"></div>
-            </div>
-         </div>
-       </div>
-     </div> --}}
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
      <div class="col-12 col-md-6 col-lg-6">
        <div class="signle-graph-box">
          <div class="single-graph-header">
@@ -150,36 +120,10 @@
      <div class="col-12 col-md-12 col-lg-12">
        <div class="signle-graph-box">
          <div class="single-graph-header">
-             <div class="graph-title">Basic Bar Chart</div>
+             <div class="graph-title">Top Health Conditions</div>
          </div>
          <div class="single-graph-body">
              <div id="basic-bar" style="height:400px;"></div>
-         </div>
-       </div>
-     </div>
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     <div class="col-12 col-md-12 col-lg-12">
-       <div class="signle-graph-box">
-         <div class="single-graph-header">
-             <div class="graph-title">Top Medicines by Symptoms</div>
-         </div>
-         <div class="single-graph-body">
-             <div id="stacked-bar" style="height:400px;"></div>
-         </div>
-       </div>
-     </div>
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     <div class="col-12 col-md-12 col-lg-12">
-       <div class="signle-graph-box">
-         <div class="single-graph-header">
-             <div class="graph-title">Bar Basic Chart</div>
-         </div>
-         <div class="single-graph-body">
-             <div id="bar-basic" style="height:400px;"></div>
          </div>
        </div>
      </div>
