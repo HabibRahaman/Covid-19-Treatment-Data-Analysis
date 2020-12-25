@@ -25,6 +25,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function thanks()
+    {
+
+        return view('web.thanks');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function download($reg_id)
     {
     	$patient = Patient::where('reg_id', $reg_id)->firstOrFail();

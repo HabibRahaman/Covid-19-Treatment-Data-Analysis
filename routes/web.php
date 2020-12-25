@@ -19,6 +19,7 @@ Route::namespace('Web')->group(function () {
 
     // Home
     Route::get('/','HomeController@index')->name('home');
+    Route::get('/thanks','HomeController@thanks')->name('thanks');
     Route::get('/prescription/{reg_id}','HomeController@download')->name('download');
 
     // Health Blog

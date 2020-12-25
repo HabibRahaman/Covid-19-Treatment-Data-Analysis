@@ -94,70 +94,70 @@
                   <label for="city">City / District <span>*</span></label>
                   <select class="custom-select" name="city" id="city" required>
                       <option value="">Select</option>
-                      <option value="Dhaka">Dhaka</option>
-                      <option value="Bagerhat">Bagerhat</option>
-                      <option value="Bandarban">Bandarban</option>
-                      <option value="Barguna">Barguna</option>
-                      <option value="Barisal">Barisal</option>
-                      <option value="Bhola">Bhola</option>
-                      <option value="Bogra">Bogra</option>
-                      <option value="Brahmanbaria">Brahmanbaria</option>
-                      <option value="Chandpur">Chandpur</option>
-                      <option value="Chittagong">Chittagong</option>
-                      <option value="Chuadanga">Chuadanga</option>
-                      <option value="Comilla">Comilla</option>
-                      <option value="Cox's Bazar">Cox's Bazar</option>
-                      <option value="Dinajpur">Dinajpur</option>
-                      <option value="Faridpur">Faridpur</option>
-                      <option value="Feni">Feni</option>
-                      <option value="Gaibandha">Gaibandha</option>
-                      <option value="Gazipur">Gazipur</option>
-                      <option value="Gopalganj">Gopalganj</option>
-                      <option value="Habiganj">Habiganj</option>
-                      <option value="Jaipurhat">Jaipurhat</option>
-                      <option value="Jamalpur">Jamalpur</option>
-                      <option value="Jessore">Jessore</option>
-                      <option value="Jhalakati">Jhalakati</option>
-                      <option value="Jhenaidah">Jhenaidah</option>
-                      <option value="Khagrachari">Khagrachari</option>
-                      <option value="Khulna">Khulna</option>
-                      <option value="Kishoreganj">Kishoreganj</option>
-                      <option value="Kurigram">Kurigram</option>
-                      <option value="Kushtia">Kushtia</option>
-                      <option value="Lakshmipur">Lakshmipur</option>
-                      <option value="Lalmonirhat">Lalmonirhat</option>
-                      <option value="Madaripur">Madaripur</option>
-                      <option value="Magura">Magura</option>
-                      <option value="Manikganj">Manikganj</option>
-                      <option value="Meherpur">Meherpur</option>
-                      <option value="Moulvibazar">Moulvibazar</option>
-                      <option value="Munshiganj">Munshiganj</option>
-                      <option value="Mymensingh">Mymensingh</option>
-                      <option value="Naogaon">Naogaon</option>
-                      <option value="Narail">Narail</option>
-                      <option value="Narayanganj">Narayanganj</option>
-                      <option value="Narsingdi">Narsingdi</option>
-                      <option value="Natore">Natore</option>
-                      <option value="Nawabganj">Nawabganj</option>
-                      <option value="Netrakona">Netrakona</option>
-                      <option value="Nilphamari">Nilphamari</option>
-                      <option value="Noakhali">Noakhali</option>
-                      <option value="Pabna">Pabna</option>
-                      <option value="Panchagarh">Panchagarh</option>
-                      <option value="Patuakhali">Patuakhali</option>
-                      <option value="Pirojpur">Pirojpur</option>
-                      <option value="Rajbari">Rajbari</option>
-                      <option value="Rajshahi">Rajshahi</option>
-                      <option value="Rangamati">Rangamati</option>
-                      <option value="Rangpur">Rangpur</option>
-                      <option value="Satkhira">Satkhira</option>
-                      <option value="Shariatpur">Shariatpur</option>
-                      <option value="Sherpur">Sherpur</option>
-                      <option value="Sirajganj">Sirajganj</option>
-                      <option value="Sunamganj">Sunamganj</option>
-                      <option value="Sylhet">Sylhet</option>
-                      <option value="Tangail">Tangail</option>
-                      <option value="Thakurgaon">Thakurgaon</option>
+                      <option value="Dhaka" @if(old('city') == 'Dhaka') selected @endif>Dhaka</option>
+                      <option value="Bagerhat" @if(old('city') == 'Bagerhat') selected @endif>Bagerhat</option>
+                      <option value="Bandarban" @if(old('city') == 'Bandarban') selected @endif>Bandarban</option>
+                      <option value="Barguna" @if(old('city') == 'Barguna') selected @endif>Barguna</option>
+                      <option value="Barisal" @if(old('city') == 'Barisal') selected @endif>Barisal</option>
+                      <option value="Bhola" @if(old('city') == 'Bhola') selected @endif>Bhola</option>
+                      <option value="Bogra" @if(old('city') == 'Bogra') selected @endif>Bogra</option>
+                      <option value="Brahmanbaria" @if(old('city') == 'Brahmanbaria') selected @endif>Brahmanbaria</option>
+                      <option value="Chandpur" @if(old('city') == 'Chandpur') selected @endif>Chandpur</option>
+                      <option value="Chittagong" @if(old('city') == 'Chittagong') selected @endif>Chittagong</option>
+                      <option value="Chuadanga" @if(old('city') == 'Chuadanga') selected @endif>Chuadanga</option>
+                      <option value="Comilla" @if(old('city') == 'Comilla') selected @endif>Comilla</option>
+                      <option value="Cox's Bazar" @if(old('city') == "Cox's Bazar") selected @endif>Cox's Bazar</option>
+                      <option value="Dinajpur" @if(old('city') == 'Dinajpur') selected @endif>Dinajpur</option>
+                      <option value="Faridpur" @if(old('city') == 'Faridpur') selected @endif>Faridpur</option>
+                      <option value="Feni" @if(old('city') == 'Feni') selected @endif>Feni</option>
+                      <option value="Gaibandha" @if(old('city') == 'Gaibandha') selected @endif>Gaibandha</option>
+                      <option value="Gazipur" @if(old('city') == 'Gazipur') selected @endif>Gazipur</option>
+                      <option value="Gopalganj" @if(old('city') == 'Gopalganj') selected @endif>Gopalganj</option>
+                      <option value="Habiganj" @if(old('city') == 'Habiganj') selected @endif>Habiganj</option>
+                      <option value="Jaipurhat" @if(old('city') == 'Jaipurhat') selected @endif>Jaipurhat</option>
+                      <option value="Jamalpur" @if(old('city') == 'Jamalpur') selected @endif>Jamalpur</option>
+                      <option value="Jessore" @if(old('city') == 'Jessore') selected @endif>Jessore</option>
+                      <option value="Jhalakati" @if(old('city') == 'Jhalakati') selected @endif>Jhalakati</option>
+                      <option value="Jhenaidah" @if(old('city') == 'Jhenaidah') selected @endif>Jhenaidah</option>
+                      <option value="Khagrachari" @if(old('city') == 'Khagrachari') selected @endif>Khagrachari</option>
+                      <option value="Khulna" @if(old('city') == 'Khulna') selected @endif>Khulna</option>
+                      <option value="Kishoreganj" @if(old('city') == 'Kishoreganj') selected @endif>Kishoreganj</option>
+                      <option value="Kurigram" @if(old('city') == 'Kurigram') selected @endif>Kurigram</option>
+                      <option value="Kushtia" @if(old('city') == 'Kushtia') selected @endif>Kushtia</option>
+                      <option value="Lakshmipur" @if(old('city') == 'Lakshmipur') selected @endif>Lakshmipur</option>
+                      <option value="Lalmonirhat" @if(old('city') == 'Lalmonirhat') selected @endif>Lalmonirhat</option>
+                      <option value="Madaripur" @if(old('city') == 'Madaripur') selected @endif>Madaripur</option>
+                      <option value="Magura" @if(old('city') == 'Magura') selected @endif>Magura</option>
+                      <option value="Manikganj" @if(old('city') == 'Manikganj') selected @endif>Manikganj</option>
+                      <option value="Meherpur" @if(old('city') == 'Meherpur') selected @endif>Meherpur</option>
+                      <option value="Moulvibazar" @if(old('city') == 'Moulvibazar') selected @endif>Moulvibazar</option>
+                      <option value="Munshiganj" @if(old('city') == 'Munshiganj') selected @endif>Munshiganj</option>
+                      <option value="Mymensingh" @if(old('city') == 'Mymensingh') selected @endif>Mymensingh</option>
+                      <option value="Naogaon" @if(old('city') == 'Naogaon') selected @endif>Naogaon</option>
+                      <option value="Narail" @if(old('city') == 'Narail') selected @endif>Narail</option>
+                      <option value="Narayanganj" @if(old('city') == 'Narayanganj') selected @endif>Narayanganj</option>
+                      <option value="Narsingdi" @if(old('city') == 'Narsingdi') selected @endif>Narsingdi</option>
+                      <option value="Natore" @if(old('city') == 'Natore') selected @endif>Natore</option>
+                      <option value="Nawabganj" @if(old('city') == 'Nawabganj') selected @endif>Nawabganj</option>
+                      <option value="Netrakona" @if(old('city') == 'Netrakona') selected @endif>Netrakona</option>
+                      <option value="Nilphamari" @if(old('city') == 'Nilphamari') selected @endif>Nilphamari</option>
+                      <option value="Noakhali" @if(old('city') == 'Noakhali') selected @endif>Noakhali</option>
+                      <option value="Pabna" @if(old('city') == 'Pabna') selected @endif>Pabna</option>
+                      <option value="Panchagarh" @if(old('city') == 'Panchagarh') selected @endif>Panchagarh</option>
+                      <option value="Patuakhali" @if(old('city') == 'Patuakhali') selected @endif>Patuakhali</option>
+                      <option value="Pirojpur" @if(old('city') == 'Pirojpur') selected @endif>Pirojpur</option>
+                      <option value="Rajbari" @if(old('city') == 'Rajbari') selected @endif>Rajbari</option>
+                      <option value="Rajshahi" @if(old('city') == 'Rajshahi') selected @endif>Rajshahi</option>
+                      <option value="Rangamati" @if(old('city') == 'Rangamati') selected @endif>Rangamati</option>
+                      <option value="Rangpur" @if(old('city') == 'Rangpur') selected @endif>Rangpur</option>
+                      <option value="Satkhira" @if(old('city') == 'Satkhira') selected @endif>Satkhira</option>
+                      <option value="Shariatpur" @if(old('city') == 'Shariatpur') selected @endif>Shariatpur</option>
+                      <option value="Sherpur" @if(old('city') == 'Sherpur') selected @endif>Sherpur</option>
+                      <option value="Sirajganj" @if(old('city') == 'Sirajganj') selected @endif>Sirajganj</option>
+                      <option value="Sunamganj" @if(old('city') == 'Sunamganj') selected @endif>Sunamganj</option>
+                      <option value="Sylhet" @if(old('city') == 'Sylhet') selected @endif>Sylhet</option>
+                      <option value="Tangail" @if(old('city') == 'Tangail') selected @endif>Tangail</option>
+                      <option value="Thakurgaon" @if(old('city') == 'Thakurgaon') selected @endif>Thakurgaon</option>
                   </select>
                 </div>
                 <div class="col-12 col-md-12 col-xl-12 form-inline">
@@ -226,12 +226,11 @@
               <div class="form-row">
                 
                 @foreach($disease->symptoms as $symptom)
-                @if($symptom->risk_level != 3 && $symptom->show == 1)
+                @if($symptom->risk_level != 3 && $symptom->show == 1 && $symptom->status == 1)
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
                             <div class="single-check-title">{{ $symptom->name }}</div>
-                            {{-- <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div> --}}
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -261,12 +260,11 @@
               <div class="form-row">
                 
                 @foreach($disease->symptoms as $symptom)
-                @if($symptom->risk_level == 3 && $symptom->show == 1)
+                @if($symptom->risk_level == 3 && $symptom->show == 1 && $symptom->status == 1)
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
                             <div class="single-check-title">{{ $symptom->name }}</div>
-                            {{-- <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div> --}}
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -302,11 +300,11 @@
               <div class="form-row">
                 
                 @foreach($disease->conditions as $condition)
+                @if($condition->show == 1 && $condition->status == 1)
                 <div class="col-12 col-md-6 col-xl-6">
                     <div class="single-check-form">
                         <div class="check-content">
                             <div class="single-check-title">{{ $condition->name }}</div>
-                            {{-- <div class="single-check-subtitle">(আপনার কি জ্বড় আছে?)</div> --}}
                         </div>
                         <div class="check-btn">
                             <label class="switch switch-left-right">
@@ -317,6 +315,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 @endforeach
 
               </div>

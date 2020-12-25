@@ -92,6 +92,6 @@ class SearchController extends Controller
 
         Session::flash('success', 'Your request has been submitted successfully. Prescription will be mailed in your email address.');
 
-        return redirect()->back();
+        return redirect()->route('thanks');
     }
 }

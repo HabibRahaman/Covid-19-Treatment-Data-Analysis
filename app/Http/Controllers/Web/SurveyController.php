@@ -56,8 +56,8 @@ class SurveyController extends Controller
         $patient->medicines()->attach($request->medicines);
 
 
-        Session::flash('success', 'Thank you for attending this survey');
+        Session::flash('success', 'Thank you for attending this survey. We appreciate your help for our research.');
 
-        return redirect()->back();
+        return redirect()->route('thanks');
     }
 }
