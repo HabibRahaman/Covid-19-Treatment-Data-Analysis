@@ -35,6 +35,7 @@
                                         <th>City</th>
                                         <th>Medical Test</th>
                                         <th>Health Condition</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -90,18 +91,35 @@
                                             @endif
                                         </td>
                                         <td>
+                                            @if($survey->status == 1)
+                                            <span class="new badge blue">Pending</span>
+                                            @elseif($survey->status == 2)
+                                            <span class="new badge green">Approved</span>
+                                            @elseif($survey->status == 0)
+                                            <span class="new badge red">Rejected</span>
+                                            @endif
+                                        </td>
+                                        <td>
                                         <a class="waves-effect waves-light btn btn-small blue modal-trigger" href="#viewitem-{{ $survey->id }}" data-toggle="tooltip" data-placement="top" title="View">
                                             <i class="fas fa-eye "></i>
                                         </a>
 
-                                        <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Delete"
+                                        <a class="waves-effect waves-light btn btn-small green" data-toggle="tooltip" data-placement="top" title="Reject" href="{{ route($route.'show', [$survey->id]) }}">
+                                           <i class="fas fa-check-square"></i>
+                                        </a>
+
+                                        <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Reject" href="{{ route($route.'edit', [$survey->id]) }}">
+                                           <i class="fas fa-window-close"></i>
+                                        </a>
+
+                                        {{-- <a class="waves-effect waves-light btn btn-small red" data-toggle="tooltip" data-placement="top" title="Delete"
                                             onclick="alertFunction('delete',{{$survey->id}});">
                                            <i class="fas fa-trash-alt"></i>
                                         </a>
                                         <form id="delete{{$survey->id}}" action="{{ route($route.'destroy', [$survey->id]) }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                             @method('DELETE')
-                                        </form>
+                                        </form> --}}
 
 
                                         <!-- ================================ -->

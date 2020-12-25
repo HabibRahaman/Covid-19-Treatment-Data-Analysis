@@ -22,19 +22,19 @@ class HomeController extends Controller
         $data['total_patients'] = Patient::count();
 
         // By Gender
-        $data['total_male'] = Patient::where('gender', 1)->count();
-        $data['total_female'] = Patient::where('gender', 2)->count();
+        $data['total_male'] = Patient::where('status', 2)->where('gender', 1)->count();
+        $data['total_female'] = Patient::where('status', 2)->where('gender', 2)->count();
 
         // By Age
-        $data['total_age1'] = Patient::where('age', 1)->count();
-        $data['total_age2'] = Patient::where('age', 2)->count();
-        $data['total_age3'] = Patient::where('age', 3)->count();
-        $data['total_age4'] = Patient::where('age', 4)->count();
-        $data['total_age5'] = Patient::where('age', 5)->count();
-        $data['total_age6'] = Patient::where('age', 6)->count();
-        $data['total_age7'] = Patient::where('age', 7)->count();
-        $data['total_age8'] = Patient::where('age', 8)->count();
-        $data['total_age9'] = Patient::where('age', 9)->count();
+        $data['total_age1'] = Patient::where('status', 2)->where('age', 1)->count();
+        $data['total_age2'] = Patient::where('status', 2)->where('age', 2)->count();
+        $data['total_age3'] = Patient::where('status', 2)->where('age', 3)->count();
+        $data['total_age4'] = Patient::where('status', 2)->where('age', 4)->count();
+        $data['total_age5'] = Patient::where('status', 2)->where('age', 5)->count();
+        $data['total_age6'] = Patient::where('status', 2)->where('age', 6)->count();
+        $data['total_age7'] = Patient::where('status', 2)->where('age', 7)->count();
+        $data['total_age8'] = Patient::where('status', 2)->where('age', 8)->count();
+        $data['total_age9'] = Patient::where('status', 2)->where('age', 9)->count();
 
         // Symptoms
         $data['symptoms'] = Symptom::withCount('patients')

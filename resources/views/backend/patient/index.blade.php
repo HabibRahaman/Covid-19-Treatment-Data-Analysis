@@ -78,7 +78,7 @@
                                             @elseif($patient->status == 2)
                                             <span class="new badge green">Sent</span>
                                             @elseif($patient->status == 0)
-                                            <span class="new badge red">Reject</span>
+                                            <span class="new badge red">Rejected</span>
                                             @endif
                                         </td>
                                         <td>

@@ -62,6 +62,13 @@ class SurveyController extends Controller
     public function show($id)
     {
         //
+        $survey = Patient::find($id);
+        $survey->status = 2;
+        $survey->save();
+
+        toastr()->success('Approved Successfully');
+
+        return redirect()->back();
     }
 
     /**
@@ -73,6 +80,13 @@ class SurveyController extends Controller
     public function edit($id)
     {
         //
+        $survey = Patient::find($id);
+        $survey->status = 0;
+        $survey->save();
+
+        toastr()->success('Rejected Successfully');
+
+        return redirect()->back();
     }
 
     /**
