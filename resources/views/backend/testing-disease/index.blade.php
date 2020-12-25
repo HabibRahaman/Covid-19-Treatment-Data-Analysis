@@ -86,7 +86,7 @@
                         <!-- ================================ -->
                         <div class="card-content">
                           <div class="responsive-table">
-                            <table id="file_export" class="table table-striped display" style="width:100%">
+                            <table class="table table-striped display" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th>Name</th>

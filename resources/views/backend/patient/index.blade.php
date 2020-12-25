@@ -229,9 +229,11 @@
                                                     <div class="row m-t-20">
                                                       <div class="col s12">
                                                           <h6>Health Cares:</h6>
-                                                          @foreach($patient->health_cares as $health_care)
-                                                            <span class="new badge black">{{ $health_care->name }}</span>
-                                                          @endforeach
+                                                          <ul>
+                                                            @foreach($patient->health_cares as $health_care)
+                                                              <li>{{ $health_care->name }}</li>
+                                                            @endforeach
+                                                          </ul>
                                                       </div>
                                                     </div>
 

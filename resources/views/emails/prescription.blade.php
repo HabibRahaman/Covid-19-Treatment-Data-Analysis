@@ -268,9 +268,11 @@ p {
                         <tr>
                             <td class="full-width">
                                 <strong>Health Cares:</strong> 
+                                <ul>
                                 @foreach ($data['patient']->health_cares as $health_care)
-                                    {{ $health_care->name }}, 
+                                    <li>{{ $health_care->name }}</li> 
                                 @endforeach
+                                </ul>
                             </td>
                         </tr>
                         @if(isset($data['message']))

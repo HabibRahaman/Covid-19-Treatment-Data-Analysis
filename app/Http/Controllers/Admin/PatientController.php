@@ -109,15 +109,19 @@ class PatientController extends Controller
         $prescription->save();
 
         // Attach
-        $patient->medicines()->sync($request->medicines);
+        $patient->medicines()->detach();
+        $patient->medicines()->attach($request->medicines);
 
-
+        // Health Cares
         $disease = Disease::where('status', 1)
                             ->firstOrFail();
 
+        $patient->health_cares()->detach();
         foreach ($disease->health_cares as $health_care) {
+          if ($health_care->status == 1) {
             // Attach
-            $patient->health_cares()->sync($health_care->id);
+            $patient->health_cares()->attach($health_care->id);
+          }
         }
 
 

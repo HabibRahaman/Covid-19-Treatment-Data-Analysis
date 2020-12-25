@@ -29,9 +29,16 @@
                                     <div class="col l3 m6">
                                         <div class="card danger-gradient">
                                             <div class="card-content">
+                                                <div class="d-flex no-block align-items-center">
                                                 <div class="center-align">
                                                     <h3 class="white-text m-b-0">{{ $users }}</h3>
                                                     <span class="white-text">Total Specialist</span>
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <span class="white-text display-6">
+                                                        <i><span class="fas fa-user-md"></span></i>
+                                                    </span>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -41,9 +48,16 @@
                                     <div class="col l3 m6">
                                         <div class="card info-gradient">
                                             <div class="card-content">
+                                                <div class="d-flex no-block align-items-center">
                                                 <div class="center-align">
                                                     <h3 class="white-text m-b-0">{{ $search }}</h3>
-                                                    <span class="white-text">Total Search</span>
+                                                    <span class="white-text">Total Patients</span>
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <span class="white-text display-6">
+                                                        <i><span class="fas fa-user-injured"></span></i>
+                                                    </span>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -53,9 +67,16 @@
                                     <div class="col l3 m6">
                                         <div class="card success-gradient">
                                             <div class="card-content">
+                                                <div class="d-flex no-block align-items-center">
                                                 <div class="center-align">
                                                     <h3 class="white-text m-b-0">{{ $survey }}</h3>
                                                     <span class="white-text">Total Survey</span>
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <span class="white-text display-6">
+                                                        <i><span class="fas fa-poll"></span></i>
+                                                    </span>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -65,9 +86,16 @@
                                     <div class="col l3 m6">
                                         <div class="card warning-gradient">
                                             <div class="card-content">
+                                                <div class="d-flex no-block align-items-center">
                                                 <div class="center-align">
                                                     <h3 class="white-text m-b-0">{{ $tests }}</h3>
                                                     <span class="white-text">Total Test</span>
+                                                </div>
+                                                <div class="ml-auto">
+                                                    <span class="white-text display-6">
+                                                        <i><span class="fas fa-vial"></span></i>
+                                                    </span>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
