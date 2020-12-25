@@ -77,7 +77,7 @@
                                                 </div>
                                                 <div class="col s12">
                                                     <div class="input-field">
-                                                        <select name="symptoms[]" id="symptoms" required multiple>
+                                                        <select name="symptoms[]" id="symptoms" multiple>
                                                             @foreach($symptoms as $symptom)
                                                             <option value="{{ $symptom->id }}">{{ $symptom->name }}</option>
                                                             @endforeach
@@ -251,7 +251,7 @@
                                                             </div>
                                                             <div class="col s12">
                                                                 <div class="input-field">
-                                                                    <select name="symptoms[]" id="symptoms" required multiple>
+                                                                    <select name="symptoms[]" id="symptoms" multiple>
                                                                         @foreach($symptoms as $symptom)
                                                                         <option value="{{ $symptom->id }}"
 
