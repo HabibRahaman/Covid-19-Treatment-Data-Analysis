@@ -11,7 +11,7 @@ class TestingDiseaseController extends Controller
 {
     public function __construct () 
     {
-        $this->middleware('permission:Diseases');
+        $this->middleware('permission:TestingTool');
         
         $this->title = 'Testing Disease';
         $this->route = 'admin.testing-disease.';

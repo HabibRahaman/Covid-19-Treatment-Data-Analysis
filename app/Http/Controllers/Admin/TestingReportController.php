@@ -10,7 +10,7 @@ class TestingReportController extends Controller
 {
     public function __construct () 
     {
-        $this->middleware('permission:Symptoms');
+        $this->middleware('permission:TestingTool');
         
         $this->title = 'Test Report';
         $this->route = 'admin.testing-report.';

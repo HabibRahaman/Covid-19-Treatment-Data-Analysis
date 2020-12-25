@@ -11,7 +11,7 @@ class TestingPriorityController extends Controller
 {
     public function __construct () 
     {
-        $this->middleware('permission:Symptoms');
+        $this->middleware('permission:TestingTool');
         
         $this->title = 'Testing Priority';
         $this->route = 'admin.testing-priority.';

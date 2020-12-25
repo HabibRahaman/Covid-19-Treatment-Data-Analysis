@@ -15,7 +15,7 @@ class PatientController extends Controller
 {
     public function __construct () 
     {
-        $this->middleware('permission:Symptoms');
+        $this->middleware('permission:Patients');
         
         $this->title = 'Patient';
         $this->route = 'admin.patient.';

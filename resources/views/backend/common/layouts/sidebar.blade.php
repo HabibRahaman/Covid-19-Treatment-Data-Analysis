@@ -9,6 +9,42 @@
                             <a href="{{ url('dashboard/index') }}" class="collapsible-header"><i><span class="fas fa-clinic-medical"></span></i><span class="hide-menu"> Dashboard </span></a>
                         </li>
 
+                        @can('Surveys')
+                        <li>
+                            <a href="{{ route('admin.survey.index') }}" class="collapsible-header"><i><span class="fas fa-poll"></span></i><span class="hide-menu"> Surveys </span></a>
+                        </li>
+                        @endcan
+
+                        @can('Patients')
+                        <li>
+                            <a href="{{ route('admin.patient.index') }}" class="collapsible-header"><i><span class="fas fa-user-injured"></span></i><span class="hide-menu"> Patients </span></a>
+                        </li>
+                        @endcan
+
+                        @can('TestingTool')
+                        <li>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i><span class="fas fa-vial"></span></i><span class="hide-menu"> Testing Tool</span></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li>
+                                        <a href="{{ route('admin.testing-disease.index') }}" class="hide-menu"><i><span class="fas fa-viruses"></span></i><span class="hide-menu"> Diseases </span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ route('admin.testing-symptom.index') }}" class="hide-menu"><i><span class="fas fa-head-side-cough"></span></i><span class="hide-menu"> Symptoms </span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ route('admin.testing-priority.index') }}" class="hide-menu"><i><span class="fas fa-tasks"></span></i><span class="hide-menu"> Priorities </span></a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ route('admin.testing-report.index') }}" class="hide-menu"><i><span class="fas fa-clipboard"></span></i><span class="hide-menu"> Test Report </span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        @endcan
 
                         @can('Diseases')
                         <li>
@@ -47,41 +83,8 @@
                         @endcan
 
                         <li>
-                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i><span class="fas fa-vial"></span></i><span class="hide-menu"> Testing Tool</span></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li>
-                                        <a href="{{ route('admin.testing-disease.index') }}" class="hide-menu"><i><span class="fas fa-viruses"></span></i><span class="hide-menu"> Diseases </span></a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ route('admin.testing-symptom.index') }}" class="hide-menu"><i><span class="fas fa-head-side-cough"></span></i><span class="hide-menu"> Symptoms </span></a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ route('admin.testing-priority.index') }}" class="hide-menu"><i><span class="fas fa-tasks"></span></i><span class="hide-menu"> Priorities </span></a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ route('admin.testing-report.index') }}" class="hide-menu"><i><span class="fas fa-clipboard"></span></i><span class="hide-menu"> Test Report </span></a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <a href="{{ route('admin.profile.index') }}" class="collapsible-header"><i><span class="fas fa-user-md"></span></i><span class="hide-menu"> Profile </span></a>
                         </li>
-
-                        <li>
-                            <a href="{{ route('admin.survey.index') }}" class="collapsible-header"><i><span class="fas fa-poll"></span></i><span class="hide-menu"> Surveys </span></a>
-                        </li>
-
-                        <li>
-                            <a href="{{ route('admin.patient.index') }}" class="collapsible-header"><i><span class="fas fa-user-injured"></span></i><span class="hide-menu"> Patients </span></a>
-                        </li>
-
-                        @can('Roles')
-                        <li>
-                            <a href="{{ route('admin.role.index') }}" class="collapsible-header"><i><span class="fas fa-user-tag"></span></i><span class="hide-menu"> Roles </span></a>
-                        </li>
-                        @endcan
 
                         @can('Users')
                         <li>
@@ -89,8 +92,13 @@
                         </li>
                         @endcan
 
+                        @can('Roles')
                         <li>
-                            <a href="{{ route('admin.profile.index') }}" class="collapsible-header"><i><span class="fas fa-user-md"></span></i><span class="hide-menu"> Profile </span></a>
+                            <a href="{{ route('admin.role.index') }}" class="collapsible-header"><i><span class="fas fa-user-tag"></span></i><span class="hide-menu"> Roles </span></a>
+                        </li>
+                        @endcan
+
+                        <li style="margin-bottom: 150px;">
                         </li>
                         
                     </ul>

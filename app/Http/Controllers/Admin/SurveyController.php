@@ -10,7 +10,7 @@ class SurveyController extends Controller
 {
     public function __construct () 
     {
-        $this->middleware('permission:Symptoms');
+        $this->middleware('permission:Surveys');
         
         $this->title = 'Survey';
         $this->route = 'admin.survey.';

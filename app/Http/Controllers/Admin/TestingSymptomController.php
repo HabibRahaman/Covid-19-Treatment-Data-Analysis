@@ -12,7 +12,7 @@ class TestingSymptomController extends Controller
 {
     public function __construct () 
     {
-        $this->middleware('permission:Symptoms');
+        $this->middleware('permission:TestingTool');
         
         $this->title = 'Testing Symptom';
         $this->route = 'admin.testing-symptom.';

@@ -15,13 +15,15 @@ class PermissionTableSeeder extends Seeder
         DB::table('permissions')->delete();
 
         $permissions = [
+           'TestingTool',
+           'Surveys',
+           'Patients',
            'Diseases',
            'Symptoms',
            'Medicines',
            'MedicalConditions',
            'HealthCares',
            'InfoBlogs',
-           'OnlineTest',
            'Roles',
            'Users'
         ];
