@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 04, 2020 at 07:28 PM
+-- Generation Time: Dec 25, 2020 at 01:15 PM
 -- Server version: 5.7.32-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.7
 
@@ -108,10 +108,10 @@ CREATE TABLE `diseases` (
 --
 
 INSERT INTO `diseases` (`id`, `name`, `slug`, `details`, `type`, `risk_level`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'COVID-19', 'covid-19', '<div>\r\n<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n</div>\r\n<div>\r\n<h2>Why do we use it?</h2>\r\n<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>\r\n</div>\r\n<p>&nbsp;</p>\r\n<div>\r\n<h2>Where does it come from?</h2>\r\n<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.</p>\r\n</div>', 1, 2, 1, '2020-08-26 23:33:54', '2020-08-30 23:53:00'),
-(7, 'Plague', 'plague', '<p>Plague</p>', 1, 3, 1, '2020-09-11 00:17:50', '2020-11-04 08:33:00'),
-(9, 'Ebola', 'ebola', '<p>Ebola</p>', 1, 3, 1, '2020-09-11 00:19:04', '2020-09-11 00:19:04'),
-(12, 'Dengu', 'dengu', '<p>Dengu</p>', 1, 2, 1, '2020-09-11 00:21:11', '2020-11-04 08:33:11');
+(1, 'COVID-19', 'covid-19', '<p>COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.</p>', 1, 2, 1, '2020-08-26 23:33:54', '2020-12-25 05:46:28'),
+(7, 'Plague', 'plague', '<p>Plague</p>', 1, 3, 0, '2020-09-11 00:17:50', '2020-12-19 00:36:22'),
+(9, 'Ebola', 'ebola', '<p>Ebola</p>', 1, 3, 0, '2020-09-11 00:19:04', '2020-12-19 00:36:15'),
+(12, 'Dengu', 'dengu', '<p>Dengu</p>', 1, 2, 0, '2020-09-11 00:21:11', '2020-11-04 22:26:46');
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,8 @@ CREATE TABLE `disease_health_care` (
 --
 
 INSERT INTO `disease_health_care` (`disease_id`, `health_care_id`) VALUES
-(1, 1);
+(1, 1),
+(1, 2);
 
 -- --------------------------------------------------------
 
@@ -147,7 +148,81 @@ CREATE TABLE `disease_medical_condition` (
 --
 
 INSERT INTO `disease_medical_condition` (`disease_id`, `medical_condition_id`) VALUES
-(1, 3);
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(1, 10),
+(1, 11),
+(1, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `disease_medicine`
+--
+
+CREATE TABLE `disease_medicine` (
+  `disease_id` int(10) UNSIGNED NOT NULL,
+  `medicine_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `disease_medicine`
+--
+
+INSERT INTO `disease_medicine` (`disease_id`, `medicine_id`) VALUES
+(1, 2),
+(1, 1),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(1, 10),
+(1, 11),
+(1, 12),
+(1, 13),
+(1, 14),
+(1, 15),
+(1, 16),
+(1, 17),
+(1, 18),
+(1, 19),
+(1, 20),
+(1, 21);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `disease_report`
+--
+
+CREATE TABLE `disease_report` (
+  `disease_id` int(10) UNSIGNED NOT NULL,
+  `report_id` bigint(20) UNSIGNED NOT NULL,
+  `probability` decimal(8,2) DEFAULT '0.00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `disease_report`
+--
+
+INSERT INTO `disease_report` (`disease_id`, `report_id`, `probability`) VALUES
+(1, 10, '34.88'),
+(2, 10, '37.21'),
+(3, 10, '27.91'),
+(1, 11, '37.78'),
+(2, 11, '37.78'),
+(3, 11, '24.44'),
+(1, 12, '32.65'),
+(2, 12, '42.86'),
+(3, 12, '24.49');
 
 -- --------------------------------------------------------
 
@@ -168,7 +243,19 @@ INSERT INTO `disease_symptom` (`disease_id`, `symptom_id`) VALUES
 (1, 2),
 (1, 3),
 (1, 1),
-(1, 4);
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(1, 10),
+(1, 11),
+(1, 12),
+(1, 13),
+(1, 14),
+(1, 15),
+(1, 16);
 
 -- --------------------------------------------------------
 
@@ -208,7 +295,8 @@ CREATE TABLE `health_cares` (
 --
 
 INSERT INTO `health_cares` (`id`, `name`, `slug`, `details`, `type`, `priority`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Ice Therapy', 'ice-therapy', '<p>Ice Therapy</p>', 2, 3, 1, '2020-09-02 01:21:14', '2020-11-04 08:31:09');
+(1, 'Drink warm beverages, like tea or broth', 'drink-warm-beverages-like-tea-or-broth', NULL, 2, 3, 1, '2020-09-02 01:21:14', '2020-12-24 23:40:28'),
+(2, 'Try relaxation or meditation techniques', 'try-relaxation-or-meditation-techniques', NULL, 2, 3, 1, '2020-12-24 23:41:37', '2020-12-24 23:41:37');
 
 -- --------------------------------------------------------
 
@@ -234,7 +322,16 @@ CREATE TABLE `medical_conditions` (
 --
 
 INSERT INTO `medical_conditions` (`id`, `name`, `slug`, `details`, `instructions`, `risk_level`, `show`, `status`, `created_at`, `updated_at`) VALUES
-(3, 'High Pressure', 'high-pressure', '<p>High Pressure</p>', '<p>High Pressure</p>', 3, 1, 1, '2020-09-02 00:10:33', '2020-09-02 00:20:57');
+(3, 'Asthma', 'asthma', NULL, '<ul>\r\n<li>Medicine continue as prescribed.</li>\r\n<li>Keep your asthma under control.</li>\r\n</ul>', 3, 1, 1, '2020-09-02 00:10:33', '2020-12-24 21:43:08'),
+(4, 'Cancer', 'cancer', NULL, '<ul>\r\n<li>Medicine continue as prescribed.</li>\r\n<li>Do not delay life-saving treatment or emergency care.</li>\r\n</ul>', 3, 1, 1, '2020-12-24 21:47:09', '2020-12-24 21:47:09'),
+(5, 'Kidney Disease', 'kidney-disease', NULL, '<ul>\r\n<li>Medicine continue as prescribed.</li>\r\n<li>Have shelf-stable food choices to help you follow your kidney diet.</li>\r\n</ul>', 3, 1, 1, '2020-12-24 21:57:53', '2020-12-24 21:57:53'),
+(6, 'Lung Diseases', 'lung-diseases', NULL, '<ul>\r\n<li>Medicine continue as prescribed.</li>\r\n<li>Keep taking your current medicines, including those with steroids in them (&ldquo;steroids&rdquo; is another word for corticosteroids).</li>\r\n<li>Avoid triggers that make your symptoms worse.</li>\r\n</ul>', 3, 1, 1, '2020-12-24 21:59:03', '2020-12-24 21:59:03'),
+(7, 'Diabetes', 'diabetes', NULL, '<ul>\r\n<li>Medicine continue as prescribed.</li>\r\n<li>Test your blood sugar and keep track of the results, as directed by your healthcare provider.</li>\r\n</ul>', 3, 1, 1, '2020-12-24 21:59:51', '2020-12-24 21:59:51'),
+(8, 'Liver disease', 'liver-disease', NULL, '<ul>\r\n<li>Medicine continue as prescribed.</li>\r\n</ul>', 2, 1, 1, '2020-12-24 22:01:37', '2020-12-24 22:01:37'),
+(9, 'Pregnancy', 'pregnancy', NULL, '<ul>\r\n<li>Medicine continue as prescribed.</li>\r\n<li>Do not skip your prenatal care appointments.</li>\r\n<li>Seek care immediately if you have a medical emergency.</li>\r\n</ul>', 2, 1, 1, '2020-12-24 22:02:52', '2020-12-24 22:02:52'),
+(10, 'Serious Heart Conditions', 'serious-heart-conditions', NULL, '<ul>\r\n<li>Medicine continue as prescribed.</li>\r\n<li>Do not delay life-saving treatment or emergency care.</li>\r\n</ul>', 2, 1, 1, '2020-12-24 22:03:46', '2020-12-24 22:03:46'),
+(11, 'Smoking', 'smoking', NULL, '<ul>\r\n<li>If you currently smoke, quit. If you used to smoke, don&rsquo;t start again. If you&rsquo;ve never smoked, don&rsquo;t start.</li>\r\n</ul>', 2, 1, 1, '2020-12-24 22:04:50', '2020-12-24 22:04:50'),
+(12, 'High Pressure', 'high-pressure', NULL, '<p>Medicine continue as prescribed.</p>', 3, 1, 1, '2020-12-25 04:30:11', '2020-12-25 04:30:11');
 
 -- --------------------------------------------------------
 
@@ -261,9 +358,27 @@ CREATE TABLE `medicines` (
 --
 
 INSERT INTO `medicines` (`id`, `group_id`, `name`, `slug`, `details`, `group`, `risk_level`, `show`, `status`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'Paracetamol', 'paracetamol', '<p>Paracetamol</p>', 1, 1, 1, 1, '2020-09-01 01:24:12', '2020-09-01 01:24:12'),
-(2, 1, 'Napa', 'napa', NULL, 0, 1, 1, 1, '2020-09-01 01:32:00', '2020-09-01 01:32:00'),
-(3, 1, 'Napa Extend', 'napa-extend', NULL, 0, 1, 1, 1, '2020-11-04 09:10:03', '2020-11-04 09:10:03');
+(1, NULL, 'Napa Extend - Tab', 'napa-extend-tab', NULL, 1, 1, 0, 1, '2020-09-01 01:24:12', '2020-12-24 12:09:50'),
+(2, 1, 'Dexpoten - Syp', 'dexpoten-syp', NULL, 0, 1, 0, 1, '2020-09-01 01:32:00', '2020-12-24 12:09:38'),
+(3, NULL, 'Tuska - Syp', 'tuska-syp', NULL, 0, 1, 0, 1, '2020-12-24 12:09:29', '2020-12-24 12:09:29'),
+(4, NULL, 'Zinc B - Tab', 'zinc-b-tab', NULL, 0, 1, 0, 1, '2020-12-24 12:11:06', '2020-12-25 06:15:47'),
+(5, NULL, 'Monas - Tab', 'monas-tab', NULL, 0, 2, 0, 1, '2020-12-24 12:12:48', '2020-12-24 12:12:48'),
+(6, NULL, 'Zimax - Tab', 'zimax-tab', NULL, 0, 2, 0, 1, '2020-12-24 12:15:37', '2020-12-24 12:15:37'),
+(7, NULL, 'Zithium 500 - Tab', 'zithium-500-tab', NULL, 0, 2, 0, 1, '2020-12-24 12:16:28', '2020-12-24 12:16:28'),
+(8, NULL, 'Myolax -  Tab', 'myolax-tab', NULL, 0, 1, 0, 1, '2020-12-24 12:17:06', '2020-12-24 12:17:06'),
+(9, NULL, 'Fenadin - Tab', 'fenadin-tab', NULL, 0, 2, 0, 1, '2020-12-24 12:18:04', '2020-12-24 21:36:32'),
+(10, NULL, 'Napa - Tab', 'napa-tab', NULL, 0, 1, 0, 1, '2020-12-24 12:19:01', '2020-12-24 21:36:44'),
+(11, NULL, 'Antica - Tab', 'antica-tab', NULL, 0, 2, 0, 1, '2020-12-24 21:26:19', '2020-12-24 21:26:19'),
+(12, NULL, 'Omidon - Tab', 'omidon-tab', NULL, 0, 1, 0, 1, '2020-12-24 21:28:04', '2020-12-24 21:28:04'),
+(13, NULL, 'Emistate - Syp', 'emistate-syp', NULL, 0, 1, 0, 1, '2020-12-24 21:28:46', '2020-12-24 21:28:46'),
+(14, NULL, 'Ornid 500 - Tab', 'ornid-500-tab', NULL, 0, 1, 0, 1, '2020-12-24 21:29:57', '2020-12-24 21:29:57'),
+(15, NULL, 'Remdesivir', 'remdesivir', NULL, 0, 3, 0, 1, '2020-12-24 21:35:07', '2020-12-24 21:35:07'),
+(16, NULL, 'Hydroxychloroquine', 'hydroxychloroquine', NULL, 0, 2, 0, 1, '2020-12-24 21:35:34', '2020-12-24 21:35:34'),
+(17, NULL, 'Azithromycin', 'azithromycin', NULL, 0, 2, 0, 1, '2020-12-24 21:37:32', '2020-12-24 21:37:32'),
+(18, NULL, 'Dexamethasone', 'dexamethasone', NULL, 0, 3, 0, 1, '2020-12-24 21:37:59', '2020-12-24 21:37:59'),
+(19, NULL, 'Ceevit 250 - Tab', 'ceevit-250-tab', NULL, 0, 1, 0, 1, '2020-12-25 06:23:48', '2020-12-25 06:23:48'),
+(20, NULL, 'Dinafex 120 - Tab', 'dinafex-120-tab', NULL, 0, 1, 0, 1, '2020-12-25 06:24:41', '2020-12-25 06:24:41'),
+(21, NULL, 'Montika 10 - Tab', 'montika-10-tab', NULL, 0, 2, 0, 1, '2020-12-25 06:25:37', '2020-12-25 06:33:28');
 
 -- --------------------------------------------------------
 
@@ -298,7 +413,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (15, '2020_09_02_071619_create_disease_health_care_table', 9),
 (16, '2020_09_03_060952_create_blogs_table', 10),
 (18, '2020_09_06_060846_create_patients_table', 11),
-(19, '2020_11_01_135914_create_tests_table', 11);
+(20, '2020_12_14_073152_create_testing_diseases_table', 12),
+(21, '2020_12_14_073238_create_testing_symptoms_table', 12),
+(22, '2020_12_14_074013_create_testing_disease_symptom_table', 12),
+(23, '2020_12_17_101317_create_test_reports_table', 13),
+(24, '2020_12_17_101901_create_symptom_report_table', 13),
+(25, '2020_12_17_101929_create_disease_report_table', 13),
+(26, '2020_12_19_153001_create_disease_medicine_table', 14),
+(27, '2020_12_20_144326_create_patient_symptom_table', 15),
+(28, '2020_12_20_144410_create_patient_medicine_table', 15),
+(29, '2020_12_20_144442_create_patient_medical_condition_table', 15),
+(30, '2020_12_23_153153_create_prescriptions_table', 16),
+(31, '2020_12_24_162544_create_patient_health_care_table', 17);
 
 -- --------------------------------------------------------
 
@@ -334,7 +460,9 @@ INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
 (1, 'App\\User', 2),
 (3, 'App\\User', 3),
 (3, 'App\\User', 4),
-(2, 'App\\User', 5);
+(2, 'App\\User', 5),
+(3, 'App\\User', 7),
+(3, 'App\\User', 10);
 
 -- --------------------------------------------------------
 
@@ -363,7 +491,7 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 
 CREATE TABLE `patients` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `reg_id` bigint(20) NOT NULL,
+  `reg_id` bigint(20) DEFAULT NULL,
   `name` varchar(191) NOT NULL,
   `email` varchar(191) NOT NULL,
   `gender` int(11) DEFAULT NULL,
@@ -384,6 +512,223 @@ CREATE TABLE `patients` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `patients`
+--
+
+INSERT INTO `patients` (`id`, `reg_id`, `name`, `email`, `gender`, `dob`, `age`, `designation`, `phone`, `city`, `country`, `medical_test`, `ventilation`, `icu`, `health_condition`, `entry_type`, `status`, `remember_token`, `created_at`, `updated_at`) VALUES
+(13, 5013, 'Mostafizur Rahman', 'mostafizur112@gmail.com', 1, NULL, 5, NULL, NULL, 'Gaibandha', NULL, 1, 0, 0, 2, 2, 1, NULL, '2020-12-25 04:21:52', '2020-12-25 04:21:52'),
+(14, 5014, 'Aminur Rahman', 'aminur789@gmail.com', 1, NULL, 4, NULL, NULL, 'Gaibandha', NULL, 1, 0, 0, 0, 2, 1, NULL, '2020-12-25 04:32:02', '2020-12-25 04:32:02'),
+(15, 5015, 'Rehnuma Rahman', 'rehnumaakter11@gmail.com', 2, NULL, 5, NULL, NULL, 'Gaibandha', NULL, 1, 0, 0, 1, 2, 1, NULL, '2020-12-25 04:36:06', '2020-12-25 04:36:07'),
+(16, 5016, 'Ekramul Haque', 'ekramulhaque60@gmail.com', 1, NULL, 5, NULL, NULL, 'Kurigram', NULL, 1, 1, 0, 0, 2, 1, NULL, '2020-12-25 06:26:59', '2020-12-25 06:26:59'),
+(17, 5017, 'Mominul Islam', 'mominul.islam@gmail.com', 1, NULL, 6, NULL, NULL, 'Kurigram', NULL, 1, 0, 0, 0, 2, 1, NULL, '2020-12-25 06:33:11', '2020-12-25 06:33:11'),
+(18, 5018, 'Sazu miah', 'sazu-miah32@gmail.com', 1, NULL, 5, NULL, NULL, 'Rangpur', NULL, 1, 0, 0, 2, 2, 1, NULL, '2020-12-25 06:38:00', '2020-12-25 06:38:00'),
+(19, 5019, 'Angur Molla', 'angur445@gmail.com', 1, NULL, 5, NULL, NULL, 'Kurigram', NULL, 1, 0, 0, 1, 2, 1, NULL, '2020-12-25 06:38:11', '2020-12-25 06:38:11'),
+(20, 5020, 'Mamun Mondol', 'mamunbabu007@gmail.com', 1, NULL, 4, NULL, NULL, 'Rangpur', NULL, 1, 1, 0, 1, 2, 1, NULL, '2020-12-25 06:42:45', '2020-12-25 06:42:45'),
+(21, 5021, 'Rabeya Akter', 'rabeyaakter029@gmail.com', 2, NULL, 6, NULL, NULL, 'Rangpur', NULL, 1, 0, 0, 1, 2, 1, NULL, '2020-12-25 06:45:04', '2020-12-25 06:45:04'),
+(22, 5022, 'Arman Hossain', 'armanhossain123@gmail.com', 1, NULL, 2, NULL, NULL, 'Kurigram', NULL, 0, 0, 0, 1, 1, 2, NULL, '2020-12-25 06:50:34', '2020-12-25 06:52:24'),
+(23, 5023, 'Mim Akter', 'mimi.akter2020@gmail.com', 2, NULL, 3, NULL, NULL, 'Rangpur', NULL, 0, 0, 0, 1, 1, 2, NULL, '2020-12-25 06:54:20', '2020-12-25 07:10:33');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_health_care`
+--
+
+CREATE TABLE `patient_health_care` (
+  `patient_id` bigint(20) UNSIGNED NOT NULL,
+  `health_care_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `patient_health_care`
+--
+
+INSERT INTO `patient_health_care` (`patient_id`, `health_care_id`) VALUES
+(22, 1),
+(22, 2),
+(23, 1),
+(23, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_medical_condition`
+--
+
+CREATE TABLE `patient_medical_condition` (
+  `patient_id` bigint(20) UNSIGNED NOT NULL,
+  `medical_condition_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `patient_medical_condition`
+--
+
+INSERT INTO `patient_medical_condition` (`patient_id`, `medical_condition_id`) VALUES
+(13, 7),
+(14, 12),
+(15, 12),
+(16, 11),
+(19, 7),
+(20, 3),
+(21, 7),
+(23, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_medicine`
+--
+
+CREATE TABLE `patient_medicine` (
+  `patient_id` bigint(20) UNSIGNED NOT NULL,
+  `medicine_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `patient_medicine`
+--
+
+INSERT INTO `patient_medicine` (`patient_id`, `medicine_id`) VALUES
+(13, 2),
+(13, 1),
+(13, 4),
+(13, 6),
+(14, 2),
+(14, 1),
+(14, 4),
+(14, 6),
+(14, 8),
+(15, 2),
+(15, 1),
+(15, 4),
+(15, 5),
+(15, 6),
+(15, 12),
+(16, 2),
+(16, 1),
+(16, 4),
+(16, 6),
+(16, 19),
+(16, 20),
+(16, 21),
+(17, 2),
+(17, 1),
+(17, 4),
+(17, 6),
+(17, 19),
+(17, 20),
+(17, 21),
+(18, 2),
+(18, 1),
+(18, 4),
+(18, 17),
+(18, 19),
+(19, 2),
+(19, 1),
+(19, 4),
+(19, 6),
+(19, 19),
+(19, 20),
+(20, 2),
+(20, 1),
+(20, 4),
+(20, 6),
+(20, 19),
+(20, 20),
+(20, 21),
+(21, 1),
+(21, 3),
+(21, 4),
+(21, 6),
+(21, 19),
+(21, 20),
+(22, 2),
+(22, 1),
+(22, 19),
+(22, 20),
+(23, 2),
+(23, 1),
+(23, 6),
+(23, 19),
+(23, 20),
+(23, 21);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_symptom`
+--
+
+CREATE TABLE `patient_symptom` (
+  `patient_id` bigint(20) UNSIGNED NOT NULL,
+  `symptom_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `patient_symptom`
+--
+
+INSERT INTO `patient_symptom` (`patient_id`, `symptom_id`) VALUES
+(13, 2),
+(13, 1),
+(13, 8),
+(13, 10),
+(14, 2),
+(14, 1),
+(14, 7),
+(14, 8),
+(14, 10),
+(15, 2),
+(15, 1),
+(15, 7),
+(15, 8),
+(15, 10),
+(15, 13),
+(16, 2),
+(16, 1),
+(16, 8),
+(16, 9),
+(16, 10),
+(17, 2),
+(17, 1),
+(17, 7),
+(17, 8),
+(17, 9),
+(17, 10),
+(18, 2),
+(18, 1),
+(18, 8),
+(18, 9),
+(18, 10),
+(19, 2),
+(19, 1),
+(19, 8),
+(19, 9),
+(19, 10),
+(20, 2),
+(20, 1),
+(20, 7),
+(20, 8),
+(20, 9),
+(20, 10),
+(21, 2),
+(21, 1),
+(21, 8),
+(21, 9),
+(21, 10),
+(22, 2),
+(22, 1),
+(22, 8),
+(22, 9),
+(23, 2),
+(23, 6),
+(23, 8),
+(23, 9),
+(23, 10),
+(23, 7);
+
 -- --------------------------------------------------------
 
 --
@@ -403,15 +748,39 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(12, 'Diseases', 'web', '2020-11-04 08:25:32', '2020-11-04 08:25:32'),
-(13, 'Symptoms', 'web', '2020-11-04 08:25:32', '2020-11-04 08:25:32'),
-(14, 'Medicines', 'web', '2020-11-04 08:25:32', '2020-11-04 08:25:32'),
-(15, 'MedicalConditions', 'web', '2020-11-04 08:25:32', '2020-11-04 08:25:32'),
-(16, 'HealthCares', 'web', '2020-11-04 08:25:32', '2020-11-04 08:25:32'),
-(17, 'InfoBlogs', 'web', '2020-11-04 08:25:32', '2020-11-04 08:25:32'),
-(18, 'OnlineTest', 'web', '2020-11-04 08:25:32', '2020-11-04 08:25:32'),
-(19, 'Roles', 'web', '2020-11-04 08:25:32', '2020-11-04 08:25:32'),
-(20, 'Users', 'web', '2020-11-04 08:25:33', '2020-11-04 08:25:33');
+(21, 'TestingTool', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(22, 'Surveys', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(23, 'Patients', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(24, 'Diseases', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(25, 'Symptoms', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(26, 'Medicines', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(27, 'MedicalConditions', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(28, 'HealthCares', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(29, 'InfoBlogs', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(30, 'Roles', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48'),
+(31, 'Users', 'web', '2020-12-25 05:18:48', '2020-12-25 05:18:48');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `prescriptions`
+--
+
+CREATE TABLE `prescriptions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `patient_id` bigint(20) UNSIGNED NOT NULL,
+  `details` text,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `prescriptions`
+--
+
+INSERT INTO `prescriptions` (`id`, `patient_id`, `details`, `created_at`, `updated_at`) VALUES
+(2, 22, '<p>WIll say something...</p>', '2020-12-25 06:50:34', '2020-12-25 06:52:24'),
+(3, 23, '<p>No comments...</p>', '2020-12-25 06:54:20', '2020-12-25 07:10:33');
 
 -- --------------------------------------------------------
 
@@ -452,21 +821,21 @@ CREATE TABLE `role_has_permissions` (
 --
 
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
-(12, 1),
-(13, 1),
-(14, 1),
-(15, 1),
-(16, 1),
-(17, 1),
-(18, 1),
-(19, 1),
-(20, 1),
-(17, 2),
-(18, 2),
-(13, 3),
-(14, 3),
-(15, 3),
-(16, 3);
+(21, 1),
+(22, 1),
+(23, 1),
+(24, 1),
+(25, 1),
+(26, 1),
+(27, 1),
+(28, 1),
+(29, 1),
+(30, 1),
+(31, 1),
+(21, 2),
+(22, 2),
+(23, 2),
+(23, 3);
 
 -- --------------------------------------------------------
 
@@ -492,10 +861,22 @@ CREATE TABLE `symptoms` (
 --
 
 INSERT INTO `symptoms` (`id`, `name`, `slug`, `details`, `priority`, `risk_level`, `show`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Fevar', 'fevar', '<div>\r\n<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n</div>\r\n<div>\r\n<h2>Why do we use it?</h2>\r\n<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>\r\n</div>\r\n<p>&nbsp;</p>\r\n<div>\r\n<h2>Where does it come from?</h2>\r\n<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.</p>\r\n</div>', 3, 1, 1, 1, '2020-08-27 01:20:30', '2020-08-30 23:57:46'),
-(2, 'Body Pain', 'body-pain', NULL, 3, 2, 1, 1, '2020-08-31 00:40:24', '2020-08-31 00:40:24'),
-(3, 'Cough', 'cough', NULL, 3, 2, 1, 1, '2020-08-31 00:42:33', '2020-08-31 00:42:33'),
-(4, 'Loss of Taste & Smell', 'loss-of-taste-smell', NULL, 3, 1, 0, 1, '2020-11-04 10:05:29', '2020-11-04 10:05:42');
+(1, 'Fever', 'fever', NULL, 3, 2, 1, 1, '2020-08-27 01:20:30', '2020-12-24 11:49:05'),
+(2, 'Cough', 'cough', NULL, 3, 2, 1, 1, '2020-08-31 00:40:24', '2020-12-25 01:59:43'),
+(3, 'Tiredness', 'tiredness', NULL, 3, 1, 1, 1, '2020-08-31 00:42:33', '2020-12-24 11:49:37'),
+(4, 'Loss of Taste & Smell', 'loss-of-taste-smell', NULL, 3, 1, 1, 1, '2020-11-04 10:05:29', '2020-12-21 08:11:45'),
+(5, 'Body Aches', 'body-aches', NULL, 2, 1, 1, 1, '2020-12-24 11:52:01', '2020-12-24 11:52:01'),
+(6, 'Chills', 'chills', NULL, 2, 2, 1, 1, '2020-12-24 11:53:12', '2020-12-24 11:53:12'),
+(7, 'Trouble Breathing', 'trouble-breathing', NULL, 2, 3, 1, 1, '2020-12-24 11:53:52', '2020-12-24 11:53:52'),
+(8, 'Sore Throat', 'sore-throat', NULL, 2, 2, 1, 1, '2020-12-24 11:54:36', '2020-12-24 11:54:36'),
+(9, 'Runny Nose', 'runny-nose', NULL, 2, 1, 1, 1, '2020-12-24 11:54:56', '2020-12-24 11:57:44'),
+(10, 'Headache', 'headache', NULL, 2, 1, 1, 1, '2020-12-24 11:55:14', '2020-12-24 11:55:14'),
+(11, 'Chest Pain', 'chest-pain', NULL, 2, 3, 1, 1, '2020-12-24 11:55:37', '2020-12-24 11:58:20'),
+(12, 'Rash', 'rash', NULL, 1, 1, 1, 1, '2020-12-24 11:56:37', '2020-12-24 11:56:37'),
+(13, 'Vomiting', 'vomiting', NULL, 1, 2, 1, 1, '2020-12-24 11:57:06', '2020-12-24 11:57:06'),
+(14, 'Diarrhea', 'diarrhea', NULL, 1, 2, 1, 1, '2020-12-24 11:57:31', '2020-12-24 11:57:31'),
+(15, 'Blue Lips or Face', 'blue-lips-or-face', NULL, 1, 3, 1, 1, '2020-12-24 11:59:07', '2020-12-24 11:59:07'),
+(16, 'Inability to Stay Awake', 'inability-to-stay-awake', NULL, 1, 3, 1, 1, '2020-12-24 11:59:44', '2020-12-24 11:59:44');
 
 -- --------------------------------------------------------
 
@@ -513,22 +894,198 @@ CREATE TABLE `symptom_medicine` (
 --
 
 INSERT INTO `symptom_medicine` (`symptom_id`, `medicine_id`) VALUES
-(2, 1),
 (1, 1),
 (2, 2),
-(1, 2),
 (2, 3),
-(1, 3);
+(3, 4),
+(7, 5),
+(6, 6),
+(6, 7),
+(5, 8),
+(9, 9),
+(11, 10),
+(10, 10),
+(11, 1),
+(10, 1),
+(12, 11),
+(13, 12),
+(13, 13),
+(14, 14),
+(8, 19),
+(9, 20),
+(7, 21);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tests`
+-- Table structure for table `symptom_report`
 --
 
-CREATE TABLE `tests` (
+CREATE TABLE `symptom_report` (
+  `symptom_id` int(10) UNSIGNED NOT NULL,
+  `report_id` bigint(20) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `symptom_report`
+--
+
+INSERT INTO `symptom_report` (`symptom_id`, `report_id`) VALUES
+(1, 10),
+(2, 10),
+(5, 10),
+(7, 10),
+(9, 10),
+(10, 10),
+(1, 11),
+(4, 11),
+(5, 11),
+(7, 11),
+(9, 11),
+(3, 11),
+(14, 11),
+(1, 12),
+(5, 12),
+(8, 12),
+(9, 12),
+(10, 12),
+(12, 12),
+(3, 12),
+(14, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testing_diseases`
+--
+
+CREATE TABLE `testing_diseases` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `slug` varchar(191) NOT NULL,
+  `details` text,
+  `type` int(11) DEFAULT NULL,
+  `risk_level` int(11) NOT NULL DEFAULT '1',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `testing_diseases`
+--
+
+INSERT INTO `testing_diseases` (`id`, `name`, `slug`, `details`, `type`, `risk_level`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'COVID-19', 'covid-19', NULL, 1, 2, 1, '2020-12-14 08:55:52', '2020-12-24 23:52:03'),
+(2, 'Flu', 'flu', NULL, 1, 2, 1, '2020-12-15 10:26:49', '2020-12-15 10:26:49'),
+(3, 'Cold', 'cold', NULL, 1, 1, 1, '2020-12-25 00:02:44', '2020-12-25 00:02:44');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testing_disease_symptom`
+--
+
+CREATE TABLE `testing_disease_symptom` (
+  `disease_id` int(10) UNSIGNED NOT NULL,
+  `symptom_id` int(10) UNSIGNED NOT NULL,
+  `priority` int(11) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `testing_disease_symptom`
+--
+
+INSERT INTO `testing_disease_symptom` (`disease_id`, `symptom_id`, `priority`) VALUES
+(1, 1, 3),
+(1, 2, 3),
+(1, 3, 2),
+(1, 4, 3),
+(2, 1, 3),
+(2, 2, 3),
+(1, 5, 2),
+(2, 5, 2),
+(3, 2, 2),
+(3, 6, 1),
+(1, 6, 3),
+(2, 6, 2),
+(3, 1, 1),
+(3, 7, 2),
+(1, 7, 3),
+(2, 7, 3),
+(3, 5, 3),
+(3, 8, 1),
+(1, 8, 2),
+(2, 8, 2),
+(3, 3, 1),
+(2, 3, 3),
+(3, 9, 3),
+(1, 9, 2),
+(2, 9, 2),
+(3, 10, 1),
+(1, 10, 2),
+(2, 10, 3),
+(3, 11, 3),
+(1, 11, 1),
+(2, 11, 1),
+(3, 12, 2),
+(1, 12, 1),
+(2, 12, 3),
+(3, 13, 2),
+(1, 13, 3),
+(2, 13, 2),
+(3, 4, 1),
+(2, 4, 1),
+(1, 14, 2),
+(2, 14, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testing_symptoms`
+--
+
+CREATE TABLE `testing_symptoms` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `slug` varchar(191) NOT NULL,
+  `details` text,
+  `priority` int(11) NOT NULL DEFAULT '0',
+  `risk_level` int(11) NOT NULL DEFAULT '1',
+  `show` tinyint(1) NOT NULL DEFAULT '1',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `testing_symptoms`
+--
+
+INSERT INTO `testing_symptoms` (`id`, `name`, `slug`, `details`, `priority`, `risk_level`, `show`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Fevar', 'fevar', NULL, 3, 2, 0, 1, '2020-12-14 10:42:49', '2020-12-25 00:06:59'),
+(2, 'Cough', 'cough', '<p>Cough</p>', 3, 2, 0, 1, '2020-12-14 11:01:13', '2020-12-14 11:01:13'),
+(3, 'Body Pain', 'body-pain', NULL, 2, 3, 0, 1, '2020-12-14 11:01:57', '2020-12-25 00:21:06'),
+(4, 'Loss of Taste & Smell', 'loss-of-taste-smell', '<p>Loss of Taste &amp; Smell</p>', 3, 1, 0, 1, '2020-12-14 11:02:49', '2020-12-14 11:02:49'),
+(5, 'Runny Nose', 'runny-nose', '<p>Runny Nose</p>', 3, 1, 0, 1, '2020-12-17 03:16:07', '2020-12-17 03:16:07'),
+(6, 'Shortness Of Breath', 'shortness-of-breath', NULL, 3, 3, 0, 1, '2020-12-25 00:06:05', '2020-12-25 00:06:05'),
+(7, 'Tiredness', 'tiredness', NULL, 3, 1, 0, 1, '2020-12-25 00:09:46', '2020-12-25 00:09:46'),
+(8, 'Diarrhea', 'diarrhea', NULL, 2, 2, 0, 1, '2020-12-25 00:11:38', '2020-12-25 00:11:38'),
+(9, 'Sore Throat', 'sore-throat', NULL, 2, 2, 0, 1, '2020-12-25 00:13:04', '2020-12-25 00:13:04'),
+(10, 'Headache', 'headache', NULL, 3, 1, 0, 1, '2020-12-25 00:14:55', '2020-12-25 00:14:55'),
+(11, 'Nasal Congestion', 'nasal-congestion', NULL, 1, 1, 0, 1, '2020-12-25 00:15:44', '2020-12-25 00:15:44'),
+(12, 'Loss Of Appetite', 'loss-of-appetite', NULL, 1, 2, 0, 1, '2020-12-25 00:17:20', '2020-12-25 00:17:20'),
+(13, 'Respiratory Issues', 'respiratory-issues', NULL, 1, 3, 0, 1, '2020-12-25 00:18:52', '2020-12-25 00:22:09'),
+(14, 'Chills', 'chills', NULL, 2, 3, 0, 1, '2020-12-25 00:20:00', '2020-12-25 00:20:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `test_reports`
+--
+
+CREATE TABLE `test_reports` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `session_id` varchar(191) NOT NULL,
   `name` varchar(191) DEFAULT NULL,
   `email` varchar(191) DEFAULT NULL,
   `gender` int(11) DEFAULT NULL,
@@ -538,10 +1095,18 @@ CREATE TABLE `tests` (
   `phone` varchar(191) DEFAULT NULL,
   `city` varchar(191) DEFAULT NULL,
   `country` varchar(191) DEFAULT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `test_reports`
+--
+
+INSERT INTO `test_reports` (`id`, `name`, `email`, `gender`, `dob`, `age`, `designation`, `phone`, `city`, `country`, `created_at`, `updated_at`) VALUES
+(10, 'Arman', NULL, 1, NULL, 2, NULL, NULL, 'Kurigram', NULL, '2020-12-25 00:56:37', '2020-12-25 00:56:37'),
+(11, 'Hasan', NULL, 1, NULL, 3, NULL, NULL, 'Kurigram', NULL, '2020-12-25 00:58:34', '2020-12-25 00:58:34'),
+(12, 'Harun Or Rashid', NULL, 1, NULL, 4, NULL, NULL, 'Gaibandha', NULL, '2020-12-25 01:15:46', '2020-12-25 01:15:46');
 
 -- --------------------------------------------------------
 
@@ -581,9 +1146,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `gender`, `dob`, `designation`, `department`, `organization`, `higher_degree`, `academy`, `specialty`, `profile`, `photo`, `phone`, `address`, `city`, `country`, `remember_token`, `is_admin`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'Super Admin', 'admin@mail.com', NULL, '$2y$10$4qpPjESW.dsoCzsr4BTDxeqE0IrZoAAqy4mqCf8PAKxepDCe7FfcS', 1, '1994-11-18', 'Developer', 'IT', 'COVID-19 Research Center', 'BSC in Engineering', 'CUB', 'Programming', 'Will say something...', '87775476_2503550363230869_6900561810877841408_n_1604500092.jpg', '01740473189', 'Mirpur', 'Dhaka', 'Bangladesh', 'zmqaVgQktTse2bmxDbkLHpXyc4DpgZy8ETQyqugwyAMdwaPyyymDeqE4EG54', 1, 1, '2020-11-04 08:22:01', '2020-11-04 08:28:12'),
+(2, 'Super Admin', 'admin@mail.com', NULL, '$2y$10$eIzXpl1KvOwrdjP/Bywtde7SQTUcjoG.3k1nJGrlqznoJ97tIr9mm', 1, '1994-11-18', 'Developer', 'IT', 'COVID-19 Research Center', 'BSC in Engineering', 'CUB', 'Programming', 'Will say something...', '87775476_2503550363230869_6900561810877841408_n_1604500092.jpg', '01740473189', 'Mirpur', 'Dhaka', 'Bangladesh', 'TVqHmHtyqRymv5d5vYnXG9hd4ATSUAndaF9IqTwOzED8R3xwb37AE1lJNn9z', 1, 1, '2020-11-04 08:22:01', '2020-12-25 05:05:14'),
 (4, 'Habib R.', 'softtechhabib@gmail.com', NULL, '$2y$10$4SwgWs7QHKM0iIbRhw7B3Oj3zC.8HcdnJcPIEZczdqvjWbaIR2n9a', 1, '2020-11-05', 'ABC', 'XYZ', 'City Uni', 'MBBS', 'DMC', 'Heart', 'Nothing to say', NULL, '01740473189', 'Chilmari', 'Kurigram', NULL, 'Oxayok3S5e9QSKCycE1kl2WyizgoqS3hZzvFRkM6vKkKajj6XP4QDLScUOap', 0, 1, '2020-11-04 13:04:29', '2020-11-04 13:04:29'),
-(5, 'Harun Or Rashid', 'harunkkp@gmail.com', NULL, '$2y$10$ZajHpK954fYUvZEj9o6RJugSe6IlH9HzPQltGf5VZ1u9aV4E34HjG', 1, '2020-11-05', 'ABC', 'XYZ', 'COVID-19 Research Center', 'MBBS', 'DMC', 'Heart', NULL, NULL, '01712345678', 'Sadullahpur', 'Gaibandha', 'Bangladesh', '2dD48Vc6gnLek0NeYB3ork7rLayycUpzkdXfLvICqqfN8o0sFk3RdzXW4mnI', 0, 1, '2020-11-04 13:17:21', '2020-11-04 13:21:38');
+(5, 'Harun Or Rashid', 'harunkkp@gmail.com', NULL, '$2y$10$ZajHpK954fYUvZEj9o6RJugSe6IlH9HzPQltGf5VZ1u9aV4E34HjG', 1, '2020-11-05', 'ABC', 'XYZ', 'COVID-19 Research Center', 'MBBS', 'DMC', 'Heart', NULL, NULL, '01712345678', 'Sadullahpur', 'Gaibandha', 'Bangladesh', 'Tr8gEigyYoOmkQEdeoSg6GMMddpXM7x1eVPDmjtwg4AiH8jZfhVoS6qVsQM0', 0, 1, '2020-11-04 13:17:21', '2020-11-04 13:21:38'),
+(7, 'Arif', 'arif@mail.com', NULL, '$2y$10$lTWypoqvULbz/CXbhy4nnOJXsnJ/dohLRnEDc.3GGEeZQzI.c1uGu', 1, '2020-11-05', 'ABC', 'XYZ', 'COVID-19 Research Center', 'MBBS', 'DMC', 'Heart', NULL, NULL, '01712345678', 'Dhanmondi', 'Dhaka', 'Bangladesh', NULL, 0, 1, '2020-11-04 22:22:54', '2020-12-25 02:05:07'),
+(10, 'Arman', 'arman@mail.com', NULL, '$2y$10$L1P0lkvjmDaw6DjeCwvzPuENU4vgd6Gxv61cyZBtniNS721Fum4Ni', 1, '2020-08-01', 'ABC', 'XYZ', 'COVID-19 Research Center', 'MBBS', 'DMC', 'Heart', NULL, NULL, '333444555', 'Dhaka', 'Dhaka', NULL, 'ryW06XrGRNWwE7bb6Fu4i2yZhJ8BmnxrHTxQCQLJ2iZKFBLivOFTGWiGVhdR', 0, 1, '2020-12-25 01:19:02', '2020-12-25 01:19:02');
 
 --
 -- Indexes for dumped tables
@@ -625,6 +1192,20 @@ ALTER TABLE `disease_health_care`
 ALTER TABLE `disease_medical_condition`
   ADD KEY `disease_medical_condition_disease_id_foreign` (`disease_id`),
   ADD KEY `disease_medical_condition_medical_condition_id_foreign` (`medical_condition_id`);
+
+--
+-- Indexes for table `disease_medicine`
+--
+ALTER TABLE `disease_medicine`
+  ADD KEY `disease_medicine_disease_id_foreign` (`disease_id`),
+  ADD KEY `disease_medicine_medicine_id_foreign` (`medicine_id`);
+
+--
+-- Indexes for table `disease_report`
+--
+ALTER TABLE `disease_report`
+  ADD KEY `disease_report_disease_id_foreign` (`disease_id`),
+  ADD KEY `disease_report_report_id_foreign` (`report_id`);
 
 --
 -- Indexes for table `disease_symptom`
@@ -696,10 +1277,45 @@ ALTER TABLE `patients`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `patient_health_care`
+--
+ALTER TABLE `patient_health_care`
+  ADD KEY `patient_health_care_patient_id_foreign` (`patient_id`),
+  ADD KEY `patient_health_care_health_care_id_foreign` (`health_care_id`);
+
+--
+-- Indexes for table `patient_medical_condition`
+--
+ALTER TABLE `patient_medical_condition`
+  ADD KEY `patient_medical_condition_patient_id_foreign` (`patient_id`),
+  ADD KEY `patient_medical_condition_medical_condition_id_foreign` (`medical_condition_id`);
+
+--
+-- Indexes for table `patient_medicine`
+--
+ALTER TABLE `patient_medicine`
+  ADD KEY `patient_medicine_patient_id_foreign` (`patient_id`),
+  ADD KEY `patient_medicine_medicine_id_foreign` (`medicine_id`);
+
+--
+-- Indexes for table `patient_symptom`
+--
+ALTER TABLE `patient_symptom`
+  ADD KEY `patient_symptom_patient_id_foreign` (`patient_id`),
+  ADD KEY `patient_symptom_symptom_id_foreign` (`symptom_id`);
+
+--
 -- Indexes for table `permissions`
 --
 ALTER TABLE `permissions`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `prescriptions`
+--
+ALTER TABLE `prescriptions`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `prescriptions_patient_id_foreign` (`patient_id`);
 
 --
 -- Indexes for table `roles`
@@ -730,9 +1346,39 @@ ALTER TABLE `symptom_medicine`
   ADD KEY `symptom_medicine_medicine_id_foreign` (`medicine_id`);
 
 --
--- Indexes for table `tests`
+-- Indexes for table `symptom_report`
 --
-ALTER TABLE `tests`
+ALTER TABLE `symptom_report`
+  ADD KEY `symptom_report_symptom_id_foreign` (`symptom_id`),
+  ADD KEY `symptom_report_report_id_foreign` (`report_id`);
+
+--
+-- Indexes for table `testing_diseases`
+--
+ALTER TABLE `testing_diseases`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `testing_diseases_name_unique` (`name`),
+  ADD UNIQUE KEY `testing_diseases_slug_unique` (`slug`);
+
+--
+-- Indexes for table `testing_disease_symptom`
+--
+ALTER TABLE `testing_disease_symptom`
+  ADD KEY `testing_disease_symptom_disease_id_foreign` (`disease_id`),
+  ADD KEY `testing_disease_symptom_symptom_id_foreign` (`symptom_id`);
+
+--
+-- Indexes for table `testing_symptoms`
+--
+ALTER TABLE `testing_symptoms`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `testing_symptoms_name_unique` (`name`),
+  ADD UNIQUE KEY `testing_symptoms_slug_unique` (`slug`);
+
+--
+-- Indexes for table `test_reports`
+--
+ALTER TABLE `test_reports`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -770,32 +1416,37 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `health_cares`
 --
 ALTER TABLE `health_cares`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `medical_conditions`
 --
 ALTER TABLE `medical_conditions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `medicines`
 --
 ALTER TABLE `medicines`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+--
+-- AUTO_INCREMENT for table `prescriptions`
+--
+ALTER TABLE `prescriptions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -805,17 +1456,27 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `symptoms`
 --
 ALTER TABLE `symptoms`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
--- AUTO_INCREMENT for table `tests`
+-- AUTO_INCREMENT for table `testing_diseases`
 --
-ALTER TABLE `tests`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `testing_diseases`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `testing_symptoms`
+--
+ALTER TABLE `testing_symptoms`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `test_reports`
+--
+ALTER TABLE `test_reports`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- Constraints for dumped tables
 --
@@ -833,6 +1494,20 @@ ALTER TABLE `disease_health_care`
 ALTER TABLE `disease_medical_condition`
   ADD CONSTRAINT `disease_medical_condition_disease_id_foreign` FOREIGN KEY (`disease_id`) REFERENCES `diseases` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `disease_medical_condition_medical_condition_id_foreign` FOREIGN KEY (`medical_condition_id`) REFERENCES `medical_conditions` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `disease_medicine`
+--
+ALTER TABLE `disease_medicine`
+  ADD CONSTRAINT `disease_medicine_disease_id_foreign` FOREIGN KEY (`disease_id`) REFERENCES `diseases` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `disease_medicine_medicine_id_foreign` FOREIGN KEY (`medicine_id`) REFERENCES `medicines` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `disease_report`
+--
+ALTER TABLE `disease_report`
+  ADD CONSTRAINT `disease_report_disease_id_foreign` FOREIGN KEY (`disease_id`) REFERENCES `testing_diseases` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `disease_report_report_id_foreign` FOREIGN KEY (`report_id`) REFERENCES `test_reports` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `disease_symptom`
@@ -854,6 +1529,40 @@ ALTER TABLE `model_has_roles`
   ADD CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
 
 --
+-- Constraints for table `patient_health_care`
+--
+ALTER TABLE `patient_health_care`
+  ADD CONSTRAINT `patient_health_care_health_care_id_foreign` FOREIGN KEY (`health_care_id`) REFERENCES `health_cares` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `patient_health_care_patient_id_foreign` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `patient_medical_condition`
+--
+ALTER TABLE `patient_medical_condition`
+  ADD CONSTRAINT `patient_medical_condition_medical_condition_id_foreign` FOREIGN KEY (`medical_condition_id`) REFERENCES `medical_conditions` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `patient_medical_condition_patient_id_foreign` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `patient_medicine`
+--
+ALTER TABLE `patient_medicine`
+  ADD CONSTRAINT `patient_medicine_medicine_id_foreign` FOREIGN KEY (`medicine_id`) REFERENCES `medicines` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `patient_medicine_patient_id_foreign` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `patient_symptom`
+--
+ALTER TABLE `patient_symptom`
+  ADD CONSTRAINT `patient_symptom_patient_id_foreign` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `patient_symptom_symptom_id_foreign` FOREIGN KEY (`symptom_id`) REFERENCES `symptoms` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `prescriptions`
+--
+ALTER TABLE `prescriptions`
+  ADD CONSTRAINT `prescriptions_patient_id_foreign` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`) ON DELETE CASCADE;
+
+--
 -- Constraints for table `role_has_permissions`
 --
 ALTER TABLE `role_has_permissions`
@@ -866,6 +1575,20 @@ ALTER TABLE `role_has_permissions`
 ALTER TABLE `symptom_medicine`
   ADD CONSTRAINT `symptom_medicine_medicine_id_foreign` FOREIGN KEY (`medicine_id`) REFERENCES `medicines` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `symptom_medicine_symptom_id_foreign` FOREIGN KEY (`symptom_id`) REFERENCES `symptoms` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `symptom_report`
+--
+ALTER TABLE `symptom_report`
+  ADD CONSTRAINT `symptom_report_report_id_foreign` FOREIGN KEY (`report_id`) REFERENCES `test_reports` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `symptom_report_symptom_id_foreign` FOREIGN KEY (`symptom_id`) REFERENCES `testing_symptoms` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `testing_disease_symptom`
+--
+ALTER TABLE `testing_disease_symptom`
+  ADD CONSTRAINT `testing_disease_symptom_disease_id_foreign` FOREIGN KEY (`disease_id`) REFERENCES `testing_diseases` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `testing_disease_symptom_symptom_id_foreign` FOREIGN KEY (`symptom_id`) REFERENCES `testing_symptoms` (`id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

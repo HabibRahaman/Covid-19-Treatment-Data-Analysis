@@ -249,14 +249,17 @@ p {
                                 @endforeach
                             </td>
                         </tr>
+                        @if(count($data['patient']->conditions) > 0)
                         <tr>
                             <td class="full-width">
-                                <strong>Health Conditions:</strong> 
+                                <strong>Health Issues:</strong> 
                                 @foreach ($data['patient']->conditions as $condition)
-                                    {{ $condition->name }}, 
+                                    <p><b>{{ $condition->name }}</b></p>
+                                    {!! $condition->instructions !!} 
                                 @endforeach
                             </td>
                         </tr>
+                        @endif
                         <tr>
                             <td class="full-width">
                                 <strong>Medicines:</strong> 
