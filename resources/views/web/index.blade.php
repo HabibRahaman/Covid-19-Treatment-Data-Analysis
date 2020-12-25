@@ -87,7 +87,7 @@
    <div class="row">
 
      <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-6">
+     {{-- <div class="col-12 col-md-6 col-lg-6">
        <div class="signle-graph-box">
          <div class="single-graph-header">
              <div class="graph-title">Real Chart</div>
@@ -98,11 +98,11 @@
             </div>
          </div>
        </div>
-     </div>
+     </div> --}}
      <!-- Single Graph -->
 
      <!-- Single Graph -->
-     <div class="col-12 col-md-6 col-lg-6">
+     {{-- <div class="col-12 col-md-6 col-lg-6">
        <div class="signle-graph-box">
          <div class="single-graph-header">
              <div class="graph-title">Moving Line Chart</div>
@@ -113,18 +113,18 @@
             </div>
          </div>
        </div>
-     </div>
+     </div> --}}
      <!-- Single Graph -->
 
      <!-- Single Graph -->
      <div class="col-12 col-md-6 col-lg-6">
        <div class="signle-graph-box">
          <div class="single-graph-header">
-             <div class="graph-title">Pie Chart</div>
+             <div class="graph-title">By Gender</div>
          </div>
          <div class="single-graph-body">
             <div class="flot-chart">
-                <div class="flot-chart-content" id="flot-pie-chart"></div>
+                <div class="flot-chart-content" id="gender-chart"></div>
             </div>
          </div>
        </div>
@@ -135,11 +135,11 @@
      <div class="col-12 col-md-6 col-lg-6">
        <div class="signle-graph-box">
          <div class="single-graph-header">
-             <div class="graph-title">Sales Bar Chart</div>
+             <div class="graph-title">By Age</div>
          </div>
          <div class="single-graph-body">
             <div class="flot-chart">
-                <div class="sales-bars-chart" style="height: 400px;"> </div>
+                <div class="flot-chart-content" id="age-chart"></div>
             </div>
          </div>
        </div>
@@ -163,23 +163,10 @@
      <div class="col-12 col-md-12 col-lg-12">
        <div class="signle-graph-box">
          <div class="single-graph-header">
-             <div class="graph-title">Stacked Bar Chart</div>
+             <div class="graph-title">Top Medicines by Symptoms</div>
          </div>
          <div class="single-graph-body">
              <div id="stacked-bar" style="height:400px;"></div>
-         </div>
-       </div>
-     </div>
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     <div class="col-12 col-md-12 col-lg-12">
-       <div class="signle-graph-box">
-         <div class="single-graph-header">
-             <div class="graph-title">Stacked column Chart</div>
-         </div>
-         <div class="single-graph-body">
-             <div id="stacked-column" style="height:400px;"></div>
          </div>
        </div>
      </div>
@@ -199,85 +186,22 @@
      <!-- Single Graph -->
 
      <!-- Single Graph -->
-     {{-- <div class="col-12 col-md-6 col-lg-6">
-       <div class="signle-graph-box">
-         <div class="single-graph-header">
-             <div class="graph-title">Basic Pie chart</div>
-         </div>
-         <div class="single-graph-body">
-             <div id="basic-pie" style="height:400px;"></div>
-         </div>
-       </div>
-     </div> --}}
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     {{-- <div class="col-12 col-md-6 col-lg-6">
-       <div class="signle-graph-box">
-         <div class="single-graph-header">
-             <div class="graph-title">Basic Doughnut Chart</div>
-         </div>
-         <div class="single-graph-body">
-             <div id="basic-doughnut" style="height:400px;"></div>
-         </div>
-       </div>
-     </div> --}}
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     {{-- <div class="col-12 col-md-6 col-lg-6">
-       <div class="signle-graph-box">
-         <div class="single-graph-header">
-             <div class="graph-title">Nested Pie Chart</div>
-         </div>
-         <div class="single-graph-body">
-             <div id="nested-pie" style="height:400px;"></div>
-         </div>
-       </div>
-     </div> --}}
-     <!-- Single Graph -->
-
-     <!-- Single Graph -->
-     {{-- <div class="col-12 col-md-6 col-lg-6">
-       <div class="signle-graph-box">
-         <div class="single-graph-header">
-             <div class="graph-title">Pole Chart</div>
-         </div>
-         <div class="single-graph-body">
-             <div id="pole-chart" style="height:400px;"></div>
-         </div>
-       </div>
-     </div> --}}
-     <!-- Single Graph -->
-
-      <!-- Single Graph -->
      <div class="col-12 col-md-12 col-lg-12">
        <div class="signle-graph-box">
          <div class="single-graph-header">
-             <div class="graph-title">Easy Pie Chart</div>
+             <div class="graph-title">Top Symptoms</div>
          </div>
          <div class="single-graph-body">
              <div class="row">
+                @foreach($symptoms as $key => $symptom)
+                    @php
+                        $symptom_percent = round(100 / $total_patients) * $symptom->patients->count();
+                    @endphp
                 <div class="col-6 col-md-3 col-lg-2">
-                    <div class="chart easy-pie-chart-1" data-percent="75"> <span class="percent">8/100</span> </div>
+                    <div class="easy-pie-chart-{{ $key + 1 }} chart pie-chart" data-percent="{{ $symptom_percent }}"> <span>{{ $symptom_percent }}% <br>
+                        <small class="text-muted">{{ $symptom->name }}</small></span> </div>
                 </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="chart easy-pie-chart-2" data-percent="75"> <span class="percent">75</span> </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="easy-pie-chart-3 chart pie-chart" data-percent="25"> <span>25% <br>
-                        <small class="text-muted">/Fever</small></span> </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="chart easy-pie-chart-4" data-percent="75"> <span class="percent">8/100</span> </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="chart easy-pie-chart-5" data-percent="75"> <span class="percent">75</span> </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2">
-                    <div class="easy-pie-chart-6 chart pie-chart" data-percent="25"> <span>25% <br>
-                      <small class="text-muted">/Cough</small></span> </div>
-                </div>
+                @endforeach
             </div>
          </div>
        </div>
@@ -290,3 +214,5 @@
 <!-- Graph Box -->
 
 @endsection
+
+@include('web.common.includes.chart')

@@ -10,11 +10,11 @@
 	<script type="text/javascript" src="{{ asset('backend/libs/flot/jquery.flot.time.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('backend/libs/flot/jquery.flot.stack.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('backend/libs/flot/jquery.flot.crosshair.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('backend/js/pages/flot/flot-data.js') }}"></script>
+	{{-- <script type="text/javascript" src="{{ asset('backend/js/pages/flot/flot-data.js') }}"></script> --}}
 
 	<!-- Bar Chart JS -->
 	<script type="text/javascript" src="{{ asset('backend/libs/echarts/dist/echarts-en.min.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('backend/js/pages/echarts/bar/bar.js') }}"></script>
+	{{-- <script type="text/javascript" src="{{ asset('backend/js/pages/echarts/bar/bar.js') }}"></script> --}}
 
 	<!-- Pie Chart JS -->
 	<script type="text/javascript" src="{{ asset('backend/libs/echarts/dist/echarts-en.min.js') }}"></script>
