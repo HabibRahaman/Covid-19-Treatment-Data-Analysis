@@ -82,7 +82,7 @@
                                                             <option value="{{ $symptom->id }}">{{ $symptom->name }}</option>
                                                             @endforeach
                                                         </select> 
-                                                        <label for="symptoms">Symptoms <span>*</span></label>
+                                                        <label for="symptoms">Symptoms</label>
                                                     </div>
                                                 </div>
                                                 <div class="col s12">
@@ -263,7 +263,7 @@
                                                                         </option>
                                                                         @endforeach
                                                                     </select> 
-                                                                    <label for="symptoms">Symptoms <span>*</span></label>
+                                                                    <label for="symptoms">Symptoms</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col s12">
